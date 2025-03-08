@@ -1,0 +1,69 @@
+.top-nav {
+    background-color: #f8f9fa; /* Or any light background color */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add some padding on the sides */
+}
+
+.top-nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav .logo img {
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.top-nav .logo .university-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333; /* Or your university color */
+}
+
+.top-nav .logo .university-name small {
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #666;
+}
+
+.top-nav .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.top-nav .menu li {
+    margin-left: 20px; /* Spacing between menu items */
+}
+
+.top-nav .menu li a {
+    text-decoration: none;
+    color: #555; /* Or your menu color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.top-nav .menu li a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+.top-nav .menu li a.mywmsu-btn {
+    background-color: #c00; /* Or your specific button color */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.top-nav .menu li a.mywmsu-btn:hover {
+    background-color: #900; /* Darken the button on hover */
+}
