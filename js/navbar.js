@@ -28,3 +28,5 @@ dropdown.addEventListener("mouseleave", () => {
         dropdown.style.opacity = "0";
     }, 300); // Delay hiding
 });
+
+

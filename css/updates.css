@@ -291,7 +291,6 @@ ul li {
 }
 .f-logo-text{
     font-size: 42px!important;    
-
 }
 
 
@@ -311,6 +310,8 @@ ul li {
     justify-content: flex-start;
 }.footer-item.i4{
     justify-content: center !important;
+}.footer-item h1{
+    font-weight: 700;
 }
 
 .footer-logo{

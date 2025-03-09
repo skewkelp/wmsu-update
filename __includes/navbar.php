@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="nav-links">
-            <a class="inter-extralight" id="Home" href="">HOME</a>
+            <a class="inter-extralight" id="Home" href="homepage">HOME</a>
             <a class="inter-extralight" id="About" href="">ABOUT US <img src="../imgs/Expand Arrow.png" alt=""></a>
             <div id="About-dropdown" class="nav-dropdown">
                 <div class="dropdown-cont">
@@ -107,7 +107,7 @@
                         <div class="dropdown-content">
                             <h6 class="inter-bold">NEWS & EVENTS</h6>
                             <p class="inter-light">Announcements</p>
-                            <p class="inter-light"><a href="../page/updates.php">News Articles</a></p>
+                            <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
                             <p class="inter-light">Media</p>
                             <p class="inter-light">Archives</p>
                         </div>
