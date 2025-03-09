@@ -376,6 +376,7 @@ ul li {
     height: auto;
     max-width: 100%;
     display: flex;
+    margin-top: 40px;
     gap: 80px;
     justify-content: center;
 }.page-section.news{
@@ -398,7 +399,7 @@ ul li {
     gap: 20px;
     text-align: center;
     align-items: center;
-
+    margin-bottom: 40px;
 
 }
 
