@@ -3,7 +3,7 @@
 
 </style>
 
-<div class="hero-banner" >
+<div class="hero-banner news-article" >
     
 </div>
 <div class="page-margin">

@@ -6,7 +6,10 @@ $pageView = isset($_GET['page-view']) ? $_GET['page-view'] : '';
 
 // Determine which file to include based on the 'page-view' parameter
 if ($pageView === 'news-articles') {
-    $directory = '../page-views/updates-views.php';
+    $directory = '../page-views/news-articles-views.php';
+} elseif ($pageView === 'archives'){
+    $directory = '../page-views/archives-views.php';
+
 } else {
     $directory = '../page-views/default-view.php'; // Fallback or default view
 }

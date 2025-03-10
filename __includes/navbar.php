@@ -109,7 +109,7 @@
                             <p class="inter-light">Announcements</p>
                             <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
                             <p class="inter-light">Media</p>
-                            <p class="inter-light">Archives</p>
+                            <p class="inter-light"><a href="updates?page-view=archives">Archives</a></p>
                         </div>
                     </div>
                 </div>

@@ -26,7 +26,10 @@ ul li {
 }
 
 :root{
-    --brand-color: #BF0202;
+    --brand-color: #BC0E03;
+    --secondary-color: #7E0804;
+
+
     --logo-text-font-size: 16px;
     --topbar-height: 100px;
 
@@ -37,6 +40,10 @@ ul li {
     --hero-banner-height: 420px;
     --img-card-b-width: 580px;
     --img-card-b-height: 387px;
+
+    --archive-vector-width: 483px;
+    --archive-vector-height: 195px;
+    --month-list-width: 634px;
 
     --img-card-s-width: 277px;
     --img-card-s-height: 208px;
@@ -255,7 +262,6 @@ ul li {
     display: block;
     width: 100%;
     height: var(--hero-banner-height);
-    background-image: url("../img/hero-banner1.png");
     background-size: cover;    
     /* justify-content: space-between; */
     /* contentview */
@@ -263,8 +269,22 @@ ul li {
     background-position: center; 
     background-repeat: no-repeat; 
     margin: 0;
-
 }
+
+
+.hero-banner.news-article{ /* NEWS-ARTICLE PAGE */
+    background-image: url("../img/hero-banner/news-articles.png");
+}
+
+.hero-banner.archives{ /* NEWS-ARTICLE PAGE */
+    background-image: url("../img/hero-banner/archives.png");
+}
+
+
+    
+
+
+
 
 /* footer */
 .footer{
@@ -401,8 +421,73 @@ ul li {
     text-align: center;
     align-items: center;
     margin-bottom: 40px;
-
 }
+
+
+/* ARCHIVES */
+.page-section.archives{
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* background-color:lightgreen; */
+    margin-bottom: 80px;
+}
+
+
+.month-list{
+    width: var(--month-list-width);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}.month-list .month{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0 0 20px;
+    justify-content: space-between;
+    background-image: url("../img/month/bckg2024.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat;
+}.month-list .month:hover {
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}.month-list .month:hover .vector{
+    transform: scaleX(.75);
+    transform-origin: right;
+    transition: 0.3s ease;
+
+} .month-list .month:hover .description-card{
+    opacity: 1;
+    padding-left: 20%;
+    transform-origin: left;
+    transition: 0.3s ease;
+}
+
+.month .description-card h2{
+    font-size: 25px;
+    font-weight: 600;
+    
+}.month#december .vector{
+    width: var(--archive-vector-width);
+    height: var(--archive-vector-height);
+    background-image: url("../img/month/december2024.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+}.month .vector{
+    width: var(--archive-vector-width);
+    height: var(--archive-vector-height);
+    background-image: url("../img/month/november2024.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
+    transition: 0.3s ease;
+    will-change: transform;
+}
+
+
+
 
 
 .recent-news{
@@ -492,11 +577,23 @@ ul li {
     max-width: 100%;
 }.section-title.articles, .section-title.articles h2{
     font-weight: 700;
-    background-color: #BC0E03;
+    background-color: #7E0804;
 }.section-title.sdg, .section-title.sdg h2{
     font-weight: 700;
     background-color: #002147;
 }
+
+.section-title.archives{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+}.section-title.archives > h2, 
+.section-title.archives > div{
+    margin: 0 var(--page-margin-width);
+}
+
 
 .sdg-list{
     /* contentview */
@@ -615,7 +712,7 @@ ul li {
     background-repeat: no-repeat; 
 }
 
-.news-article{
+.news-list .news-article{ 
     display: flex;
     flex-direction: row;
     gap: 12px;
@@ -625,7 +722,7 @@ ul li {
     background-color: white;
     /* border: 1px solid red; */    
     border-radius: 2%;
-}.news-article:hover{
+}.news-list .news-article:hover{
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
     transition: 0.3s;
 }
@@ -1049,6 +1146,8 @@ thead {
     :root{
         --page-margin-width: 80px;
     }
+
+    
 }
 
 @media (min-width: 1280px) and (max-width: 1440px){
@@ -1058,7 +1157,14 @@ thead {
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
+        --archive-vector-width: 363px;
+        --archive-vector-height: 148.5px;
+        --month-list-width: calc( 634px * 0.75);
+
     }
+
+    /* ARCHIVES */
+    
 }
 
 @media (min-width: 1025px) and (max-width: 1280px){
@@ -1069,6 +1175,9 @@ thead {
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
+        --archive-vector-width: 242px;
+        --archive-vector-height: 99px;
+        --month-list-width: calc( 800px * 0.5);
     }
 
 }
@@ -1081,6 +1190,9 @@ thead {
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
+        --archive-vector-width: 242px;
+        --archive-vector-height: 99px;
+        
     }
 
     .page-section.news{
