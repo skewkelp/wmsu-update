@@ -22,4 +22,7 @@ if ($pageView === 'news-articles') {
             require_once $directory; // Include the determined file
         ?>
     </div>
+    <?php
+    require_once '../__includes/footer.php';
+    ?>
 </body>

@@ -9,6 +9,23 @@ body{
     overflow-x: hidden; /* Stops side scrolling */
 }
 
+:root{
+    --burger-width: 27.400px;
+    --burger-height: 11px;
+    --default-display: block;
+    --hidden-display: none;
+    --nav-links-display: flex;
+}
+
+
+nav{
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    position: sticky;
+    z-index: 4;
+}
+
 .nav-cont{
     display: flex;
     justify-content: space-between;
@@ -27,7 +44,6 @@ body{
 .WMSU-Logo{
     height: 60px;
     width: 60px;
-    z-index: 5;
 }
 
 .logo-text{
@@ -121,19 +137,24 @@ body{
 }
 
 .nav-dropdown{
+    visibility: hidden;
     position: absolute;
     top: 100px; /* Aligns below navbar */
     left: 0;
     background-color: white;
     width: 100%;
     height: 400px;
-    opacity: .70;
-    visibility: hidden;
+    /* opacity: .70; */
     transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out, visibility .1s linear .1s;
     transform: translateY(-15px);
     display: flex;
     justify-content: center;
     z-index: 3;
+
+    background-image: url("../img/nav-background.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .nav-dropdown::before {
@@ -143,50 +164,56 @@ body{
     left: 0;
     width: 100%; /* Matches the dropdown width instead of full screen */
     height: 10px; /* Invisible hover buffer */
-    background: transparent;
+    /* background: transparent; */
     pointer-events: auto; /* Ensures it remains interactive */
-    z-index: 3;
+    z-index: 1;
 }
 
 .nav-links>#About:hover ~ #About-dropdown,
 #About-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
 .nav-links>#Admissions:hover ~ #Admissions-dropdown,
 #Admissions-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
 .nav-links>#Academic:hover ~ #Academic-dropdown,
 #Academic-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
 .nav-links>#Research:hover ~ #Research-dropdown,
 #Research-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
 .nav-links>#Updates:hover ~ #Updates-dropdown,
 #Updates-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
 .nav-links>#Other-Links:hover ~ #Other-dropdown,
 #Other-dropdown:hover {
     visibility: visible;
-    opacity: .75;
+    /* opacity: .75; */
+    opacity: .98;
     transform: translateY(0);
 }
 
@@ -206,7 +233,12 @@ body{
 }
 
 .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
     margin: 0 100px;
+    align-content: center;
+    justify-content: center;
 }
 
 .dropdown-content h6{
@@ -222,9 +254,51 @@ body{
     margin-top: -10px;
 }
 
+/* .dropdown-content.d1{
+    justify-content: center;
+} */
+
 .nav-divider{
     width: .5px;
     height: 300px;
     background-color: black;
-    margin: -80px -20px;
+    /* margin: -80px -20px; */
+}
+
+.burger-menu{
+    background-image: url("../img/burger-menu2.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: none;
+}
+
+
+.two-columns{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px){
+
+    .nav-links .inter-extralight, .MyWmsu-btn{
+        display: none;
+    }
+    
+    .burger-menu{
+        display: block;
+    }
+}
+
+@media (min-width: 1px) and (max-width: 768px){
+
+    .nav-links .inter-extralight, .MyWmsu-btn{
+        display: none;
+    }
+    
+    .burger-menu{
+        display: block;
+    }
 }

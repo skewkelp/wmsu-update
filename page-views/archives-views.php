@@ -1,6 +1,16 @@
 <style>
-    <?php require_once '../css/updates.css'; ?>
+    <?php 
+    // require_once '../css/updates.css'; 
+    ?>
+</style>
 
+<style>
+    <?php require_once '../vendor/bootstrap-5.3.3-dist/css/bootstrap.min.css'; ?>
+    <?php require_once '../vendor/datatable-2.1.8/datatables.min.css'; ?>
+    <?php require_once '../css/navbar.css'; ?>
+    <?php require_once '../css/homepage.css'; ?>
+    <?php require_once '../css/fonts.css'; ?>
+    <?php require_once '../css/updates.css'; ?>
 </style>
 
 <div class="hero-banner archives" >
@@ -22,7 +32,7 @@
                     <h2>DECEMBER</h2>
                     <h2 id="year">2024</h2>
                 </div>
-                <a href="" class="vector"></a>
+                <a href="" class="vector" ><img src="" alt=""></a>
             </div>
             <div id="november" class="month">
                 <div class="description-card">
@@ -109,38 +119,4 @@
             </div>
         </div>
     </div>
-</div>
-<div class="footer">
-    <div class="footer list text">
-        <div class="footer-item">
-            <div class="d-flex flex-row">
-                <div class="footer-logo"></div>
-                <h1 class="f-logo-text">| WMSU</h1>
-            </div>    
-            <p>Copyright © 2025 Western <br> Mindanao State University.<br>
-            All rights reserved.</p>
-        </div>
-        
-        <div class="footer-item">
-            <h1>ABOUT</h1>
-            <p><a href="">Mission</a></p>
-            <p><a href="">Vission</a></p>
-            <p><a href="">History</a></p>
-        </div>
-        
-        <div class="footer-item">
-            <h1>SERVICES</h1>
-            
-        </div>
-        
-        <div class="footer-item i4">
-            <h1>QUICK LINKS</h1>
-            <div class="d-flex flex-column justify-content-start">
-                <div class="transparency-seal"><a href=""></a></div>
-            </div>
-            <p><a href="">Board Of Regents</a></p>
-            <p><a href="">Administrative</a></p>
-            <p><a href="">Officials</a></p>
-        </div>
-
 </div>

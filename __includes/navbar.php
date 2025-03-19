@@ -79,7 +79,17 @@
                     </div>
                 </div>
             </div>
-            <a class="inter-extralight" id="Research" href="">RESEARCH & EXT. <img src="../imgs/Expand Arrow.png" alt=""></a>
+            <a class="inter-extralight" id="Administration" href="">ADMINISTRATION <img src="../imgs/Expand Arrow.png" alt=""></a>
+            <div id="Administration-dropdown" class="nav-dropdown">
+                <div class="dropdown-cont">
+                    <div class="dropdown-title">
+                        <div class="dropdown-content">
+                            <h1>Administration</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="inter-extralight" id="Research" href="">RESEARCH <img src="../imgs/Expand Arrow.png" alt=""></a>
             <div id="Research-dropdown" class="nav-dropdown">
             <div class="dropdown-cont">
                     <div class="dropdown-title">
@@ -93,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <a class="inter-extralight" id="Updates" href="">UPDATES <img src="../imgs/Expand Arrow.png" alt=""></a>
+            <!-- <a class="inter-extralight" id="Updates" href="">UPDATES <img src="../imgs/Expand Arrow.png" alt=""></a>
             <div id="Updates-dropdown" class="nav-dropdown">
                 <div class="dropdown-cont">
                     <div class="dropdown-title">
@@ -113,18 +123,40 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            
             <a class="inter-extralight" id="Other-Links" href="">OTHER LINKS <img src="../imgs/Expand Arrow.png" alt=""></a>
             <div id="Other-dropdown" class="nav-dropdown">
+                <div class="dropdown-cont">
                     <div class="dropdown-title">
                         <div class="dropdown-content">
-                            <a href="../page/linkages.php">Linkages</a>
+                            <h6 class="inter-bold">UPDATES</h6>
+                            <h6 class="inter-bold">THE PRESIDENT'S CORNER</h6>
+                            <p class="inter-light">Updates</p>
+                            <p class="inter-light">About the President</p>
+                            <p class="inter-light">President's Reports</p>
+                            <br>
+                            <h6 class="inter-bold">NEWS & EVENTS</h6>
+                            <p class="inter-light">Announcements</p>
+                            <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
+                            <p class="inter-light">Media</p>
+                            <p class="inter-light"><a href="updates?page-view=archives">Archives</a></p>
+                        </div>
+                        <div class="nav-divider"></div>
+
+                        <div class="dropdown-content d1">
+                            <h6 class="inter-bold"></h6>
+                            <h6 class="inter-bold"></h6>
+                            <p><a href="../page/linkages.php">Linkages</a></p>
                         </div>
                     </div>
+                </div>
+                
             </div>
             <div class="MyWmsu-btn">
                 <a class="MyWmsu-link inter-regular" href="">MyWMSU</a>
             </div>
+            <button class="burger-menu"></button>
         </div>
     </section>
 </nav>
