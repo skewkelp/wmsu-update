@@ -78,7 +78,7 @@
                     <div id="article-1" class="img-card s">
                     </div>
                     <div class="description-card articles">
-                        <h2><a href="">In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true">In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</a></h2>
                         <div class="date">
                             <h2>March 7, 2025</h2>
                         </div>
@@ -230,8 +230,10 @@
         
 
     </div>
+</div>
 
-    <div class="page-section sdg ph-120">
+
+<div class="page-section sdg ph-120">
         <div class="section-title sdg">
             <h2>THE 17 GOALS</h2>
         </div>
@@ -352,6 +354,3 @@
             <p>wmsu@wmsu.edu.ph</p>
         </div>
     </div>
-    
-</div>
-

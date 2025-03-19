@@ -275,7 +275,6 @@ button{
     --sdg-text-h2-font-size: 16px;
 }
 
-
 .wmsu-logo{
     display: flex;
     flex-direction: row;
@@ -445,6 +444,10 @@ button{
     position: relative;
 }
 
+.page-margin.article{
+    background-color: #fafafa;
+}
+
 /* HERO BANNER ARCHIVE*/
 .hero-banner{
     display: block;
@@ -467,13 +470,6 @@ button{
 .hero-banner.archives{ /* NEWS-ARTICLE PAGE */
     background-image: url("../img/hero-banner/archives.png");
 }
-
-
-    
-
-
-
-
 
 
 .page-title-box{
@@ -532,6 +528,13 @@ button{
     flex-direction: column;
     gap: 10px;
     /* background-color:lightgreen; */
+}.page-section.article{
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+
 }.page-section.sdg{
     /* contentview */
     flex-direction: column;
@@ -541,11 +544,15 @@ button{
     background-color: #002147;
 
 }.page-section.info{
+    margin-top: 0px;
+    padding-top: 40px;
+    /* margin-bottom: 40px; */
+    background-color:#9E2828;
+
     flex-direction: column;
     gap: 20px;
     text-align: center;
     align-items: center;
-    margin-bottom: 40px;
 }
 
 
@@ -681,8 +688,6 @@ button{
 /* news-article */
 
 
-
-
 .info-items{
     justify-content: center;
     align-content: center;
@@ -692,6 +697,12 @@ button{
     /* width: 1104px; */
     height: var(--important-certificates-height);
 }
+
+.page-section .info-items p{
+    color: white;
+}
+
+
 
 .socmed-logo{
     width: 61px;
@@ -712,7 +723,6 @@ button{
 }
 
 
-
 .section-title, .section-title > h2{
     /* contentview */
     font-size: 32px;
@@ -730,6 +740,31 @@ button{
     background-color: #00AEEF;
     /* background-color: #7E0804; */
 }
+
+.page-section .page-header{
+    padding-bottom: 8px;
+}
+
+.page-section .date h1,
+.page-section .date h2{
+    font-size: 18px;
+}
+
+.page-section .date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.page-section .page-header h2, 
+.page-section .page-header h1{
+    color: #7E0804;
+    font-size: 22px;
+
+}   
+
 
 .section-title.archives{
     display: flex;
@@ -754,8 +789,9 @@ button{
     flex-wrap: wrap;
     gap: .6%;
     row-gap: 2%;
-    
-    margin-bottom: 28px;
+    /* padding: 0 40px ; */
+    padding: 0 40px 28px 40px;
+    /* margin-bottom: 28px; */
     position: relative;
 
 }
@@ -786,7 +822,7 @@ button{
     position: relative;
 }.sdg-list .filter-button:hover .sdg-text img{
     /* background-color: green; */
-    border-radius: 12%;
+    /* border-radius: 12%; */
     /* padding: 0px 8px; */
     transform: scale(1.25);
     transition: 0.3s!important;
@@ -1283,14 +1319,14 @@ button{
     gap: 14px;
 }
 
-.date{
+.description-card .date{
     width: fit-content;
     padding: 12px;
     border-radius: 4%;
     border: solid #D9D9D9 1px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: white;
-}.date p{
+}.description-card .date p{
     font-weight: 600;
     font-size: 20px;
     white-space: nowrap;
@@ -1603,12 +1639,12 @@ thead {
     .filter-button .sdg-text{
         transform: scale(1.5);
         transform-origin: left;
-
         margin-left: 20px;
     }
     .filter-button .icon img{
         transform: scale(1.5);
         transform-origin: right;
+        margin-right: 20px;
     }
 
   
@@ -1620,7 +1656,7 @@ thead {
         position: relative;
     }.sdg-list .filter-button:hover .sdg-text img{
         /* background-color: green; */
-        border-radius: 12%;
+        /* border-radius: 12%; */
         /* padding: 0px 8px; */
         transform: scale(2);
         transform-origin: left;
@@ -1649,7 +1685,7 @@ thead {
 
     .sdg-list .filter-button:hover .sdg-text img{
         /* background-color: green; */
-        border-radius: 12%;
+        /* border-radius: 12%; */
         /* padding: 0px 8px; */
         transform: scale(1.5);
         transform-origin: left;
@@ -1676,12 +1712,22 @@ thead {
     
     .page-section.news .body-card.news{
         flex-direction: row;
-        
         gap: 2%;
     }
 
+    .filter-button .sdg-text{
+        transform: scale(1.4);
+        transform-origin: left;
+        margin-left: 20px;
+    }
+    .filter-button .icon img{
+        transform: scale(1);
+        transform-origin: right;
+        margin-right: 5px;
+    }
+
     .filter-button.sdg-goals .sdg-text img{
-        transform: scale(.5);
+        transform: scale(.75);
         transform-origin: left;
     }
 
@@ -1693,6 +1739,29 @@ thead {
     /* .sdg-list .filter-button{
         flex: 0 0 14%;  
         height: 120px;        
+    } */
+
+    .sdg-list .filter-button:hover .sdg-text img{
+        /* background-color: green; */
+        /* border-radius: 12%; */
+        /* padding: 0px 8px; */
+        transform: scale(1.15);
+        transform-origin: left;
+        transition: 0.3s!important;
+        z-index: 2;
+        position: relative;
+    }.sdg-list .filter-button:hover .icon img{
+        transform: scale(1.25);
+        transform-origin: right;
+        transition: 0.3s!important;
+        z-index: 2;
+        position: relative;
+    }
+    /* .sdg-list .filter-button:hover .sdg-text{
+        transform: scale(1);
+        transition: 0.3s!important;
+        z-index: 2;
+        position: relative;
     } */
 }
 
