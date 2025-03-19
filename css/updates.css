@@ -84,6 +84,8 @@ button{
     --og-sdg-list-height: 300px;
     --sdg-list-height: var(--og-sdg-list-height);
 
+    --og-important-certificates-height: 240px;
+    --important-certificates-height: var(--og-important-certificates-height);
     /* sdg-color */
     --sdg-1-background-color: #EB1C2D;
     --sdg-2-background-color: #D3A029;
@@ -686,13 +688,9 @@ button{
     align-content: center;
 }
 
-.important-certificates{
-    width: 1104px;
-    height: 240px;
-    background-image: url("../img/important-seal.png");
-    background-size: cover;    
-    background-position: center; 
-    background-repeat: no-repeat; 
+.info-items.important-certificates img{
+    /* width: 1104px; */
+    height: var(--important-certificates-height);
 }
 
 .socmed-logo{
@@ -1547,6 +1545,9 @@ thead {
         --img-card-s-height: 160px;
         --archive-vector-width: 242px;
         --archive-vector-height: 99px;
+
+        --important-certificates-height: calc(var(--og-important-certificates-height) * .75);
+
 
         /* --sdg-filter-width: calc(140px * 0.6);
         --sdg-filter-height: calc(140px * 0.6); */

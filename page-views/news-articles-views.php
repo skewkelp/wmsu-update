@@ -336,7 +336,7 @@
     </div>
 
     <div class="page-section info ph-120">
-        <div class="info-items important-certificates"></div>
+        <div class="info-items important-certificates"><img src="../img/important-seal.png" alt=""></div>
         <div class="info-items socmed">
             <p>Follow Us</p>
             <div class="d-flex flex-row justify-content-center">
