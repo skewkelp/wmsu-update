@@ -23,23 +23,32 @@
             Faculty and students are encouraged to prepare accordingly to ensure a seamless transition to virtual learning for the day.</p>
         </div>
 
-        <div class="gallery style-1"> 
-            <div><img src="../img/article-sample-1.jpg" alt=""></div>
+        <div class="gallery style-1" > 
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-2" style="display: none;"> 
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
         </div>
     </div>
 
-    <div class="footer-nav">
-        <div class="previous">
+    <div class="pagination">
+        <div class="col previous">
             <div class="icon"><img src="../img/icon/back-icon.png" alt=""></div>
             <div class="description d-flex flex-column justify-content-start">
                 <h1>PREVIOUS</h1>
-                <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                <div class="text-container">
+                    <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                </div>
             </div>
         </div>
-        <div class="next">
+        <div class="col next">
             <div class="description d-flex flex-column justify-content-start">
                 <h1>NEXT</h1>
-                <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                <div class="text-container">
+                    <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                </div>
             </div>
             <div class="icon"><img src="../img/icon/next-icon.png" alt=""></div>
 
