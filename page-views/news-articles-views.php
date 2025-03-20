@@ -18,7 +18,7 @@
 
                 </div>
                 <div class="description-card latest">
-                    <h2 class="indented"><a href="">In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</a></h2>
+                    <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true">In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</a></h2>
                     <div class="date">
                         <h2>March 7, 2025</h2>
                     </div>
@@ -34,7 +34,7 @@
                 <div id="news-2" class="img-card s">
                 </div>
                 <div class="description-card news">
-                    <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
                     <div class="date">
                         <h2>March 7, 2025</h2>
                     </div>
@@ -46,7 +46,7 @@
 
                 </div>
                 <div class="description-card news">
-                    <h2><a href="">SciComustahan Launched: Advancing Science Communication in Mindanao</a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true">SciComustahan Launched: Advancing Science Communication in Mindanao</a></h2>
                     <div class="date">
                         <h2>March 7, 2025</h2>
                     </div>
@@ -58,7 +58,7 @@
                 <div id="news-4" class="img-card s">
                 </div>
                 <div class="description-card news">
-                    <h2><a href="">WMSU Pioneers Cutting-Edge Research with the Pure and Analytical Research Center</a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true">WMSU Pioneers Cutting-Edge Research with the Pure and Analytical Research Center</a></h2>
                     <div class="date">
                         <h2>March 7, 2025</h2>
                     </div>
@@ -115,7 +115,7 @@
                     <div id="article-2" class="img-card s">
                     </div>
                     <div class="description-card articles">
-                        <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
                         <div class="date">
                             <h2>March 7, 2025</h2>
                         </div>
@@ -152,7 +152,7 @@
                     <div id="article-3" class="img-card s">
                     </div>
                     <div class="description-card articles">
-                        <h2><a href="">SciComustahan Launched: Advancing Science Communication in Mindanao</a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true">SciComustahan Launched: Advancing Science Communication in Mindanao</a></h2>
                         <div class="date">
                             <h2>March 7, 2025</h2>
                         </div>
@@ -189,7 +189,7 @@
                     <div id="article-4" class="img-card s">
                     </div>
                     <div class="description-card articles">
-                        <h2><a href="">WMSU Pioneers Cutting-Edge Research with the Pure and Analytical Research Center</a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true">WMSU Pioneers Cutting-Edge Research with the Pure and Analytical Research Center</a></h2>
                         <div class="date">
                             <h2>March 7, 2025</h2>
                         </div>

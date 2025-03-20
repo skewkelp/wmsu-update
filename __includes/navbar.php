@@ -146,7 +146,8 @@
 
                         <div class="dropdown-content d1">
                             <h6 class="inter-bold"></h6>
-                            <h6 class="inter-bold"></h6>
+                            <p class="inter-light"><a href="updates?page-view=test">TEST</a></p>
+
                             <p><a href="../page/linkages.php">Linkages</a></p>
                         </div>
                     </div>

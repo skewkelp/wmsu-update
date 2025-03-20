@@ -18,7 +18,7 @@ if ($pageView === 'news-articles') {
     $directory = '../page-views/archives-views.php';
 
 } else {
-    $directory = '../page-views/default-view.php'; // Fallback or default view
+    $directory = '../page-draft/backlog.php'; // Fallback or default view
 }
 ?>
 
