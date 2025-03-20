@@ -757,41 +757,156 @@ button{
     gap: 4px;
 }
 
+
+/* GALLERY */
 .page-section.article .gallery{
     display: grid;
     align-self: center;
     justify-content: center;
     width: 1200px;
     height: auto;
-    /* height: 675px; */
-    /* width: 100%;
-     */
-    /* height: 250px; */
     background-color: #0069A3;
 }
 .page-section.article .gallery .img-container{
     display: flex;
     justify-content: center;
-    /* width: 1200px;
-    height: 675px; */
     background-color: green;
+
 }.gallery .img-container img{
     width: 100%; 
     height: auto; 
     object-fit: cover;
 }
+
+/*  Currently intended for modal gallery view. Styling for default view, but to view
+all image is through modal gallery. No progress yet
+
+NOTE: GALLERY HEIGHT FOR STYLE, remove the specified !important on height to retain default auto height.
+Auto height set on default class gallery allows for img-containers to expand height, making img to fit and 
+not cut.
+REDUNDANT = no use, for note taking incase on specified cell grid specification
+*/
+
+/* 1 x 1 - 1 Image styling. 1 x 1*/
 .gallery.style-1{
     grid-template-columns: 1fr;
 }
 
+/* 1 x 2 - 2 Image styling. 1 x 1(W-50%)*/
 .gallery.style-2{
     grid-template-columns: repeat(2, 1fr);
     gap: 1%;
 }
 
-.gallery.style-2 .img-container{
-    grid-template-columns: 1fr 1fr;
+/* 1 x 3 - 3 Image styling. 1 x 1(w-33.3%) */
+.gallery.style-5 {
+    grid-template-columns: repeat(3, 1fr); /* 3 images in a row */
+    gap: 1%;
 }
+
+/* 2 x 2 - 3 Image styling. image-1 = 2(span 2) x 1, image-2,3 = 2 x 1(H-50%) */
+.gallery.style-6{
+    height: 600px;
+    grid-template-columns: repeat(2, 49.5%); 
+    grid-template-rows: repeat(2, 49.5%); 
+    gap: 1%;
+
+}.gallery.style-6 .img-container:nth-child(1) { 
+    grid-column: 1; /* Only in 1st column */
+    grid-row: 1 / span 2; /* Spans 2 rows */
+}
+
+/*  //REDUNDANT  
+.gallery.style-6 .img-container:nth-child(2) { 
+    grid-column: 2; 
+    grid-row: 1;   
+}
+
+.gallery.style-6 .img-container:nth-child(3) {
+    grid-column: 2; 
+    grid-row: 2;  
+} */
+
+
+/* 2 x 2 - 3 Image styling. image-1 = 1 x 2(span 2), image-2/3 = 1 X 2(W-50%) */
+.gallery.style-7 {
+    height: 1200px !important;
+    grid-template-columns: repeat(2, 49.5%);   
+    grid-template-rows: 49.5%;  
+    gap: 1%;
+}.gallery.style-7 .img-container:nth-child(1) { /* 448x900 image */
+    grid-column: 1 / span 2; /* Spans both columns */
+    grid-row: 1 ; /* Occupies the first row */
+}
+
+/*  //REDUNDANT  
+.gallery.style-7 .img-container:nth-child(2) { 
+    grid-column: 1; 
+    grid-row: 2;   
+}
+
+.gallery.style-7 .img-container:nth-child(3) {
+    grid-column: 2; 
+    grid-row: 2;   
+} */
+
+/* 2 x 2 - 4 image styling. 2x2 equal */
+.gallery.style-8 {
+    height: 900px !important;
+    grid-template-columns: repeat(2, 49.5%);   
+    grid-template-rows:  repeat(2, 49.5%);  
+    /* grid-template-rows: 450px 450px;   */
+    gap: 1%;
+}
+
+/* 2 x 2 - 4 image styling. image-1 = 1x3(span), image-2,3,4 = 1x1(w-33%) */
+.gallery.style-9 {
+    height: 900px !important;
+    /* grid-template-columns: 1.5fr 1fr;    */
+    grid-template-columns: 59.5% 39.5%;   
+    grid-template-rows:  repeat(3, 32.66%);  
+    gap: 1%;
+}.gallery.style-9 .img-container:nth-child(1) { 
+    grid-column: 1 ; 
+    grid-row: 1 / span 3; 
+}
+/* //REDUNDANT 
+.gallery.style-9 .img-container:nth-child(2) { 
+    grid-column: 2; 
+    grid-row: 1; 
+}.gallery.style-9 .img-container:nth-child(3) { 
+    grid-column: 2; 
+    grid-row: 2; 
+}.gallery.style-9 .img-container:nth-child(4) { 
+    grid-column: 2; 
+    grid-row: 3; 
+} */
+
+/* 2 x 2 - 4 image styling. image-1 = 1x3(span), image-2,3,4 = 1x1(w-33%) */
+.gallery.style-10 {
+    height: 900px !important;
+    /* grid-template-columns: 1.5fr 1fr;    */
+    grid-template-columns: repeat(3, 32.66%);
+    grid-template-rows: 59.5% 39.5%;   
+    gap: 1%;
+}.gallery.style-10 .img-container:nth-child(1) { 
+    grid-column: 1 / span 3; 
+    grid-row: 1 ; 
+}
+/*  //REDUNDANT  
+.gallery.style-10 .img-container:nth-child(2) { 
+    grid-column: 2; 
+    grid-row: 1; 
+}.gallery.style-10 .img-container:nth-child(3) { 
+    grid-column: 2; 
+    grid-row: 2; 
+}.gallery.style-10 .img-container:nth-child(4) { 
+    grid-column: 2; 
+    grid-row: 3; 
+} */
+
+
+
 
 
 

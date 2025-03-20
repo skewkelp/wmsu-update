@@ -22,15 +22,55 @@
             <br><br>
             Faculty and students are encouraged to prepare accordingly to ensure a seamless transition to virtual learning for the day.</p>
         </div>
-
+    <!-- style="display: none;" -->
         <div class="gallery style-1" > 
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-2" style="display: none;"> 
+        <div class="gallery style-2" > 
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
         </div>
+
+        <div class="gallery style-5" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-6" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-7" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-8" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-9" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        </div>
+
+        <div class="gallery style-10" > 
+            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
+            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        </div>
+
     </div>
 
     <div class="pagination">
