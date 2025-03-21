@@ -22,53 +22,95 @@
             <br><br>
             Faculty and students are encouraged to prepare accordingly to ensure a seamless transition to virtual learning for the day.</p>
         </div>
+
+        <?php 
+            $galleryStyle = isset($_GET['temp-img-count']) ? $_GET['temp-img-count'] : 'false';
+
+            if ($galleryStyle === '1'){
+                $galleryDisplay ='
+                <div class="gallery style-1" onclick="openLightbox();currentSlide(1)"> 
+                    <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+                </div>';
+
+            }elseif($galleryStyle === '2'){
+                $galleryDisplay= '
+                <div class="gallery style-2" > 
+                    <div class="img-container" onclick="openLightbox();currentSlide(1)"><img class="g-img-1" src="../img/article-sample-1.jpg" alt=""></div>
+                    <div class="img-container" onclick="openLightbox();currentSlide(2)"><img class="g-img-2" src="../img/article-sample-1.jpg" alt=""></div>
+                </div>';
+
+            }elseif($galleryStyle === '3'){
+
+
+            }else{
+                $galleryDisplay = '<h2>ERR. NO IMAGE RECEIVED</h2>';
+
+            }
+
+            echo $galleryDisplay;
+        ?>
+
+
+
     <!-- style="display: none;" -->
-        <div class="gallery style-1" > 
-            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        
+
+        
+
+        <div class="gallery style-5"  style="display: none;"> 
+            <div class="img-container" onclick="openLightbox();currentSlide(1)"><img src="../img/article-sample-2.jpg" alt=""></div>
+            <div class="img-container" onclick="openLightbox();currentSlide(2)"><img src="../img/article-sample-3.jpg" alt=""></div>
+            <div class="img-container" onclick="openLightbox();currentSlide(3)"><img src="../img/article-sample-4.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-2" > 
-            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
-            <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery style-5" > 
+        <div class="gallery style-6"  style="display: none;"> 
             <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-6" > 
+        <div class="gallery style-7"  style="display: none;"> 
             <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-7" > 
-            <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
-            <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
-            <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery style-8" > 
+        <div class="gallery style-8"  style="display: none;"> 
             <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-9" > 
+        <div class="gallery style-9"  style="display: none;"> 
             <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
         </div>
 
-        <div class="gallery style-10" > 
+        <div class="gallery style-10"  style="display: none;"> 
             <div class="img-container"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-3.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-4.jpg" alt=""></div>
             <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+                <div class="slides active">
+                    <img src="../img/article-sample-2.jpg" alt="Image 1">
+                </div>
+                <div class="slides">
+                    <img src="../img/article-sample-3.jpg" alt="Image 2">
+                </div>
+                <div class="slides">
+                    <img src="../img/article-sample-4.jpg" alt="Image 3">
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
 
     </div>
@@ -115,3 +157,50 @@
         <p>wmsu@wmsu.edu.ph</p>
     </div>
 </div>
+
+
+<script>
+    let slideIndex = 1;
+
+    function openLightbox() {
+        document.getElementById("lightbox").style.display = "block";
+        showSlides(slideIndex);
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+
+        
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active"); // Hide all slides by removing active class
+        }
+        
+        // const img = document.querySelector("gallery-style");
+
+
+        slides[slideIndex - 1].classList.add("active"); // Show the active slide by adding active class
+    }
+</script>
+
+
+
+
+
+
+

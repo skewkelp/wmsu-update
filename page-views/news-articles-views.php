@@ -4,8 +4,14 @@
     ?>
 </style>
 
-<div class="hero-banner news-article" >
-    
+<?php 
+//TEMP DATA
+    require_once '../table-articles/table-articles.php';
+
+?>
+
+
+<div class="hero-banner news-article" >    
 </div>
 <div class="page-margin">
     <div class="page-section news">
@@ -14,15 +20,20 @@
                 <h1>LATEST NEWS</h1>
             </div>
             <div class="body-card news">
-                <div id="news-1" class="img-card b">
-
+                <?php 
+                $latestarticle = $articleText[0];
+                
+                
+                ?>
+                <!-- <div id="news-1" class="img-card b"> -->
+                <div class="img-card b">
+                    <img src="<?php echo $latestarticle['thumbnail'];?>" alt="">
                 </div>
                 <div class="description-card latest">
-                    <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true">In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</a></h2>
+                    <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true&article-index=0&temp-img-count=<?php echo $latestarticle['img_count'];?>"><?php echo $latestarticle['header'];?></a></h2>
                     <div class="date">
-                        <h2>March 7, 2025</h2>
+                        <h2><?php echo $latestarticle['date'];?></h2>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -30,7 +41,23 @@
         <hr class="divider news">
 
         <div class="news-list">
+            
+            <?php  foreach (array_slice($articleText, 1, 4) as $article):?>
             <div class="news-article">
+                <div id="" class="img-card s">
+                    <img src="<?php echo $article['thumbnail'];?>" alt="">
+                </div>
+                <div class="description-card news">
+                    <h2><a href="updates?page-view=news-articles&article-view=true"><?php echo $article['header'];?></a></h2>
+                    <div class="date">
+                        <h2><?php echo $article['date'];?></h2>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+
+            
+            <!-- <div class="news-article">
                 <div id="news-2" class="img-card s">
                 </div>
                 <div class="description-card news">
@@ -63,7 +90,7 @@
                         <h2>March 7, 2025</h2>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -73,7 +100,35 @@
         </div>
 
         <div class="article-list">
+            <?php  foreach (array_slice($articleText, 0, 4) as $article):?>
             <div class="article">
+                <div class="main-info articles">
+                    <div id="" class="img-card s">
+                        <img src="<?php echo $article['thumbnail'];?>" alt="">
+                    </div>
+                    <div class="description-card articles">
+                        <h2><a href="updates?page-view=news-articles&article-view=true"><?php echo $article['header'];?></a></h2>
+                        <div class="date">
+                            <h2><?php echo $article['date'];?></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag articles">
+                    <div class="title-card">
+                        <p>Related Info</p>
+                    </div>
+                    <div class="label-tags">
+                        <?php foreach ($article['sdg_tag'] as $tag): ?>
+                            <div class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?></div>
+                        <?php endforeach; ?>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <?php endforeach; ?>
+
+            <!-- <div class="article">
                 <div class="main-info articles">
                     <div id="article-1" class="img-card s">
                     </div>
@@ -219,7 +274,7 @@
                         <div class="sdg-label sdg-17">17</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         
             
         </div>
