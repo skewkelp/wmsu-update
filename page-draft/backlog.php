@@ -3,161 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery with Lightbox</title>
+    <title>Rich Text Editor with Bullets</title>
+    <!-- Include Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <style>
-
-        .gallery {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-        }
-        
-        .img-container {
-            cursor: pointer;
-            margin: 10px;
-        }
-        
-        .img-container img {
-            width: 200px; /* Set your desired image width */
-            height: auto;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        .lightbox {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .lightbox-content {
-            position: relative;
-            margin: auto;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80%;
-        }
-        
-        .slides {
-            display: none; /* Hidden by default */
-            opacity: 0; /* Initially hidden */
-            transition: opacity 0.5s ease; /* Smooth transition effect */
-        }
-
-        .active {
-            display: block; /* Show the active slide */
-            opacity: 1; /* Fade in */
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-        }
-        
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            user-select: none;
-        }
-        
-        .prev {
-            left: 0;
-        }
-        
-        .next {
-            right: 0;
+        .editor {
+            height: 300px;
         }
     </style>
 </head>
 <body>
+<h2>Write Your Article</h2>
 
-<div class="gallery">
-    <div class="img-container" onclick="openLightbox();currentSlide(1)">
-        <img src="../img/article-sample-2.jpg" alt="Image 1">
-    </div>
-    <div class="img-container" onclick="openLightbox();currentSlide(2)">
-        <img src="../img/article-sample-3.jpg" alt="Image 2">
-    </div>
-    <div class="img-container" onclick="openLightbox();currentSlide(3)">
-        <img src="../img/article-sample-4.jpg" alt="Image 3">
-    </div>
-</div>
+<!-- Create the editor container -->
+<div id="editor" class="editor"></div>
 
-<div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <div class="lightbox-content">
-        <div class="slides active">
-            <img src="../img/article-sample-1.jpg" alt="Image 1">
-        </div>
-        <div class="slides">
-            <img src="../img/article-sample-3.jpg" alt="Image 2">
-        </div>
-        <div class="slides">
-            <img src="../img/article-sample-4.jpg" alt="Image 3">
-        </div>
-    </div>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-</div>
+<!-- Button to submit the content -->
+<button id="submit-button">Submit Article</button>
 
+<!-- Hidden form to send data to PHP -->
+<form id="article-form" action="submit.php" method="post" style="display:none;">
+    <input type="hidden" name="article_content" id="article-content">
+</form>
+
+<!-- Include Quill JS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
-    let slideIndex = 1;
-
-    function openLightbox() {
-        document.getElementById("lightbox").style.display = "block";
-        showSlides(slideIndex);
-    }
-
-    function closeLightbox() {
-        document.getElementById("lightbox").style.display = "none";
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function changeSlide(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slides");
-        
-        if (n > slides.length) { slideIndex = 1; }
-        if (n < 1) { slideIndex = slides.length; }
-        
-        for (i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active"); // Hide all slides by removing active class
+    // Initialize Quill editor
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['clean'], // remove formatting button
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }] // Correctly set list buttons
+            ]
         }
-        
-        slides[slideIndex - 1].classList.add("active"); // Show the active slide by adding active class
-    }
-</script>
+    });
 
+    document.getElementById('submit-button').addEventListener('click', function() {
+        // Get content from the quill editor
+        var html = quill.root.innerHTML;
+        // Set the content in the hidden input
+        document.getElementById('article-content').value = html;
+        // Submit the form
+        document.getElementById('article-form').submit();
+    });
+</script>
 </body>
 </html>
+
+
+
+<?php
+// SAMPLE GALLERY VIEW
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Image Gallery with Lightbox</title>
+//     <style>
+
+//         .gallery {
+//             display: flex;
+//             justify-content: space-around;
+//             margin: 20px;
+//         }
+        
+//         .img-container {
+//             cursor: pointer;
+//             margin: 10px;
+//         }
+        
+//         .img-container img {
+//             width: 200px; /* Set your desired image width */
+//             height: auto;
+//             border: 2px solid #ddd;
+//             border-radius: 4px;
+//         }
+        
+//         .lightbox {
+//             display: none; /* Hidden by default */
+//             position: fixed;
+//             z-index: 1000;
+//             left: 0;
+//             top: 0;
+//             width: 100%;
+//             height: 100%;
+//             background-color: rgba(0, 0, 0, 0.8);
+//         }
+        
+//         .lightbox-content {
+//             position: relative;
+//             margin: auto;
+//             top: 50%;
+//             transform: translateY(-50%);
+//             width: 80%;
+//         }
+        
+//         .slides {
+//             display: none; /* Hidden by default */
+//             opacity: 0; /* Initially hidden */
+//             transition: opacity 0.5s ease; /* Smooth transition effect */
+//         }
+
+//         .active {
+//             display: block; /* Show the active slide */
+//             opacity: 1; /* Fade in */
+//         }
+
+//         img {
+//             max-width: 100%;
+//             height: auto;
+//         }
+        
+//         .close {
+//             position: absolute;
+//             top: 15px;
+//             right: 35px;
+//             color: white;
+//             font-size: 40px;
+//             cursor: pointer;
+//         }
+        
+//         .prev, .next {
+//             cursor: pointer;
+//             position: absolute;
+//             top: 50%;
+//             width: auto;
+//             padding: 16px;
+//             color: white;
+//             font-weight: bold;
+//             font-size: 18px;
+//             transition: 0.6s ease;
+//             user-select: none;
+//         }
+        
+//         .prev {
+//             left: 0;
+//         }
+        
+//         .next {
+//             right: 0;
+//         }
+//     </style>
+// </head>
+// <body>
+
+// <div class="gallery">
+//     <div class="img-container" onclick="openLightbox();currentSlide(1)">
+//         <img src="../img/article-sample-2.jpg" alt="Image 1">
+//     </div>
+//     <div class="img-container" onclick="openLightbox();currentSlide(2)">
+//         <img src="../img/article-sample-3.jpg" alt="Image 2">
+//     </div>
+//     <div class="img-container" onclick="openLightbox();currentSlide(3)">
+//         <img src="../img/article-sample-4.jpg" alt="Image 3">
+//     </div>
+// </div>
+
+// <div id="lightbox" class="lightbox">
+//     <span class="close" onclick="closeLightbox()">&times;</span>
+//     <div class="lightbox-content">
+//         <div class="slides active">
+//             <img src="../img/article-sample-1.jpg" alt="Image 1">
+//         </div>
+//         <div class="slides">
+//             <img src="../img/article-sample-3.jpg" alt="Image 2">
+//         </div>
+//         <div class="slides">
+//             <img src="../img/article-sample-4.jpg" alt="Image 3">
+//         </div>
+//     </div>
+//     <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+//     <a class="next" onclick="changeSlide(1)">&#10095;</a>
+// </div>
+
+// <script>
+//     let slideIndex = 1;
+
+//     function openLightbox() {
+//         document.getElementById("lightbox").style.display = "block";
+//         showSlides(slideIndex);
+//     }
+
+//     function closeLightbox() {
+//         document.getElementById("lightbox").style.display = "none";
+//     }
+
+//     function currentSlide(n) {
+//         showSlides(slideIndex = n);
+//     }
+
+//     function changeSlide(n) {
+//         showSlides(slideIndex += n);
+//     }
+
+//     function showSlides(n) {
+//         let i;
+//         let slides = document.getElementsByClassName("slides");
+        
+//         if (n > slides.length) { slideIndex = 1; }
+//         if (n < 1) { slideIndex = slides.length; }
+        
+//         for (i = 0; i < slides.length; i++) {
+//             slides[i].classList.remove("active"); // Hide all slides by removing active class
+//         }
+        
+//         slides[slideIndex - 1].classList.add("active"); // Show the active slide by adding active class
+//     }
+// </script>
+
+// </body>
+// </html>
+?>
 <!-- 157 -->
 
 

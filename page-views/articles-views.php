@@ -15,8 +15,10 @@
         $article = $articleTable[$articleIndex];
         $imageCollection = $gallery[$article['gallery_fk']];
         
-        $safeDescription = nl2br(htmlspecialchars($article['description']));
+        // $safeDescription = nl2br(htmlspecialchars($article['description']));
         
+        $safeDescription = ($article['description']);
+
         if(isset($articleTable[$articleIndex + 1])){
             $prevArticle = $articleTable[$articleIndex + 1];    
         }else{
@@ -75,7 +77,8 @@
         </div>
         
         <div class="description-card">
-            <p><?php echo $safeDescription;?></p>
+            <!-- <?php //<p><?php echo $safeDescription;?> </p> ?> -->
+            <?php echo $safeDescription;?>
         </div>
         
         <?php
@@ -102,46 +105,64 @@
         </div> -->
 
         <?php 
-            $galleryStyle = isset($_GET['temp-img-count']) ? $_GET['temp-img-count'] : 'false';
+            $galleryStyle = isset($_GET['gallery-style']) ? $_GET['gallery-style'] : 'false';
             $imageElements = '';
             $galleryDisplay = '';
+            
+            if($galleryStyle === '1'){
+                $limit = 1;
+            }elseif($galleryStyle === '2'|| $galleryStyle === '3'){
+                $limit = 2;
+            }elseif($galleryStyle === '5'||$galleryStyle === '6'||$galleryStyle === '7'){
+                $limit = 3;
+            }elseif($galleryStyle === '8' || $galleryStyle === '9' || $galleryStyle === '10'){
+                $limit = 4;
+            }
 
+            $slicedCollection = array_slice($imageCollection['images'], 0, $limit);
             if ($galleryStyle === '1'){
-                foreach ($imageCollection['images'] as $imagePath) {
+                foreach ($slicedCollection as $imagePath) {
                     $imageElements = '<div class="img-container"><img src="' . htmlspecialchars($imagePath) . '" alt=""></div>';
                 }
 
                 $galleryDisplay ='
                 <div class="gallery style-1" onclick="openLightbox();currentSlide(1)">' . $imageElements . '</div>';
 
-            }elseif($galleryStyle === '2'){
-                foreach ($imageCollection['images'] as $index => $imagePath) {
+            }elseif($galleryStyle === '2' || $galleryStyle === '3' || $galleryStyle === '5' || $galleryStyle === '6' || $galleryStyle === '7' || $galleryStyle === '8' ){
+                foreach ($slicedCollection as $index => $imagePath) {
                     $originalIndex = $index + 1;
 
                     $imageElements .= '<div class="img-container" onclick="openLightbox();currentSlide('. $originalIndex .')"><img src="' . htmlspecialchars($imagePath) . '" alt=""></div>';
                 }
 
+                // if($galleryStyle === '2'){
+                //     $style = 'style-2';
+                // }elseif($galleryStyle === '3'){
+                //     $style = 'style-3';
+                // }elseif($galleryStyle === '5'){
+                //     $style = 'style-5';
+                // }elseif($galleryStyle === '6'){
+                //     $style = 'style-6';
+                // }elseif($galleryStyle === '7'){
+                //     $style = 'style-7';
+                // }
+                
+                $style = 'style-' . $galleryStyle;
+
+
+
                 $galleryDisplay= '
-                <div class="gallery style-2"> ' . $imageElements . ' </div>';
-
-                
-                // $galleryDisplay= '
-                // <div class="gallery style-2" > 
-                //     <div class="img-container" onclick="openLightbox();currentSlide(1)"><img src="../img/article-sample-1.jpg" alt=""></div>
-                //     <div class="img-container" onclick="openLightbox();currentSlide(2)"><img src="../img/article-sample-1.jpg" alt=""></div>
-                // </div>';
-
-            }elseif($galleryStyle === '3'){
-                
-
+                <div class="gallery ' . $style .'"> ' . $imageElements . ' </div>';
             }
-            
+
+
+
             $galleryDisplay = $galleryDisplay ? $galleryDisplay : '<h2>ERR. NO IMAGE RECEIVED</h2>';
 
             echo $galleryDisplay;
         ?>
 
-
+            
 
     <!-- style="display: none;" -->
         
@@ -239,7 +260,7 @@
             <div class="description d-flex flex-column justify-content-start">
                 <h1>PREVIOUS</h1>
                 <div class="text-container">
-                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&temp-img-count=<?php echo $prevArticle? $prevArticle['img_count']: '';?>">
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&gallery-style=<?php echo $prevArticle? $prevArticle['gallery_style']: '';?>">
                         <?php echo $prevArticle? $prevArticle['header']: '';?></a>
                     </h2>
                 </div>
@@ -249,7 +270,7 @@
             <div class="description d-flex flex-column justify-content-start">
                 <h1>NEXT</h1>
                 <div class="text-container">
-                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $nextIndex;?>&temp-img-count=<?php echo $nextArticle? $nextArticle['img_count']: '';?>">
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $nextIndex;?>&gallery-style=<?php echo $nextArticle? $nextArticle['gallery_style']: '';?>">
                         <?php echo $nextArticle? $nextArticle['header'] : '';?></a>
                     </h2>
                 </div>

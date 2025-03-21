@@ -790,12 +790,22 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 
 /* 1 x 1 - 1 Image styling. 1 x 1*/
 .gallery.style-1{
+    height: 900px !important;
+    width: 700px !important;
     grid-template-columns: 1fr;
 }
 
 /* 1 x 2 - 2 Image styling. 1 x 1(W-50%)*/
 .gallery.style-2{
     grid-template-columns: repeat(2, 1fr);
+    gap: 1%;
+}
+
+/* 2 x 1 - 2 Image styling. 2(h-50%) x 1*/
+.gallery.style-3{
+    height: 900px !important;
+    width: 700px !important;
+    grid-template-rows: repeat(2, 49.5%);
     gap: 1%;
 }
 
@@ -991,6 +1001,11 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     font-size: 22px;
     font-weight: 600;
 }   
+.page-section .description-card p,
+.page-section .description-card ul li{
+    list-style-type: circle!important;  
+    margin: 0;
+}
 
 .article .pagination{
     display: flex;

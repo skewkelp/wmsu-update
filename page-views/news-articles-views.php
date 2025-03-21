@@ -26,7 +26,7 @@
                     <img src="<?php echo $latestarticle['thumbnail'];?>" alt="">
                 </div>
                 <div class="description-card latest">
-                    <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true&article-index=0&temp-img-count=<?php echo $latestarticle['img_count'];?>"><?php echo $latestarticle['header'];?></a></h2>
+                    <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true&article-index=0&gallery-style=<?php echo $latestarticle['gallery_style'];?>"><?php echo $latestarticle['header'];?></a></h2>
                     <div class="date">
                         <h2><?php echo $latestarticle['date'];?></h2>
                     </div>
@@ -48,7 +48,7 @@
                     <img src="<?php echo $article['thumbnail'];?>" alt="">
                 </div>
                 <div class="description-card news">
-                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&temp-img-count=<?php echo $article['img_count'];?>"><?php echo $article['header'];?></a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
                     <div class="date">
                         <h2><?php echo $article['date'];?></h2>
                     </div>
@@ -113,7 +113,7 @@
                         <img src="<?php echo $article['thumbnail'];?>" alt="">
                     </div>
                     <div class="description-card articles">
-                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&temp-img-count=<?php echo $article['img_count'];?>"><?php echo $article['header'];?></a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
                         <div class="date">
                             <h2><?php echo $article['date'];?></h2>
                         </div>
