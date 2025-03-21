@@ -20,11 +20,7 @@
                 <h1>LATEST NEWS</h1>
             </div>
             <div class="body-card news">
-                <?php 
-                $latestarticle = $articleText[0];
-                
-                
-                ?>
+                <?php $latestarticle = $articleTable[0];?>
                 <!-- <div id="news-1" class="img-card b"> -->
                 <div class="img-card b">
                     <img src="<?php echo $latestarticle['thumbnail'];?>" alt="">
@@ -42,13 +38,18 @@
 
         <div class="news-list">
             
-            <?php  foreach (array_slice($articleText, 1, 4) as $article):?>
+            <?php  
+            $slicedArticles = array_slice($articleTable, 1, 4);
+            
+            foreach ($slicedArticles as $index => $article):
+                $originalIndex = $index + 1;
+            ?>
             <div class="news-article">
                 <div id="" class="img-card s">
                     <img src="<?php echo $article['thumbnail'];?>" alt="">
                 </div>
                 <div class="description-card news">
-                    <h2><a href="updates?page-view=news-articles&article-view=true"><?php echo $article['header'];?></a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&temp-img-count=<?php echo $article['img_count'];?>"><?php echo $article['header'];?></a></h2>
                     <div class="date">
                         <h2><?php echo $article['date'];?></h2>
                     </div>
@@ -100,7 +101,7 @@
         </div>
 
         <div class="article-list">
-            <?php  foreach (array_slice($articleText, 0, 4) as $article):?>
+            <?php  foreach (array_slice($articleTable, 0, 4) as $article):?>
             <div class="article">
                 <div class="main-info articles">
                     <div id="" class="img-card s">

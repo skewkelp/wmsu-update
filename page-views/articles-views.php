@@ -4,11 +4,46 @@
     ?>
 </style>
 
+<?php 
+//TEMP DATA
+    require_once '../table-articles/table-articles.php';
+?>
+
 <div class="hero-banner news-article" >
 </div>
 
 <div class="page-margin article">
     <div class="page-section article">
+        <?php 
+            $articleIndex = isset($_GET['article-index']) ? $_GET['article-index'] : '';
+            $article = [];
+            if($articleIndex >= 0){
+                $article = $articleTable[$articleIndex];
+                $imageCollection = $gallery[$article['gallery_fk']];
+                
+                $safeDescription = nl2br(htmlspecialchars($article['description']));
+                
+                // echo '<h1>converted description = ' . $safeDescription . '</h1> ';
+            }else{
+                echo '<h1>index = ' . $articleIndex . '</h1> ';
+
+                echo '<h1>ERROR EMPTY NULL INDEX</h1> ';
+            }
+        ?>
+        <div class="page-header article">
+            <h1><?php echo $article['header'];?></h2>
+        </div>
+        
+        <div class="date">
+            <span class="bi-clock icon"></span>
+            <h2><?php echo $article['date'];?></h2>
+        </div>
+        
+        <div class="description-card">
+            <p><?php echo $safeDescription;?></p>
+        </div>
+
+        <!-- 
         <div class="page-header article">
             <h1>In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</h2>
         </div>
@@ -21,23 +56,37 @@
             <p>In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.
             <br><br>
             Faculty and students are encouraged to prepare accordingly to ensure a seamless transition to virtual learning for the day.</p>
-        </div>
+        </div> -->
 
         <?php 
             $galleryStyle = isset($_GET['temp-img-count']) ? $_GET['temp-img-count'] : 'false';
+            $imageElements = '';
+            $galleryDisplay = 'Default';
 
             if ($galleryStyle === '1'){
+                foreach ($imageCollection['images'] as $imagePath) {
+                    $imageElements = '<div class="img-container"><img src="' . htmlspecialchars($imagePath) . '" alt=""></div>';
+                }
+
                 $galleryDisplay ='
-                <div class="gallery style-1" onclick="openLightbox();currentSlide(1)"> 
-                    <div class="img-container"><img src="../img/article-sample-1.jpg" alt=""></div>
-                </div>';
+                <div class="gallery style-1" onclick="openLightbox();currentSlide(1)">' . $imageElements . '</div>';
 
             }elseif($galleryStyle === '2'){
+                foreach ($imageCollection['images'] as $index => $imagePath) {
+                    $originalIndex = $index + 1;
+
+                    $imageElements .= '<div class="img-container" onclick="openLightbox();currentSlide('. $originalIndex .')"><img src="' . htmlspecialchars($imagePath) . '" alt=""></div>';
+                }
+
                 $galleryDisplay= '
-                <div class="gallery style-2" > 
-                    <div class="img-container" onclick="openLightbox();currentSlide(1)"><img class="g-img-1" src="../img/article-sample-1.jpg" alt=""></div>
-                    <div class="img-container" onclick="openLightbox();currentSlide(2)"><img class="g-img-2" src="../img/article-sample-1.jpg" alt=""></div>
-                </div>';
+                <div class="gallery style-2"> ' . $imageElements . ' </div>';
+
+                
+                // $galleryDisplay= '
+                // <div class="gallery style-2" > 
+                //     <div class="img-container" onclick="openLightbox();currentSlide(1)"><img src="../img/article-sample-1.jpg" alt=""></div>
+                //     <div class="img-container" onclick="openLightbox();currentSlide(2)"><img src="../img/article-sample-1.jpg" alt=""></div>
+                // </div>';
 
             }elseif($galleryStyle === '3'){
 
@@ -54,9 +103,6 @@
 
     <!-- style="display: none;" -->
         
-
-        
-
         <div class="gallery style-5"  style="display: none;"> 
             <div class="img-container" onclick="openLightbox();currentSlide(1)"><img src="../img/article-sample-2.jpg" alt=""></div>
             <div class="img-container" onclick="openLightbox();currentSlide(2)"><img src="../img/article-sample-3.jpg" alt=""></div>
