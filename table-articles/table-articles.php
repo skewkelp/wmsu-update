@@ -31,7 +31,7 @@ $articleTable = [
         "header" => "In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.",
         "description" => "<p>In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.<br><br>Faculty and students are encouraged to prepare accordingly to ensure a seamless transition to virtual learning for the day.</p>",
         "date" => "March 7, 2025",
-        "thumbnail" => "../img/article-1.png",
+        "thumbnail" => "../table-articles/0/image-1.jpg",
         "gallery_style" => "1",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 0
@@ -40,7 +40,7 @@ $articleTable = [
         "header" => "Western Mindanao State University joins the 2025 National Women’s Month Celebration!",
         "description" => "<p>Western Mindanao State University (WMSU) joined the 2025 National Women’s Month Celebration on March 3, 2025, with an opening program spearheaded by Dr. Mariam Z. Julkarnain, Director of the Gender Research and Resource Center (GRRC).<br><br>The event featured a vibrant opening salvo and the unveiling of a commitment wall, symbolizing the university’s continued advocacy for gender equality and women’s empowerment. A series of activities, including seminars, competitions, and interactive sessions, have been scheduled throughout March to engage and inspire participants.<br><br>This year’s celebration highlights the core objectives of Republic Act 9710, or the Magna Carta of Women, reaffirming WMSU’s commitment to nourishing a society where women have equal rights, power, and opportunities.",
         "date" => "March 7, 2025",
-        "thumbnail" => "../img/article-2.png",
+        "thumbnail" => "../table-articles/1/image-1.jpg",
         "gallery_style" => "2",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 1
@@ -74,7 +74,7 @@ $articleTable = [
         <ul><li>Sky Cable Channel 54</li></ul>
         <ul><li>E-media Mo FM Facebook Page</li></ul>",
         "date" => "March 7, 2025",
-        "thumbnail" => "../img/article-3.png",
+        "thumbnail" => "../table-articles/2/image-1.jpg",
         "gallery_style" => "5",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 2
@@ -113,7 +113,7 @@ $articleTable = [
         <p>With faith, humility, and unity, WMSU moves forward with confidence, ensuring a future defined by groundbreaking research and scientific progress. The Pure and Analytical Research Center stands as a beacon of knowledge and innovation, not only for the university but for the entire region and the nation as a whole. (LMP, PAO)</p>
         ",
         "date" => "March 7, 2025",
-        "thumbnail" => "../img/article-4.png",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3

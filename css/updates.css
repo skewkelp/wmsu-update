@@ -1557,16 +1557,22 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     flex-shrink: 0;
 }
 
-.img-card.b{
+.img-card.b, .img-card-link.b{
     /* width: 608px;
     height: 400px; */
+    border-radius: 20px;
     width: var(--img-card-b-width);
     height: var(--img-card-b-height);
+    background-color: green;
+    overflow: hidden;
 }
 
-.img-card.s{
+.img-card.s, .img-card-link.s{
+    border-radius: 20px;
     width: var(--img-card-s-width);
     height: var(--img-card-s-height);
+    background-color: green;
+    overflow: hidden;
 }
 
 

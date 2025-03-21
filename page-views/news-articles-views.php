@@ -22,9 +22,11 @@
             <div class="body-card news">
                 <?php $latestarticle = $articleTable[0];?>
                 <!-- <div id="news-1" class="img-card b"> -->
-                <div class="img-card b">
-                    <img src="<?php echo $latestarticle['thumbnail'];?>" alt="">
-                </div>
+                <a href="updates?page-view=news-articles&article-view=true&article-index=0&gallery-style=<?php echo $latestarticle['gallery_style'];?>" class="img-card-link b">
+                    <div class="img-card b">
+                        <img src="<?php echo $latestarticle['thumbnail'];?>" alt="">
+                    </div>
+                </a>
                 <div class="description-card latest">
                     <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true&article-index=0&gallery-style=<?php echo $latestarticle['gallery_style'];?>"><?php echo $latestarticle['header'];?></a></h2>
                     <div class="date">
@@ -44,9 +46,11 @@
                 $originalIndex = $index + 1;
             ?>
             <div class="news-article">
-                <div id="" class="img-card s">
-                    <img src="<?php echo $article['thumbnail'];?>" alt="">
-                </div>
+                <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>" class="img-card-link s">
+                    <div id="" class="img-card s">
+                        <img src="<?php echo $article['thumbnail'];?>" alt="">
+                    </div>
+                </a>
                 <div class="description-card news">
                     <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
                     <div class="date">
@@ -109,9 +113,11 @@
             ?>
             <div class="article">
                 <div class="main-info articles">
-                    <div id="" class="img-card s">
-                        <img src="<?php echo $article['thumbnail'];?>" alt="">
-                    </div>
+                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>" class="img-card-link s">
+                        <div id="" class="img-card s">
+                            <img src="<?php echo $article['thumbnail'];?>" alt="">
+                        </div>
+                    </a>
                     <div class="description-card articles">
                         <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
                         <div class="date">
