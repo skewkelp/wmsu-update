@@ -937,6 +937,11 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     opacity: 1; /* Fade in */
 }
 
+.slides.active{
+    display: grid;
+    place-items: center; 
+}
+
 .slides.active img {
     max-width: 100%;
     height: auto;
@@ -970,6 +975,10 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 
 .lightbox .next {
     right: 0;
+}
+
+.hidden{
+    display: none !important;
 }
 
 /* gallery view */

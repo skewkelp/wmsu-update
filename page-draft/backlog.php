@@ -108,7 +108,7 @@
     <span class="close" onclick="closeLightbox()">&times;</span>
     <div class="lightbox-content">
         <div class="slides active">
-            <img src="../img/article-sample-2.jpg" alt="Image 1">
+            <img src="../img/article-sample-1.jpg" alt="Image 1">
         </div>
         <div class="slides">
             <img src="../img/article-sample-3.jpg" alt="Image 2">

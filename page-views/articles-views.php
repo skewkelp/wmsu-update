@@ -7,29 +7,64 @@
 <?php 
 //TEMP DATA
     require_once '../table-articles/table-articles.php';
+
+    $articleIndex = isset($_GET['article-index']) ? $_GET['article-index'] : '';
+    $article = [];
+
+    if($articleIndex >= 0){
+        $article = $articleTable[$articleIndex];
+        $imageCollection = $gallery[$article['gallery_fk']];
+        
+        $safeDescription = nl2br(htmlspecialchars($article['description']));
+        
+        if(isset($articleTable[$articleIndex + 1])){
+            $prevArticle = $articleTable[$articleIndex + 1];    
+        }else{
+            $prevArticle = false;
+        }
+
+
+        $prevArticle = isset($articleTable[$articleIndex + 1]) ? $articleTable[$articleIndex + 1] : false;
+
+        $nextArticle = isset($articleTable[$articleIndex - 1]) ? $articleTable[$articleIndex - 1] : false;
+           
+        
+        $prevIndex = $articleIndex + 1;
+        $nextIndex = $articleIndex - 1;
+        
+        // echo '<h1>converted description = ' . $safeDescription . '</h1> ';
+    }else{
+        echo '<h1>index = ' . $articleIndex . '</h1> ';
+
+        echo '<h1>ERROR EMPTY NULL INDEX</h1> ';
+    }
 ?>
+
+<script>
+    var prevArticleExists = <?php echo json_encode($prevArticle !== false); ?>;
+    var nextArticleExists = <?php echo json_encode($nextArticle !== false); ?>;
+    
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hide or show elements based on existence
+        if (!prevArticleExists) {
+            document.querySelector('.previous .icon').classList.add('hidden');
+            document.querySelector('.previous .description').classList.add('hidden');
+        }
+        if (!nextArticleExists) {
+            document.querySelector('.next .icon').classList.add('hidden');
+            document.querySelector('.next .description').classList.add('hidden');
+        }
+    });
+</script>
+
 
 <div class="hero-banner news-article" >
 </div>
 
 <div class="page-margin article">
     <div class="page-section article">
-        <?php 
-            $articleIndex = isset($_GET['article-index']) ? $_GET['article-index'] : '';
-            $article = [];
-            if($articleIndex >= 0){
-                $article = $articleTable[$articleIndex];
-                $imageCollection = $gallery[$article['gallery_fk']];
-                
-                $safeDescription = nl2br(htmlspecialchars($article['description']));
-                
-                // echo '<h1>converted description = ' . $safeDescription . '</h1> ';
-            }else{
-                echo '<h1>index = ' . $articleIndex . '</h1> ';
 
-                echo '<h1>ERROR EMPTY NULL INDEX</h1> ';
-            }
-        ?>
         <div class="page-header article">
             <h1><?php echo $article['header'];?></h2>
         </div>
@@ -44,13 +79,12 @@
         </div>
         
         <?php
-
-        if ($safeDescription === '' ) {
-            echo '<h2>ERR. EMPTY DESCRIPTION</h2>';
-        } elseif($safeDescription === null){
-            echo '<h2>ERR. DESCRIPTION NULL</h2>';
-        }
-    ?>
+            if ($safeDescription === '' ) {
+                echo '<h2>ERR. EMPTY DESCRIPTION</h2>';
+            } elseif($safeDescription === null){
+                echo '<h2>ERR. DESCRIPTION NULL</h2>';
+            }
+        ?>
         
         <!-- 
         <div class="page-header article">
@@ -153,7 +187,37 @@
         <div id="lightbox" class="lightbox">
             <span class="close" onclick="closeLightbox()">&times;</span>
             <div class="lightbox-content">
-                <div class="slides active">
+                <?php 
+                $galleryDisplay = '';
+                
+                foreach ($imageCollection['images'] as $index => $imagePath) {
+                    $originalIndex = $index + 1;
+                    if($originalIndex == 1){
+                        $galleryDisplay .= '
+                        <div class="slides active">
+                            <img src="' . htmlspecialchars($imagePath) . '" alt="Image ' . $originalIndex . '">
+                        </div>';
+                    }else{
+                        $galleryDisplay .= '
+                        <div class="slides">
+                            <img src="' . htmlspecialchars($imagePath) . '" alt="Image ' . $originalIndex . '">
+                        </div>';
+                    }
+                }
+                // if($galleryStyle === '1'){
+                //     foreach ($imageCollection['images'] as $imagePath) {           
+                //         $galleryDisplay .= '
+                //         <div class="slides active">
+                //             <img src="' . htmlspecialchars($imagePath) . '" alt="Image ' . 1 . '">
+                //         </div>';
+                //     }
+                // }else{
+                // }
+
+                echo $galleryDisplay;
+
+                ?>
+                <!-- <div class="slides active">
                     <img src="../img/article-sample-2.jpg" alt="Image 1">
                 </div>
                 <div class="slides">
@@ -161,7 +225,7 @@
                 </div>
                 <div class="slides">
                     <img src="../img/article-sample-4.jpg" alt="Image 3">
-                </div>
+                </div> -->
             </div>
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
@@ -175,7 +239,9 @@
             <div class="description d-flex flex-column justify-content-start">
                 <h1>PREVIOUS</h1>
                 <div class="text-container">
-                    <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&temp-img-count=<?php echo $prevArticle? $prevArticle['img_count']: '';?>">
+                        <?php echo $prevArticle? $prevArticle['header']: '';?></a>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -183,7 +249,9 @@
             <div class="description d-flex flex-column justify-content-start">
                 <h1>NEXT</h1>
                 <div class="text-container">
-                    <h2><a href="">Western Mindanao State University joins the 2025 National Women’s Month Celebration!</a></h2>
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $nextIndex;?>&temp-img-count=<?php echo $nextArticle? $nextArticle['img_count']: '';?>">
+                        <?php echo $nextArticle? $nextArticle['header'] : '';?></a>
+                    </h2>
                 </div>
             </div>
             <div class="icon"><img src="../img/icon/next-icon.png" alt=""></div>
