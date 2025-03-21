@@ -42,7 +42,16 @@
         <div class="description-card">
             <p><?php echo $safeDescription;?></p>
         </div>
+        
+        <?php
 
+        if ($safeDescription === '' ) {
+            echo '<h2>ERR. EMPTY DESCRIPTION</h2>';
+        } elseif($safeDescription === null){
+            echo '<h2>ERR. DESCRIPTION NULL</h2>';
+        }
+    ?>
+        
         <!-- 
         <div class="page-header article">
             <h1>In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.</h2>
@@ -61,7 +70,7 @@
         <?php 
             $galleryStyle = isset($_GET['temp-img-count']) ? $_GET['temp-img-count'] : 'false';
             $imageElements = '';
-            $galleryDisplay = 'Default';
+            $galleryDisplay = '';
 
             if ($galleryStyle === '1'){
                 foreach ($imageCollection['images'] as $imagePath) {
@@ -89,12 +98,11 @@
                 // </div>';
 
             }elseif($galleryStyle === '3'){
-
-
-            }else{
-                $galleryDisplay = '<h2>ERR. NO IMAGE RECEIVED</h2>';
+                
 
             }
+            
+            $galleryDisplay = $galleryDisplay ? $galleryDisplay : '<h2>ERR. NO IMAGE RECEIVED</h2>';
 
             echo $galleryDisplay;
         ?>
