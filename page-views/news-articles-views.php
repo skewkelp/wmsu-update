@@ -40,7 +40,7 @@
 
         <div class="news-list">
             <?php  
-            $slicedArticles = array_slice($articleTable, 1, 4);
+            $slicedArticles = array_slice($articleTable, 1, 3);
             
             foreach ($slicedArticles as $index => $article):
                 $originalIndex = $index + 1;
@@ -131,15 +131,15 @@
                     </div>
                     <div class="label-tags">
                         <?php foreach ($article['sdg_tag'] as $tag): ?>
-                            <div class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?></div>
+                            <button class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?>
+                            </button>
                         <?php endforeach; ?>
                         
                     </div>
                 </div>
             </div>
-
             <?php endforeach; ?>
-
+            
             <!-- <div class="article">
                 <div class="main-info articles">
                     <div id="article-1" class="img-card s">
@@ -287,12 +287,14 @@
                     </div>
                 </div>
             </div> -->
-        
-            
         </div>
             
-        <div class="article-list">
-        d
+        <div class="article-list more-articles">
+            <a href="updates?page-view=news-articles&more-articles=true" class="more-articles-link">
+                <div class="more-articles-button">
+                    <h2> See More Articles?</h2>
+                </div>
+            </a>
         </div>
         
 

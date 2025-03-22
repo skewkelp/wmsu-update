@@ -433,11 +433,15 @@ button{
     min-height: calc(100vh - var(--topbar-height));
     justify-content: center;
 }
+.page-body{
+    background-color: #fafafa;
+}
+
 
 .page-margin{
     display: flex;
     flex-direction: column;
-    margin: 0 var(--page-margin-width) !important;       /* Apply padding */
+    margin: 0 var(--page-margin-width);       /* Apply padding */
     box-sizing: border-box; /* Include padding in width calculation */
     gap: 40px;
     overflow-x: hidden;
@@ -446,6 +450,7 @@ button{
 
 .page-margin.article{
     background-color: #fafafa;
+    margin: 0 calc(var(--page-margin-width) + 60px);
 }
 
 /* HERO BANNER ARCHIVE*/
@@ -732,6 +737,8 @@ button{
     /* background-color: goldenrod; */
     max-width: 100%;
 }.section-title.articles, .section-title.articles h2{
+    padding-left: 40px;
+    text-align: left;
     font-weight: 700;
     background-color: #7E0804;
 }.section-title.sdg, .section-title.sdg h2{
@@ -763,7 +770,7 @@ button{
     display: grid;
     align-self: center;
     justify-content: center;
-    width: 1200px;
+    width: 100%;
     height: auto;
     background-color: #0069A3;
 }
@@ -1389,7 +1396,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 }
 
 
-.article-list{
+.articles .article-list{
     /* contentview */
     display: flex;
     flex-wrap: wrap;
@@ -1416,6 +1423,47 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     transition: 0.3s;
 }
 
+
+
+
+.article-list.more-articles{
+    display: flex;
+    justify-content: flex-end;
+}.article-list.more-articles .more-articles-link .more-articles-button{
+    width: auto;
+    background-color: #7E0804;
+    padding: 20px;
+    border-radius: 4%;
+}
+
+.article-list.more-articles .more-articles-link {
+    animation: hop 8s ease-in-out infinite; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.article-list.more-articles .more-articles-link:hover{
+    transform: translateY(-20px);
+    border-radius: 4%;
+
+}
+
+
+.more-articles .more-articles-link .more-articles-button h2{
+    font-size: 18px;
+    color: white;
+}
+
+@keyframes hop {
+    0%, 30% {
+        transform: translateY(0); /* Start at original position for 1.2 seconds */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up 20px at 4 seconds */
+    }
+    85%, 100% {
+        transform: translateY(0); /* Back to original position for the remainder of the time */
+    }
+}
 
 #article-1{
     background-image: url("../img/article-1.png");

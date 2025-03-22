@@ -33,7 +33,7 @@ $articleTable = [
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/0/image-1.jpg",
         "gallery_style" => "1",
-        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "sdg_tag" => ['3','4','8','9','11','12','13'],
         "gallery_fk" => 0
     ],
     [
@@ -81,44 +81,109 @@ $articleTable = [
 
     ],
     [
-        "header" => "WMSU Pioneers Cutting-Edge Research with the Pure and Analytical Research Center",
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
         "description" => "
-        <p>Western Mindanao State University has taken a transformative leap in scientific research and innovation with the establishment of the Pure and Analytical Research Center (PARC). More than just a facility, PARC represents the university’s unwavering commitment to advancing molecular and chemical research, fostering interdisciplinary collaboration, and equipping researchers with state-of-the-art technology. This milestone aligns with WMSU’s vision of becoming a leading research institution, driving impactful discoveries that benefit both academia and society.</p>
-        <p><br></p>
-        <p>The establishment of PARC is a testament to the dedication and collective efforts of researchers, faculty members, and institutional leaders. It emerged from the NICER Phase 1 Project 2: Molecular and Nutritional Assessment of ZamPen Native Chicken, along with other personally funded projects, paving the way for a research hub that houses high-end instrumentation facilities to support the scientific community. With a clear vision of becoming a premier research facility in molecular and chemical research, PARC is designed to provide cutting-edge services anchored in science-based technology and innovation. It remains steadfast in its mission to generate socially responsive research while offering pure and analytical services that contribute to sustainable growth and development in the region.</p>
-        <p><br></p>
-        <p>As one of the 10 newly established research centers at WMSU, PARC was officially approved under BOR Resolution No. 038 and has been structured into two primary divisions: the Pure and Analytical Research Laboratory – Chemical Division, led by Dr. Reynante E. Autida, RCh, and the Molecular Division, headed by Dr. Melbert C. Sepe. These divisions serve over 100 students, faculty researchers, and external stakeholders, extending their services beyond the university to cater to other institutions, agencies, and research entities in Region IX and beyond.</p>
-        <p><br></p>
-        <p>PARC is part of WMSU’s broader initiative to advance multidisciplinary research, joining nine other specialized research centers that highlight the university’s commitment to scientific excellence and innovation. These ten research units represent a diverse range of disciplines, reinforcing WMSU’s position as a hub for research and development:</p>
-        <p><br></p>
-        <ol>
-        <li>Native Chicken R&amp;D Center</li>
-        <li>Pure and Analytical Research Center</li>
-        <li>WMSU Socio-Economic Research and Data Analytic Center (SERDAC)</li>
-        <li>Research Innovation Center for Metals and Engineering</li>
-        <li>Research Center for Culinary Nutrition and Food Product Innovation</li>
-        <li>Climate Change Research Center (CCRC)</li>
-        <li>Center for Health Research and Health Systems Research</li>
-        <li>Ethnobotanical and Pharmacological Center</li>
-        <li>WMSU Biodiversity Research Center</li>
-        <li>Research Center for Language and Literature Studies</li>
-        </ol>
-        <p><br></p>
-        <p>The success of PARC has been further strengthened through strategic partnerships with prominent institutions, including the Philippine Genome Center-University of the Philippines Mindanao, Department of Science and Technology- IX (DOST-IX), DOST Philippine Council for Agriculture, Aquatic and Natural Resources Research and Development (PCAARRD), Science for Change Program, COARE or the Computing and Archiving Research Environment, and the National University of Singapore.</p>
-        <p><br></p>
-        <p>Aligned with WMSU’s University 4.0 initiative, PARC is committed to ensuring its sustainability through income-generating projects, research opportunities, and continuous innovations. The center’s establishment significantly contributes to the university’s efforts in SUC Leveling, a key component in institutional development and national recognition. The importance of meaningful research was highlighted by Dr. Marvin A. Maulion, Director for Research Center Operations Office, who emphasized that research should focus on addressing real-world problems rather than simply creating market-driven products. This principle aligns with the words of DOST Secretary Renato U. Solidum, who urged scientists to solve societal challenges through impactful research.</p>
-        <p><br></p>
-        <p>The launch of the Pure and Analytical Research Center is more than just a celebration of infrastructure—it is a major step in transforming WMSU into a smart research university. As the university continues to expand its research frontiers, the commitment to excellence, collaboration, and sustainability remains at the core of its mission.</p>
-        <p><br></p>
-        <p>With faith, humility, and unity, WMSU moves forward with confidence, ensuring a future defined by groundbreaking research and scientific progress. The Pure and Analytical Research Center stands as a beacon of knowledge and innovation, not only for the university but for the entire region and the nation as a whole. (LMP, PAO)</p>
+       
         ",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
-
-
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+        <p>Western Mindanao State University (WMSU) Centro de Estudio Mindanao spearheaded by its Director Dr. Melanie F. Lear hosted “Katutubong Sining: A Lecture-Workshop on Indigenous Arts &amp; Culture” at the WMSU Social Hall February 27, 2025. It was organized in partnership with Katutubo Exchange Philippines (KXPH), the event brought together students and faculty to explore and honor the Philippines’ rich&nbsp;Indigenous cultural heritage and traditional arts.</p>
+        <p><br></p>
+        <p>The lecture-workshop was led by Dr. Edwin Antonio, Vice Head of the National Committee on Northern Cultural Communities under the National Commission for Culture and the Arts (NCCA) and Founder/Director of KXPH. Dr. Antonio captivated attendees with his deep knowledge, shedding light on the importance of preserving Indigenous traditions in a modern context.</p>
+        <p><br></p>
+        <p>Held during February, recognized as National Arts Month under Proclamation No. 683, series of 1991, the event also resonated with the United Nations’ International Decade of Indigenous Languages (2022-2032). “Katutubong Sining” served as a vibrant tribute to these milestones, fostering a deeper appreciation of Filipino Indigenous identity among the WMSU community.</p>
+        <p><br></p>
+        <p>-RGT-</p>
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/4/image-2.jpg",
+        "gallery_style" => "6",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 4
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/4/image-2.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
     ]
 ];
 
@@ -135,6 +200,9 @@ $gallery = [
     ],
     [
         "images" => ['../table-articles/3/image-1.jpg', '../table-articles/3/image-2.jpg', '../table-articles/3/image-3.jpg', '../table-articles/3/image-4.jpg', '../table-articles/3/image-5.jpg', '../table-articles/3/image-6.jpg', '../table-articles/3/image-7.jpg', '../table-articles/3/image-8.jpg', '../table-articles/3/image-9.jpg', '../table-articles/3/image-10.jpg', '../table-articles/3/image-11.jpg', '../table-articles/3/image-12.jpg', '../table-articles/3/image-13.jpg', '../table-articles/3/image-14.jpg']
+    ],
+    [
+        "images" => ['../table-articles/4/image-1.jpg', '../table-articles/4/image-2.jpg', '../table-articles/4/image-3.jpg', '../table-articles/4/image-4.jpg'],
     ]
 ];
 

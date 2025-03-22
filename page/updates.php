@@ -4,15 +4,21 @@ require_once '../__includes/head.php';
 // Get the 'page-view' query parameter
 $pageView = isset($_GET['page-view']) ? $_GET['page-view'] : '';
 $articleView = isset($_GET['article-view']) ? $_GET['article-view'] : 'false';
+$moreArticlesView = isset($_GET['more-articles']) ? $_GET['more-articles'] : 'false';
 
 // Determine which file to include based on the 'page-view' parameter
 if ($pageView === 'news-articles') {
 
-    if($articleView === 'true'){
-        $directory = '../page-views/articles-views.php';
-    }elseif($articleView === 'false'){
-        $directory = '../page-views/news-articles-views.php';
+    if($moreArticlesView === 'false'){
+        if($articleView === 'true'){
+            $directory = '../page-views/articles-views.php';
+        }elseif($articleView === 'false'){
+            $directory = '../page-views/news-articles-views.php';
+        }
+    }elseif($moreArticlesView === 'true'){
+        $directory = '../page-views/more-articles-views.php';
     }
+
 
 } elseif ($pageView === 'archives'){
     $directory = '../page-views/archives-views.php';
@@ -27,7 +33,7 @@ if ($pageView === 'news-articles') {
 
 <body>
     <?php require_once '../__includes/navbar.php'; ?>
-    <div class="homepage-body">
+    <div class="page-body">
         <?php 
             require_once $directory; // Include the determined file
         ?>
