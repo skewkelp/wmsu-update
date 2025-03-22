@@ -1,0 +1,117 @@
+
+.box{
+    position: relative;
+    border: 2px solid black;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.box::before{
+    content: '';
+    position: absolute;
+    inset: 0;             /*makes it able to display content */
+    background-image: url('../imgs/wsmu.jpg');
+    background-size: cover;
+    opacity: 0.2;
+}
+.fb-box{
+    position: relative;
+    isolation: isolate;
+    height: 250px;
+    width: 22%;  
+    background-position: center;
+    background-image: url('../imgs/wsmu.jpg');
+    background-size: cover;
+    border-radius: 30px;
+}
+.fb-box::after{
+    content: '';          
+    position: absolute;
+    inset: 0;           /*makes it able to display content */
+    background-color:rgba(220, 20, 60, 0.5);
+    background-image: url('../img/socmed/Facebooj.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 50% 30%; 
+    border-radius: 30px;
+    z-index: -1;
+}
+.new-blazer-box{
+    position: relative;
+    isolation: isolate;
+    height: 250px;
+    width: 22%;
+    background-position: center;
+    background-image: url('../imgs/wsmu.jpg');
+    background-size: cover;
+    border-radius: 30px;
+}
+.new-blazer-box::after{
+    content: '';
+    position: absolute;
+    inset: 0;                 /*makes it able to display content */
+    background-color:rgba(220, 20, 60, 0.5);
+    z-index: -1;
+    background-image: url('../img/socmed/New_Blazer-removebg-preview.png');
+    background-size: 80%;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    
+}
+.digest-box{
+    position: relative;
+    isolation: isolate;
+    height: 250px;
+    width: 20%;
+    background-position: center;
+    background-image: url('../imgs/wsmu.jpg');
+    background-size: cover;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.digest-box::after{
+    content: '';
+    position: absolute;
+    inset: 0;              /*makes it able to display content */
+    background-color:rgba(220, 20, 60, 0.5);
+    z-index: -1;
+    background-image: url('../img/socmed/univeristy_Digest-removebg-preview.png');
+    background-size: 80%;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    
+}
+.student-council-box{
+    position: relative;
+    isolation: isolate;
+    height: 250px;
+    width: 20%;
+    background-position: center;
+    background-image: url('../imgs/wsmu.jpg');
+    background-size: cover;
+    border-radius: 30px;
+}
+.student-council-box::after{
+    content: '';
+    position: absolute;
+    inset: 0;              /*makes it able to display content */
+    background-color:rgba(220, 20, 60, 0.5);
+    z-index: -1;
+    background-image: url('../img/socmed/student_council-removebg-preview.png');
+    background-size: 60%;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+}
+.texts{
+    text-align: center;
+    color: white;
+    display: grid;
+    margin-top: 70%;
+}

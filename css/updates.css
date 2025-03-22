@@ -280,7 +280,9 @@ ul li {
     background-image: url("../img/hero-banner/archives.png");
 }
 
-
+.hero-banner.media{
+    background-image:url("../img/media-banner.png") ;
+}
     
 
 

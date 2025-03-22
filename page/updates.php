@@ -9,7 +9,8 @@ if ($pageView === 'news-articles') {
     $directory = '../page-views/news-articles-views.php';
 } elseif ($pageView === 'archives'){
     $directory = '../page-views/archives-views.php';
-
+} elseif($pageView == 'media'){
+    $directory = '../page-views/media.php';
 } else {
     $directory = '../page-views/default-view.php'; // Fallback or default view
 }
