@@ -34,14 +34,15 @@
 
 
 <div class="section-title archives">
-    <h2>ARTICLES</h2>
+    <h2>YEARLY</h2>
+
     <div class="d-flex flex-row" style="gap: 20px;">
-        <button style="color:black;"><</button>
+        <a class="button previous archives" href="">&laquo;</a>
         <h2><?php 
             // echo 'second:' . $secondCount;
             echo $yearlyArchived["year_pk"];
         ?></h2>
-        <button style="color:black; ">></button>
+        <a class="button next archives" href="" >&raquo;</a>
     </div>
 </div>
 <div class="page-margin">
