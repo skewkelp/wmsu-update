@@ -596,6 +596,7 @@ button{
     /* background-color:lightgreen; */
     gap: 20px;
     margin-bottom: 80px;
+    align-items: flex-start;
 }
 
 .section-title.archives{

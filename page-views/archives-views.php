@@ -10,39 +10,83 @@
 </div>
 <?php 
     require_once '../table-articles/table-articles.php';
-    $year = 1; //default 
-    $yearlyArchived = $archives[$year];
-    $monthlyArchived = $yearlyArchived["months"];
-    $originalIndex = 0;
+    $defaultYear = 2; //default year index for archive
 
-    // $slicedArchives = array_slice($monthlyArchived, 0, 6);
-    
-    $monthlyCount = count($monthlyArchived);
-    
-    $firstCount = ceil($monthlyCount/2);
-    $secondCount = $monthlyCount - $firstCount; 
-    
-    $firstMonthList = array_slice($monthlyArchived, -1 *($firstCount)); // 
-    
-    $secondMonthList = array_slice($monthlyArchived, 0,($secondCount)); // 
+    $getYear = isset($_GET['archived-index']) ? (int)$_GET['archived-index'] : '';
 
+    if($getYear){
+ 
+        if($getYear == $defaultYear){
+            $currentIndex = $defaultYear - 1;
+            $prevYear = $currentIndex;
+        }if($getYear > $defaultYear || $getYear < $defaultYear){
+            $currentIndex = $getYear - 1;
+            $prevYear = $currentIndex;
+            if($prevYear == 0){
+                $prevNav = false;
+            }else{
+                $prevNav = isset($archives[$prevYear]) ? $archives[$prevYear] : false;
+            }
+        }
+        $nextYear = $currentIndex + 1;
+        //1 = 0  2 = 1, 3 = 2
 
-    // $slicedArchives = array_slice($monthlyArchived, -6); // 
+        $nextNav = isset($archives[$nextYear]) ? $archives[$nextYear] : false;
+           
+        
 
-    // $monthsCount = count($slicedArchives); // Get the number of elements
+        $yearlyArchived = $archives[$currentIndex];
+        $monthlyArchived = $yearlyArchived["months"];
+        $originalIndex = 0;
+        
+        $monthlyCount = count($monthlyArchived);
+        
+        $firstCount = ceil($monthlyCount/2);
+        $secondCount = $monthlyCount - $firstCount; 
+        
+        $firstMonthList = array_slice($monthlyArchived, -1 *($firstCount)); // 
+        
+        $secondMonthList = array_slice($monthlyArchived, 0,($secondCount)); // 
+    
+    }
+    
+    else{
+        $currentIndex = 'ERR';
+    }
+
+   
 ?>
 
+<script>
+    var prevNavExist = <?php echo json_encode($prevNav !== false); ?>;
+    var nextNavExist = <?php echo json_encode($nextNav !== false); ?>;
+    
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hide or show elements based on existence
+        if (!prevNavExist) {
+            document.querySelector('.previous.archives').classList.add('hidden');
+        }
+        if (!nextNavExist) {
+            document.querySelector('.next.archives').classList.add('hidden');
+        }
+    });
+</script>
 
 <div class="section-title archives">
-    <h2>YEARLY</h2>
+    <h2>YEARLY
+        <?php 
+         ////COMMENT DEBUGGING
+            // echo '<br>second:' . $secondCount . ' //prevYear:' . $prevYear . ' //currentYear or getYear:' . $getYear .' //nextYear:' .  $nextYear . ' //currentIndex:' . $currentIndex ;
+        ?>
+    </h2>
 
     <div class="d-flex flex-row" style="gap: 20px;">
-        <a class="button previous archives" href="">&laquo;</a>
+        <a class="button previous archives" href="updates?page-view=archives&archived-index=<?php echo $prevYear;?>">&laquo;</a>
         <h2><?php 
-            // echo 'second:' . $secondCount;
             echo $yearlyArchived["year_pk"];
         ?></h2>
-        <a class="button next archives" href="" >&raquo;</a>
+        <a class="button next archives" href="updates?page-view=archives&archived-index=<?php echo $nextYear + 1;?>" >&raquo;</a>
     </div>
 </div>
 <div class="page-margin">

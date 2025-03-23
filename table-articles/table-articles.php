@@ -604,17 +604,17 @@ $archives = [
         "year_pk" => "2023",
         "months" => [
             [
-                "name" => "December",
-                "articles_fk" => [] // References to articles
-            ],
-            [
-                "name" => "November",
+                "name" => "OCTOBER",
                 "articles_fk" => []
             ],
             [
-                "name" => "October",
+                "name" => "NOVEMBER",
                 "articles_fk" => []
-            ]
+            ],
+            [
+                "name" => "DECEMBER",
+                "articles_fk" => []
+            ],
         ],
     ],
     [
@@ -673,9 +673,18 @@ $archives = [
     [
         "year_pk" => "2025",
         "months" => [
-            "January" => [2],
-            "February" => [],
-            "March" => []
+            [
+                "name" => "JANUARY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "FEBRUARY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "MARCH",
+                "articles_fk" => []
+            ],
         ],
     ],
 ];
