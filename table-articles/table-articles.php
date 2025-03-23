@@ -185,20 +185,18 @@ $articleTable = [
     ],
     [
         "header" => "13",
-        "description" => "
-       
-        ",
+        "description" => " ",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
+
     ],
     [
         "header" => "14",
-        "description" => "
-       
-        ",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
@@ -208,20 +206,18 @@ $articleTable = [
     ],
     [
         "header" => "15",
-        "description" => "
-       
-        ",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
+
     ],
     [
         "header" => "16",
-        "description" => "
-       
-        ",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
@@ -398,7 +394,7 @@ $articleTable = [
         ,"status" => "displayed"
     ],
     [
-        "header" => "32",
+        "header" => "32archived",
         "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
@@ -408,7 +404,7 @@ $articleTable = [
         ,"status" => "archived"
     ],
     [
-        "header" => "33",
+        "header" => "33archived",
         "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
@@ -428,7 +424,7 @@ $articleTable = [
         ,"status" => "displayed"
     ],
     [
-        "header" => "35",
+        "header" => "35archived",
         "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
@@ -534,8 +530,8 @@ $articleTable = [
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
-        "gallery_fk" => 3
-        ,"status" => "displayed"
+        "gallery_fk" => 3,
+        "status" => "displayed"
     ],
     [
         "header" => "46",
@@ -544,8 +540,8 @@ $articleTable = [
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
-        "gallery_fk" => 3
-        ,"status" => "displayed"
+        "gallery_fk" => 3,
+        "status" => "displayed"
     ],
     [
         "header" => "47",
@@ -554,8 +550,8 @@ $articleTable = [
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
-        "gallery_fk" => 3
-        ,"status" => "displayed"
+        "gallery_fk" => 3,
+        "status" => "displayed"
     ],
     [
         "header" => "48",
@@ -564,8 +560,8 @@ $articleTable = [
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
-        "gallery_fk" => 3
-        ,"status" => "displayed"
+        "gallery_fk" => 3,
+        "status" => "displayed"
     ],
     [
         "header" => "49",
@@ -574,8 +570,8 @@ $articleTable = [
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
-        "gallery_fk" => 3
-        ,"status" => "displayed"
+        "gallery_fk" => 3,
+        "status" => "displayed"
     ]
 ];
 

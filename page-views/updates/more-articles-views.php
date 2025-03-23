@@ -12,7 +12,7 @@
     $articleSize = count($articleTable);
     $articlesPerPage = 12;
     $totalPages = ceil($articleSize / $articlesPerPage);
-    
+    //49/3 = 5 pages max
     $moreArticlePage = isset($_GET['page']) ? (int)$_GET['page'] : 'err';
     if($moreArticlePage){
         // $totalPages = 59; // Total pages
@@ -63,52 +63,72 @@
             <h2>ARTICLE UPDATES 
                 <?php 
                 ////PHP CHECKER COMMENT OUT FOR TESTING
-                // echo '//art-size:' . $articleSize . ' ' . ' //pageCount:' .$pageCount . ' ' . ' //actualpage:'. $moreArticlePage .' //articleIndex:'. $articleIndex .' //condition:'. $condition . ' //' . $err;
+                echo '//art-size:' . $articleSize . ' ' . ' //pageCount:' .$pageCount . ' ' . ' //actualpage:'. $moreArticlePage .' //articleIndex:'. $articleIndex .' //condition:'. $condition . ' //' . $err;
                 ?>
             </h2>
         </div>
 
         <div class="article-list">
-            <?php  
-            
-            $slicedArticles = array_slice($articleTable, $articleIndex, $articlesPerPage);
-            
-            foreach ($slicedArticles as $index => $article):
-                $originalIndex = $index;
-                // if($article["status"] === "archived"){
-                //     continue;
-                // }
-            ?>
-            <div class="article">
-                <div class="main-info articles">
-                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>" class="img-card-link s">
-                        <div id="" class="img-card s">
-                            <img src="<?php echo $article['thumbnail'];?>" alt="">
-                        </div>
-                    </a>
-                    <div class="description-card articles">
-                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
-                        <div class="date">
-                            <h2><?php echo $article['date'];?></h2>
-                        </div>
+    <?php
+    $displayedArticlesCount = 0; // Count of displayed articles
+
+    // Loop through articles
+    for (; $articleIndex < $articlesPerPage * $pageCount; ) { // Note: Removed increment from the for loop header
+        if ($articleIndex >= count($articleTable)) {
+            break; // Prevent out-of-bounds access
+        }
+
+        $article = $articleTable[$articleIndex];
+        
+        // Check if the article's status is not "displayed"
+        if ($article["status"] !== "displayed") {
+            // Move to the next index if the current article is not displayed
+            $articleIndex++; 
+            continue; // Skip to the next iteration
+        }
+
+        // If the article is displayed, maintain the original index and increment the displayed articles count
+        $originalIndex = $articleIndex; 
+        $displayedArticlesCount++;
+        
+        // Stop displaying articles if the maximum count per page has been reached
+        if ($displayedArticlesCount > $articlesPerPage) {
+            break; // Exit the loop once we reach the limit of displayed articles per page
+        }
+    ?>
+    
+        <div class="article">
+            <div class="main-info articles">
+                <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex; ?>&gallery-style=<?php echo $article['gallery_style']; ?>" class="img-card-link s">
+                    <div id="" class="img-card s">
+                        <img src="<?php echo $article['thumbnail']; ?>" alt="">
                     </div>
-                </div>
-                <div class="tag articles">
-                    <div class="title-card">
-                        <p>Related Info</p>
-                    </div>
-                    <div class="label-tags">
-                        <?php foreach ($article['sdg_tag'] as $tag): ?>
-                            <button class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?>
-                            </button>
-                        <?php endforeach; ?>
-                        
+                </a>
+                <div class="description-card articles">
+                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex; ?>&gallery-style=<?php echo $article['gallery_style']; ?>"><?php echo $article['header']; ?></a></h2>
+                    <div class="date">
+                        <h2><?php echo $article['date']; ?></h2>
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
-         
+            <div class="tag articles">
+                <div class="title-card">
+                    <p>Related Info</p>
+                </div>
+                <div class="label-tags">
+                    <?php for ($tagIndex = 0; $tagIndex < count($article['sdg_tag']); $tagIndex++): ?>
+                        <button class="sdg-label sdg-<?php echo $article['sdg_tag'][$tagIndex]; ?>"><?php echo $article['sdg_tag'][$tagIndex]; ?></button>
+                    <?php endfor; ?>
+                </div>
+            </div>
         </div>
+
+    <?php
+        // Move to the next article index at the end of the loop
+        $articleIndex++;
+    }
+    ?>
+</div>
 
         
         <!-- <div class="pagination more-articles">
@@ -134,7 +154,7 @@
         </div> -->
         
         <div class="pagination more-articles">
-            <a href="?page=<?php echo $pageCount - 1; ?>" class="prev <?php if ($pageCount == 1) echo 'disabled'; ?>">&laquo; Previous</a>
+            <a href="?page-view=news-articles&more-articles=true&page=<?php echo $pageCount - 1; ?>" class="prev <?php if ($pageCount == 1) echo 'disabled'; ?>">&laquo; Previous</a>
             
             <?php
             // Showing pages dynamically
@@ -294,3 +314,26 @@
             <p>wmsu@wmsu.edu.ph</p>
         </div>
     </div>
+
+    <?php 
+    //  $slicedArticles = array_slice($articleTable, $articleIndex, $articlesPerPage);
+    //  $numberOfArticles = count($slicedArticles); // Get the number of sliced articles
+     
+     // for ($index = 0, $j = 1; $index < $numberOfArticles; $index++): 
+     //     $article = $slicedArticles[$index]; // Get the article based on the index
+         
+     //     // if($article["status"] !== "displayed"){
+         
+     //     //     $checkStatus = $articleTable[$articleIndex + $index + $j];
+     //     //     for($checkCount = 0; ($index + $checkCount) < 12 && $checkStatus["status"] !== "displayed";  $j++, $checkStatus = $articleTable[($articleIndex + $index) + $j]){
+     //     //         $article = $checkStatus["status"];
+     //     //         break;
+     //     //     }
+     //     //     // $index++; 
+     //     // }else{
+
+
+     //     // }
+
+    
+    ?>

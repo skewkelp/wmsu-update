@@ -5,6 +5,7 @@ require_once '../__includes/head.php';
 $pageView = isset($_GET['page-view']) ? $_GET['page-view'] : '';
 $articleView = isset($_GET['article-view']) ? $_GET['article-view'] : 'false';
 $moreArticlesView = isset($_GET['more-articles']) ? $_GET['more-articles'] : 'false';
+$moreArchivesView = isset($_GET['more-archives']) ? $_GET['more-archives'] : 'false';
 
 // Determine which file to include based on the 'page-view' parameter
 if ($pageView === 'news-articles') {
@@ -20,12 +21,20 @@ if ($pageView === 'news-articles') {
     }elseif($moreArticlesView === 'true'){
         $directory = '../page-views/updates/more-articles-views.php';
         // $directory = '../page-views/more-articles-views.php';
+    }else{
+
+
     }
 
 
 } elseif ($pageView === 'archives'){
-    $directory = '../page-views/archives-views.php';
-    // $directory = '../page-views/updates/archives-views.php';
+    if($moreArchivesView === 'true'){
+        $directory = '../page-views/updates/archives-monthly-views.php';
+
+    }elseif($moreArchivesView === 'false'){
+        $directory = '../page-views/archives-views.php';
+        
+    }
 
 } else {
     $directory = '../page-draft/backlog.php'; // Fallback or default view

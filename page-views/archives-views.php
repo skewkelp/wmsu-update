@@ -98,7 +98,7 @@
             $month = $firstMonthList[$index]; // Access the month using the index
             $originalIndex = $index + 1; // Increment index for display
             ?>
-            <a href="">
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $originalIndex?>">
                 <div class="month">
                     <div class="description-card">
                         <h2><?php echo $month["name"] ?></h2>
