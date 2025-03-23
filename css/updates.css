@@ -53,10 +53,6 @@ button{
     --img-card-b-width: 580px;
     --img-card-b-height: 387px;
 
-    --archive-vector-width: 460px;
-    --archive-vector-height: 195px;
-    --month-list-width: 634px;
-
     --img-card-s-width: 277px;
     --img-card-s-height: 208px;
     --description-2-h2-font-size: 16px;
@@ -273,6 +269,15 @@ button{
     
     --sdg-text-h1-font-size: 32px;
     --sdg-text-h2-font-size: 16px;
+}
+
+:root{
+    /* FOR ARCHIVES */
+    --archives-page-section-flex-direction: row;
+    --archives-page-section-justify-content: space-between;
+    --archive-vector-width: 460px;
+    --archive-vector-height: 195px;
+    --month-list-width: 634px;
 }
 
 .wmsu-logo{
@@ -563,9 +568,11 @@ button{
 
 /* ARCHIVES */
 .page-section.archives{
-    flex-direction: row;
-    /* justify-content: space-between; */
+    flex-direction: var(--archives-page-section-flex-direction);
+    align-items: center;
+    justify-content: var(--archives-page-section-justify-content);
     /* background-color:lightgreen; */
+    gap: 20px;
     margin-bottom: 80px;
 }
 
@@ -575,7 +582,7 @@ button{
     display: flex;
     flex-direction: column;
     gap: 20px;
-}.month-list .month{
+}.month-list a .month{
     display: flex;
     position: relative;
     flex-direction: row;
@@ -586,15 +593,22 @@ button{
     background-size: cover;    
     background-position: center; 
     background-repeat: no-repeat;
-}.month-list .month:hover {
+
+}.month-list a .month:hover {
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.25);
     transition: 0.3s ease;
-}.month-list .month:hover .vector{
+}.month-list a .month:hover .vector{
     transform: scaleX(.75);
     transform-origin: right;
     transition: 0.3s ease;
+}.month-list a .month:hover .description-card h2{
+    transform: scale(1.5);
+    transform-origin: left;
+    transition: 0.3s ease;
 
 }
+
+
 /* .month-list .month:hover img{
     transform: scaleX(.75);
     transform-origin: right;
@@ -612,16 +626,10 @@ button{
 .month .description-card h2{
     font-size: 25px;
     font-weight: 600;
-    
-}.month#december .vector{
-    width: var(--archive-vector-width);
-    height: var(--archive-vector-height);
-    /* background-image: url("../img/month/december2024.png"); */
-    background-size: cover;    
-    background-position: center; 
-    background-repeat: no-repeat;
-    
-}.month .vector{
+    transition: 0.3s ease;
+
+}
+.month .vector{
     border-radius: 100px 0 0 100px;
     display: flex;
     width: var(--archive-vector-width);
@@ -629,26 +637,33 @@ button{
     justify-content: right;
     position: relative;
 
-    background-color: #3EB049;
-    background-image: url("../img/month/vector.png");
-    /* background-image: url("../img/month/november2024.png"); */
-    background-attachment: fixed;
-    background-size: cover;    
-    background-position: left; 
-    background-repeat: no-repeat; 
+    background-color: rgba(126, 8, 4, 0.75);
     transition: 0.3s ease;
     will-change: transform;
+    overflow: hidden; 
 }
 
-.month .vector > img{
-    display: flex;
-    width: var(--archive-vector-width);
-    height: var(--archive-vector-height);
-    position: absolute;
-    will-change: transform;
 
+.month .vector img {
+    width: 100%; 
+    height: auto; 
+    /* object-fit: cover;  */
+    position: absolute; 
+
+    /* will-change: transform; */
+    z-index: 1;
 }
 
+.month .overlay {
+    position: absolute; /* Absolute position to cover the image */
+    top: 0; /* Align with the top */
+    left: 0; /* Align with the left */
+    width: 100%; /* Cover full width of parent */
+    height: 100%; /* Cover full height of parent */
+    background-color: rgba(126, 8, 4, 0.85); /* Semi-transparent background */
+    z-index: 2; /* Ensure overlay is above the image */
+}
+/* ---END ARCHIVES */
 
 
 
@@ -1932,32 +1947,38 @@ thead {
 @media screen and (min-width: 1280px) and (max-width: 1440px){
     :root{
         --page-margin-width: 80px;
+        --hero-banner-height: calc(420px * .85);
         --img-card-b-width: 400px;
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
-        --archive-vector-width: 363px;
-        --archive-vector-height: 148.5px;
-        --month-list-width: calc( 634px * 0.75);
+
         --sdg-filter-width: calc(140px * 0.85);
         --sdg-filter-height: calc(140px * 0.85);
         --sdg-list-height: auto;
 
     }
-    /* ARCHIVES */
+    /* FOR ARCHIVES */
+    :root{
+        --archive-vector-width: 363px ;
+        --archive-vector-height: 148.5px;
+        --archives-page-section-justify-content: center;
+        /* --archive-vector-width: 460px ;
+        --archive-vector-height: 195px; */
+        --month-list-width: calc( 634px * 0.8);
+    }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1280px){
     :root{
         --page-margin-width: 30px;
-        --hero-banner-height: 280px;
+        --hero-banner-height: calc(420px * .8);
+        /* --hero-banner-height: 280px; */
         --img-card-b-width: 400px;
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
-        --archive-vector-width: 242px;
-        --archive-vector-height: 99px;
-        --month-list-width: calc(800px * 0.5);
+    
         --sdg-filter-width: calc(140px * 0.8);
         --sdg-filter-height: calc(140px * 0.8);
 
@@ -1967,7 +1988,15 @@ thead {
         --sdg-1-icon-width: calc(var(--og-sdg-1-icon-width) * 0.8);
 
     }
-
+    :root{
+        /* FOR ARCHIVES */
+        --archive-vector-width: calc(460px * 0.75);
+        --archive-vector-height: calc(195px * 0.75);
+        --archives-page-section-justify-content: center;
+        /* --archive-vector-width: 242px;
+        --archive-vector-height: 99px; */
+        --month-list-width: calc(800px * 0.6);
+    }
 }
 
 
@@ -1979,8 +2008,7 @@ thead {
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
         --img-card-s-height: 160px;
-        --archive-vector-width: 242px;
-        --archive-vector-height: 99px;
+        
 
         --important-certificates-height: calc(var(--og-important-certificates-height) * .75);
 
@@ -2070,6 +2098,15 @@ thead {
         z-index: 2;
         position: relative;
     }
+
+
+    :root{
+        /* FOR ARCHIVES */
+        /* --archive-vector-width: 242px;
+        --archive-vector-height: 99px; */
+        --archive-vector-width: calc(460px * 0.5);
+        --archive-vector-height: calc(195px * 0.5);
+    }
 }
 
 @media screen and (min-width: 960px) and (max-width: 1024px){
@@ -2106,6 +2143,7 @@ thead {
         --hero-banner-height: 240px;
     }
 
+  
     .page-section.news{
         flex-direction: column;
     }
@@ -2163,6 +2201,12 @@ thead {
         z-index: 2;
         position: relative;
     } */
+
+    /* ARCHIVES */
+    :root{
+        --archives-page-section-flex-direction: column;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 800px){

@@ -599,6 +599,90 @@ $gallery = [
 ];
 
 
+$archives = [
+    [
+        "year_pk" => "2023",
+        "months" => [
+            [
+                "name" => "December",
+                "articles_fk" => [] // References to articles
+            ],
+            [
+                "name" => "November",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "October",
+                "articles_fk" => []
+            ]
+        ],
+    ],
+    [
+        "year_pk" => "2024",
+        "months" => [
+            [
+                "name" => "JANUARY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "FEBRUARY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "MARCH",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "APRIL",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "MAY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "JUNE",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "JULY",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "AUGUST",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "SEPTEMBER",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "OCTOBER",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "NOVEMBER",
+                "articles_fk" => []
+            ],
+            [
+                "name" => "DECEMBER",
+                "articles_fk" => []
+            ],
+        ],
+    ],
+    [
+        "year_pk" => "2025",
+        "months" => [
+            "January" => [2],
+            "February" => [],
+            "March" => []
+        ],
+    ],
+];
+
+// [1,2] ?
+
+
 // $articleTable = [
 //     [
 //         "header" => "In response to the scheduled power interruption by NGCP and Zamcelco in the West Coast area, including WMSU, on Saturday, March 8, 2025, all undergraduate and graduate classes will be conducted online.",

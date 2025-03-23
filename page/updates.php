@@ -12,16 +12,20 @@ if ($pageView === 'news-articles') {
     if($moreArticlesView === 'false'){
         if($articleView === 'true'){
             $directory = '../page-views/articles-views.php';
+            // $directory = '../page-views/updates/articles-views.php';
         }elseif($articleView === 'false'){
             $directory = '../page-views/news-articles-views.php';
+            // $directory = '../page-views/updates/news-articles-views.php';
         }
     }elseif($moreArticlesView === 'true'){
-        $directory = '../page-views/more-articles-views.php';
+        $directory = '../page-views/updates/more-articles-views.php';
+        // $directory = '../page-views/more-articles-views.php';
     }
 
 
 } elseif ($pageView === 'archives'){
     $directory = '../page-views/archives-views.php';
+    // $directory = '../page-views/updates/archives-views.php';
 
 } else {
     $directory = '../page-draft/backlog.php'; // Fallback or default view

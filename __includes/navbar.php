@@ -157,7 +157,9 @@
             <div class="MyWmsu-btn">
                 <a class="MyWmsu-link inter-regular" href="">MyWMSU</a>
             </div>
-            <button class="burger-menu"></button>
+            <button class="burger-menu">
+                <i class="bi bi-list"></i>
+            </button>
         </div>
     </section>
 </nav>
