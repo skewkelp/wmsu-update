@@ -35,6 +35,8 @@ $articleTable = [
         "gallery_style" => "1",
         "sdg_tag" => ['3','4','8','9','11','12','13'],
         "gallery_fk" => 0
+        ,"status" => "displayed"
+
     ],
     [
         "header" => "Western Mindanao State University joins the 2025 National Women’s Month Celebration!",
@@ -44,6 +46,7 @@ $articleTable = [
         "gallery_style" => "2",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 1
+        ,"status" => "displayed"
 
     ],
     [
@@ -78,7 +81,7 @@ $articleTable = [
         "gallery_style" => "5",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 2
-
+        ,"status" => "displayed"
     ],
     [
         "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
@@ -90,6 +93,7 @@ $articleTable = [
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
         "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
@@ -107,75 +111,80 @@ $articleTable = [
         "gallery_style" => "6",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 4
+        ,"status" => "displayed"
     ],
     [
         "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "header" => "7",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "header" => "8",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "header" => "9",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "header" => "10",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
-        "description" => "
-       
-        ",
+        "header" => "11",
+        "description" => "",
         "date" => "March 7, 2025",
         "thumbnail" => "../table-articles/4/image-2.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+        ,"status" => "displayed"
     ],
     [
-        "header" => "WMSU Celebrates Indigenous Heritage with “Katutubong Sining” Lecture-Workshop",
+        "header" => "12",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "13",
         "description" => "
        
         ",
@@ -184,6 +193,389 @@ $articleTable = [
         "gallery_style" => "8",
         "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
         "gallery_fk" => 3
+    ],
+    [
+        "header" => "14",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "15",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+    ],
+    [
+        "header" => "16",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "17",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "18",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "19",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "20",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "21",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "22",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "23",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "24",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "25",
+        "description" => "
+       
+        ",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "26",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "27",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "28",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "29",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "30",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "31",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "32",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "archived"
+    ],
+    [
+        "header" => "33",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "archived"
+    ],
+    [
+        "header" => "34",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "35",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "archived"
+    ],
+    [
+        "header" => "36",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "37",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "38",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "39",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "40",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "41",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "42",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "43",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "44",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "45",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "46",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "47",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "48",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
+    ],
+    [
+        "header" => "49",
+        "description" => "",
+        "date" => "March 7, 2025",
+        "thumbnail" => "../table-articles/3/image-1.jpg",
+        "gallery_style" => "8",
+        "sdg_tag" => ['1'],
+        "gallery_fk" => 3
+        ,"status" => "displayed"
     ]
 ];
 

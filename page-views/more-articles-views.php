@@ -8,21 +8,76 @@
 //TEMP DATA
     require_once '../table-articles/table-articles.php';
 
+    $condition = 'isNotSet';
+    $articleSize = count($articleTable);
+    $articlesPerPage = 12;
+    $totalPages = ceil($articleSize / $articlesPerPage);
+    
+    $moreArticlePage = isset($_GET['page']) ? (int)$_GET['page'] : 'err';
+    if($moreArticlePage){
+        // $totalPages = 59; // Total pages
+        // $articleIndex += 0;
+        $pageCount = $moreArticlePage;
+
+        $err = 'no error';
+        if($pageCount == 1){
+            $condition = 'is-1';
+            $articleIndex = 0;
+        }elseif($pageCount < 1){
+            $condition = 'less-1';
+            $pageCount = 1;
+            $articleIndex = 0;
+        }elseif($pageCount > 1){
+            $condition = 'greater-1';
+            $count = $moreArticlePage - 1;
+            $articleIndex = $count * $articlesPerPage;
+        }elseif($pageCount > $totalPages){
+            $condition = 'max article page-'. $articleSize;
+            $pageCount = 1;
+            $articleIndex = 0;
+        }
+    }
+    //ERROR CHECK  
+    elseif($moreArticlePage === 'err'){       
+        $err = 'error';
+        $moreArticlePage = 1;
+        $articleIndex = 0;
+        $pageCount = '';
+        $condition = 'err';
+        
+    }else{
+        $err = 'errorPageNull';
+        $condition = 'err';
+        $articleIndex = 0;
+        $moreArticlePage = 1;
+        $pageCount = '';
+    }
+    
+    
+
 ?>
 
 <div class="page-margin">
     <div class="page-section articles">
         <div class="section-title articles">
-            <h2>ARTICLE UPDATES</h2>
+            <h2>ARTICLE UPDATES 
+                <?php 
+                ////PHP CHECKER COMMENT OUT FOR TESTING
+                // echo '//art-size:' . $articleSize . ' ' . ' //pageCount:' .$pageCount . ' ' . ' //actualpage:'. $moreArticlePage .' //articleIndex:'. $articleIndex .' //condition:'. $condition . ' //' . $err;
+                ?>
+            </h2>
         </div>
 
         <div class="article-list">
             <?php  
             
-            $slicedArticles = array_slice($articleTable, 0, 12);
+            $slicedArticles = array_slice($articleTable, $articleIndex, $articlesPerPage);
             
             foreach ($slicedArticles as $index => $article):
                 $originalIndex = $index;
+                // if($article["status"] === "archived"){
+                //     continue;
+                // }
             ?>
             <div class="article">
                 <div class="main-info articles">
@@ -54,11 +109,68 @@
             <?php endforeach; ?>
          
         </div>
+
+        
+        <!-- <div class="pagination more-articles">
+            <div class="col previous">
+                <div class="icon"><img src="../img/icon/back-icon.png" alt=""></div>
+                <h1>PREVIOUS</h1>
+                <div class="description d-flex flex-column justify-content-start">
+                    <a href=""><h2>1</h2></a>
+                </div>
+            </div>
+            <div class="col">
+             
+            </div>
+            <div class="col next">
+                <div class="description d-flex flex-column justify-content-start">
+                    <a href=""><h2>1</h2></a>
+
+                </div>
+                <h1>NEXT</h1>
+                <div class="icon"><img src="../img/icon/next-icon.png" alt=""></div>
+
+            </div>
+        </div> -->
+        
+        <div class="pagination more-articles">
+            <a href="?page=<?php echo $pageCount - 1; ?>" class="prev <?php if ($pageCount == 1) echo 'disabled'; ?>">&laquo; Previous</a>
             
-        <div class="article-list more-articles">
+            <?php
+            // Showing pages dynamically
+            if($pageCount){
+                for ($i = 1; $i <= $totalPages; $i++) {
+                    if ($i == 1 || $i == $totalPages || ($i >= $pageCount - 1 && $i <= $pageCount + 1)) {
+                        // Highlight current page
+                        echo '<a href="?page-view=news-articles&more-articles=true&page=' . $i . '" class="page-number' . ($i == $pageCount ? ' active' : '') . '">' . $i . '</a>';
+                    } elseif ($i == 2 || $i == $totalPages - 1) {
+                        echo '<span class="ellipsis">...</span>';
+                    }
+                }
+            }else{
+                echo '<a href="?page-view=news-articles&more-articles=true&page=">ERROR</a>';
+            }
             
+         
+            ?>
+
+            <a href="?page-view=news-articles&more-articles=true&page=<?php echo $pageCount + 1; ?>" class="next <?php if ($pageCount == $totalPages) echo 'disabled'; ?>">Next &raquo;</a>
         </div>
         
+        <script>
+            const pageLinks = document.querySelectorAll('.pagination .page-number');
+
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    // Remove 'active' class from all links
+                    pageLinks.forEach(link => link.classList.remove('active'));
+                    // Add 'active' class to the clicked link
+                    this.classList.add('active');
+                    // Enable the link to change the page
+                    window.location.href = this.href; // Redirect to the clicked link's URL
+                });
+            });
+        </script>
 
     </div>
 </div>

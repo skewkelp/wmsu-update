@@ -1014,6 +1014,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     margin: 0;
 }
 
+/* pagination like buttom nav, used on article-view and mor-articles */
 .article .pagination{
     display: flex;
     flex-direction: row;
@@ -1027,6 +1028,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     flex-direction: row;
     gap: 4%;
     align-items: start;
+    justify-content: center;
 }.pagination .previous div{
     align-items: flex-start;
     text-align: start;
@@ -1050,7 +1052,64 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     color: #7E0804;
 }
 
+.more-articles .col{
+    align-items: center;
+}
 
+
+.pagination.more-articles{
+    justify-content: center;
+ 
+}
+.pagination.more-articles .col{
+    flex: 0;
+
+}
+
+.pagination.more-articles .description,
+.pagination.more-articles h2,
+.pagination.more-articles h1,
+.pagination.more-articles a {
+    align-self: center;
+    margin: 0;
+    font-size: 18px;
+}
+
+/* ddd */
+.pagination.more-articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.pagination.more-articles a {
+    color: #7E0804;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    margin: 0 5px;
+}
+
+.pagination.more-articles a.active {
+    background-color: yellow; /* Highlight the active page */
+    color: #7E0804;
+}
+
+.pagination.more-articles a:hover {
+    background-color: lightgray; /* Change color on hover */
+}
+
+.ellipsis {
+    margin: 0 5px; /* Space around ellipsis */
+}
+
+.prev, .next {
+    font-weight: bold; /* Style for Previous and Next links */
+}
+/*  */
 
 
 .section-title.archives{
@@ -1518,6 +1577,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     /* background-color: lightsalmon; */
     max-width: var(--img-card-s-width);
     /* max-width: 280px; */
+    align-self: flex-start;
 }
 
 .tag.articles .title-card{

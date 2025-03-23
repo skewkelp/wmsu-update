@@ -1,60 +1,154 @@
+<?php
+// Sample total number of pages and current page
+$totalPages = 59; // Total pages
+$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Get current page from URL, default is 1
+
+// Logic to prevent current page from being less than 1 or greater than total pages
+if ($currentPage < 1) {
+    $currentPage = 1;
+} elseif ($currentPage > $totalPages) {
+    $currentPage = $totalPages;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rich Text Editor with Bullets</title>
-    <!-- Include Quill CSS -->
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <title>Pagination Example</title>
     <style>
-        .editor {
-            height: 300px;
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+        }
+
+        .pagination a {
+            color: navy;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: 1px solid transparent;
+            margin: 0 5px;
+        }
+
+        .pagination a.active {
+            background-color: yellow; /* Highlight the active page */
+            color: darkblue;
+        }
+
+        .pagination a:hover {
+            background-color: lightgray; /* Change color on hover */
+        }
+
+        .ellipsis {
+            margin: 0 5px; /* Space around ellipsis */
+        }
+
+        .prev, .next {
+            font-weight: bold; /* Style for Previous and Next links */
         }
     </style>
 </head>
 <body>
-<h2>Write Your Article</h2>
 
-<!-- Create the editor container -->
-<div id="editor" class="editor"></div>
-
-<!-- Button to submit the content -->
-<button id="submit-button">Submit Article</button>
-
-<!-- Hidden form to send data to PHP -->
-<form id="article-form" action="submit.php" method="post" style="display:none;">
-    <input type="hidden" name="article_content" id="article-content">
-</form>
-
-<!-- Include Quill JS -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script>
-    // Initialize Quill editor
-    var quill = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-            toolbar: [
-                [{ 'header': [1, 2, false] }],
-                ['bold', 'italic', 'underline'],
-                ['clean'], // remove formatting button
-                [{ 'list': 'ordered' }, { 'list': 'bullet' }] // Correctly set list buttons
-            ]
+<div class="pagination">
+    <a href="?page=<?php echo $currentPage - 1; ?>" class="prev <?php if ($currentPage == 1) echo 'disabled'; ?>">&laquo; Previous</a>
+    
+    <?php
+    // Showing pages dynamically
+    for ($i = 1; $i <= $totalPages; $i++) {
+        if ($i == 1 || $i == $totalPages || ($i >= $currentPage - 1 && $i <= $currentPage + 1)) {
+            // Highlight current page
+            echo '<a href="?page=' . $i . '" class="page-number' . ($i == $currentPage ? ' active' : '') . '">' . $i . '</a>';
+        } elseif ($i == 2 || $i == $totalPages - 1) {
+            echo '<span class="ellipsis">...</span>';
         }
-    });
+    }
+    ?>
 
-    document.getElementById('submit-button').addEventListener('click', function() {
-        // Get content from the quill editor
-        var html = quill.root.innerHTML;
-        // Set the content in the hidden input
-        document.getElementById('article-content').value = html;
-        // Submit the form
-        document.getElementById('article-form').submit();
+    <a href="?page=<?php echo $currentPage + 1; ?>" class="next <?php if ($currentPage == $totalPages) echo 'disabled'; ?>">Next &raquo;</a>
+</div>
+
+<script>
+    const pageLinks = document.querySelectorAll('.pagination .page-number');
+
+    pageLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            // Remove 'active' class from all links
+            pageLinks.forEach(link => link.classList.remove('active'));
+            // Add 'active' class to the clicked link
+            this.classList.add('active');
+            // Enable the link to change the page
+            window.location.href = this.href; // Redirect to the clicked link's URL
+        });
     });
 </script>
 </body>
 </html>
 
+<?php
+//<--! SAMPLE QUIL.JS -->
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Rich Text Editor with Bullets</title>
+//     <!-- Include Quill CSS -->
+//     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+//     <style>
+//         .editor {
+//             height: 300px;
+//         }
+//     </style>
+// </head>
+// <body>
+// <h2>Write Your Article</h2>
 
+// <!-- Create the editor container -->
+// <div id="editor" class="editor"></div>
+
+// <!-- Button to submit the content -->
+// <button id="submit-button">Submit Article</button>
+
+// <!-- Hidden form to send data to PHP -->
+// <form id="article-form" action="submit.php" method="post" style="display:none;">
+//     <input type="hidden" name="article_content" id="article-content">
+// </form>
+
+// <!-- Include Quill JS -->
+// <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+// <script>
+//     // Initialize Quill editor
+//     var quill = new Quill('#editor', {
+//         theme: 'snow',
+//         modules: {
+//             toolbar: [
+//                 [{ 'header': [1, 2, false] }],
+//                 ['bold', 'italic', 'underline'],
+//                 ['clean'], // remove formatting button
+//                 [{ 'list': 'ordered' }, { 'list': 'bullet' }] // Correctly set list buttons
+//             ]
+//         }
+//     });
+
+//     document.getElementById('submit-button').addEventListener('click', function() {
+//         // Get content from the quill editor
+//         var html = quill.root.innerHTML;
+//         // Set the content in the hidden input
+//         document.getElementById('article-content').value = html;
+//         // Submit the form
+//         document.getElementById('article-form').submit();
+//     });
+// </script>
+// </body>
+// </html>
+
+?>
 
 <?php
 // SAMPLE GALLERY VIEW

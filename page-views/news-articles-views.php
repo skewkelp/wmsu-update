@@ -290,7 +290,7 @@
         </div>
             
         <div class="article-list more-articles">
-            <a href="updates?page-view=news-articles&more-articles=true" class="more-articles-link">
+            <a href="updates?page-view=news-articles&more-articles=true&page=1" class="more-articles-link">
                 <div class="more-articles-button">
                     <h2> See More Articles?</h2>
                 </div>
