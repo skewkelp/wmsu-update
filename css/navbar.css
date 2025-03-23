@@ -17,6 +17,7 @@ body{
     --nav-links-display: flex;
     --nav-bar-height: 100px;
     --nav-bar-padding: 15px 0;
+    --nav-bar-calc-padding: 30px;
 }
 
 
@@ -146,7 +147,7 @@ nav{
 .nav-dropdown{
     visibility: hidden;
     position: absolute;
-    top: var(--nav-bar-height); /* Aligns below navbar */
+    top: calc(var(--nav-bar-height) + var(--nav-bar-calc-padding)); /* Aligns below navbar */
     left: 0;
     background-color: white;
     width: 100%;
