@@ -18,6 +18,13 @@
     background-size: cover;
     opacity: 0.2;
 }
+.clickable-fb{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
 .fb-box{
     position: relative;
     isolation: isolate;
@@ -27,6 +34,9 @@
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+   
 }
 .fb-box::after{
     content: '';          
@@ -36,11 +46,14 @@
     background-image: url('../img/socmed/Facebooj.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 90%;
     background-position: 50% 30%; 
     border-radius: 30px;
     z-index: -1;
 }
+.fb-box:hover{
+    transform: scale(1.1);
+}  
 .new-blazer-box{
     position: relative;
     isolation: isolate;
@@ -50,6 +63,7 @@
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    transition: transform 0.5s ease-in-out;
 }
 .new-blazer-box::after{
     content: '';
@@ -64,6 +78,16 @@
     border-radius: 30px;
     
 }
+.new-blazer-box:hover{
+    transform: scale(1.1);
+}
+.clickable-new-blazer{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
 .digest-box{
     position: relative;
     isolation: isolate;
@@ -74,6 +98,8 @@
     background-size: cover;
     border-radius: 30px;
     overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    
 }
 .digest-box::after{
     content: '';
@@ -82,10 +108,20 @@
     background-color:rgba(220, 20, 60, 0.5);
     z-index: -1;
     background-image: url('../img/socmed/univeristy_Digest-removebg-preview.png');
-    background-size: 80%;
+    background-size: 70%;
     background-position: 50% 30%;
     background-repeat: no-repeat;
     
+}
+.digest-box:hover{
+    transform: scale(1.1);
+}
+.clickable-digest{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
 }
 .student-council-box{
     position: relative;
@@ -96,6 +132,7 @@
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    transition: transform 0.5s ease-in-out;
 }
 .student-council-box::after{
     content: '';
@@ -105,13 +142,46 @@
     z-index: -1;
     background-image: url('../img/socmed/student_council-removebg-preview.png');
     background-size: 60%;
-    background-position: 50% 30%;
+    background-position: 50% 32%;
     background-repeat: no-repeat;
     border-radius: 30px;
 }
-.texts{
+.clickable-student-council{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
+.student-council-box:hover{
+    transform: scale(1.1);
+}
+.text-fb{
     text-align: center;
     color: white;
     display: grid;
-    margin-top: 70%;
+    align-items: center;
+    padding-top: 70%;
 }
+.text-new-blazer{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 70%;
+}
+.university-digest-text{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 75%;
+}
+.usc-text{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 75%; 
+}
+

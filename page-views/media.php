@@ -16,33 +16,48 @@
     <link rel="stylesheet" href="../css/media.css">
 </head>
 <body>
-    <div class="hero-banner media" >
+    <div class="hero-banner media"></div>
     
-</div>
-
 <div class ="section-title archives">
     <h2>Our Official Publication Medias</h2>
 </div>
 <div class="container">
  <div class="box">
+
  <div class="fb-box">
-  <h4 class="texts">Facebook</h2>
+<div class="text-fb"> 
+      <h4>Facebook</h4>
+</div> 
+<a href="https://www.facebook.com/wmsu.edu.ph" class="clickable-fb"></a>
 </div>
+
  <div class="new-blazer-box">
-    <h4 class="texts">New Blazer</h2>
- </div>
+ <div class="text-new-blazer"> 
+       <h4>New Blazer</h4>
+</div>
+  <a href="https://www.facebook.com/thenewblazer" class="clickable-new-blazer"></a>    
+</div>
+
  <div class="digest-box">
-    <h4 class="texts">University Digest</h2>
+<div class="university-digest-text"> 
+ <h4>University Digest</h4>
+</div>   
+ <a href="https://www.facebook.com/theuniversitydigest" class="clickable-digest"></a>
  </div>
 </div>
 </div>
+
 <div class ="section-title archives">
-    <h2>Our Official Student Council</h2>
+<h2>Our Official Student Council</h2>
 </div>
+
 <div class="container">
 <div class="box">
 <div class="student-council-box">
-<h4 class="texts">Student Council</h4>
+<div class="usc-text">
+ <h4>Student Council</h4>
+</div>
+ <a href="https://www.facebook.com/WMSUSC" class="clickable-student-council"></a>
 </div>
 </div>
 </div>
