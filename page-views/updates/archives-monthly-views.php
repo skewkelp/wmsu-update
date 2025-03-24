@@ -15,7 +15,7 @@
     $pageCount = $morePage;
     $condition = 'isNotSet';
     $articlesPerPage = 12;
-    
+
     if($getYear && $getMonth){
         // $month = $getMonth;
         $archivedIndex = $getYear;
@@ -105,13 +105,13 @@
             ?>
             <div class="article">
                 <div class="main-info articles">
-                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $archived['gallery_style'];?>" class="img-card-link s">
+                    <a href="updates?page-view=archives&article-view=true&article-index=<?php echo $article;?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $archived['gallery_style'];?>" class="img-card-link s">
                         <div id="" class="img-card s">
                             <img src="<?php echo $archived['thumbnail'];?>" alt="">
                         </div>
                     </a>
                     <div class="description-card articles">
-                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $archived['gallery_style'];?>"><?php echo $archived['header'];?></a></h2>
+                        <h2><a href="updates?page-view=archives&article-view=true&article-index=<?php echo $article;?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $archived['gallery_style'];?>"><?php echo $archived['header'];?></a></h2>
                         <div class="date">
                             <h2><?php echo $archived['date'];?></h2>
                         </div>

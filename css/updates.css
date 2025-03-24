@@ -1543,7 +1543,9 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     justify-content: flex-end;
 }.article-list.more-articles .more-articles-link .more-articles-button{
     width: auto;
-    background-color: #7E0804;
+    /* background-color: #7E0804; */
+    background-color: #FFA500;
+    /* background-color: #007BFF; */
     padding: 20px;
     border-radius: 4%;
 }
@@ -1562,7 +1564,12 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 
 .more-articles .more-articles-link .more-articles-button h2{
     font-size: 18px;
-    color: white;
+    /* color: white; */
+    /* color: #FFD700; */
+    /* color: #7E0804; */
+    color: #000000;
+
+
 }
 
 @keyframes hop {

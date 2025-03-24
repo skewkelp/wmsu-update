@@ -32,8 +32,13 @@ if ($pageView === 'news-articles') {
         $directory = '../page-views/updates/archives-monthly-views.php';
 
     }elseif($moreArchivesView === 'false'){
-        $directory = '../page-views/archives-views.php';
         
+        if($articleView === 'true'){
+            $directory = '../page-views/updates/archived-articles-views.php';
+            // $directory = '../page-views/updates/articles-views.php';
+        }elseif($articleView === 'false'){
+            $directory = '../page-views/archives-views.php';
+        }
     }
 
 } else {

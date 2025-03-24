@@ -9,7 +9,31 @@
     require_once '../table-articles/table-articles.php';
 
     $articleIndex = isset($_GET['article-index']) ? $_GET['article-index'] : '';
+    $getYear = isset($_GET['archived-index']) ? (int)$_GET['archived-index'] : '';
+    $getMonth = isset($_GET['month-index']) ? (int)$_GET['month-index'] : '';
+    
     $article = [];
+
+    // 
+    $archiveObj = $archives[$getYear];
+    // echo '<pre style="margin-left:120px;">';
+    // var_dump($archiveObj);
+    // echo '</pre>';
+    $yearName = $archiveObj["year_pk"];
+    $monthList = $archiveObj["months"];
+    // echo '<pre style="margin-left:120px;">';
+    // var_dump($monthList[11]);
+    // echo '</pre>';
+
+    $archivedMonth = $monthList[$getMonth];
+    // echo '<pre style="margin-left:120px;">';
+    // var_dump($archivedMonth);
+    // echo '</pre>';
+    $monthName = $archivedMonth['name'];
+    $archivedArticles = $archivedMonth['articles_fk'];
+    // 
+
+
 
     if($articleIndex >= 0){
         $article = $articleTable[$articleIndex];
@@ -19,15 +43,18 @@
         
         $safeDescription = ($article['description']);
 
-        if(isset($articleTable[$articleIndex + 1])){
-            $prevArticle = $articleTable[$articleIndex + 1];    
+        if(isset($archivedArticles[$articleIndex + 1])){
+            $prevArticle = $archivedArticles[$articleIndex + 1];    
         }else{
             $prevArticle = false;
         }
 
-        $prevArticle = isset($articleTable[$articleIndex + 1]) ? $articleTable[$articleIndex + 1] : false;
+        $prevArticle = isset($archivedArticles[$articleIndex + 1]) ? $archivedArticles[$articleIndex + 1] : false;
+        $nextArticle = isset($archivedArticles[$articleIndex - 1]) ? $archivedArticles[$articleIndex - 1] : false;
 
-        $nextArticle = isset($articleTable[$articleIndex - 1]) ? $articleTable[$articleIndex - 1] : false;
+
+        // $prevArticle = isset($articleTable[$articleIndex + 1]) ? $articleTable[$articleIndex + 1] : false;
+        // $nextArticle = isset($articleTable[$articleIndex - 1]) ? $articleTable[$articleIndex - 1] : false;
            
         
         $prevIndex = $articleIndex + 1;
@@ -60,7 +87,7 @@
 </script>
 
 
-<div class="hero-banner news-article" >
+<div class="hero-banner archives" >
 </div>
 
 <div class="page-margin article">
@@ -145,17 +172,11 @@
                 // }elseif($galleryStyle === '7'){
                 //     $style = 'style-7';
                 // }
-                
                 $style = 'style-' . $galleryStyle;
-
-
 
                 $galleryDisplay= '
                 <div class="gallery ' . $style .'"> ' . $imageElements . ' </div>';
             }
-
-
-
             $galleryDisplay = $galleryDisplay ? $galleryDisplay : '<h2>ERR. NO IMAGE RECEIVED</h2>';
 
             echo $galleryDisplay;
@@ -163,7 +184,7 @@
 
             
 
-    <!-- style="display: none;" -->
+        <!-- style="display: none;" -->
         
         <div class="gallery style-5"  style="display: none;"> 
             <div class="img-container" onclick="openLightbox();currentSlide(1)"><img src="../img/article-sample-2.jpg" alt=""></div>
@@ -250,7 +271,6 @@
             <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
         </div>
-
     </div>
 
     <div class="pagination">
@@ -259,7 +279,11 @@
             <div class="description d-flex flex-column justify-content-start">
                 <h1>PREVIOUS</h1>
                 <div class="text-container">
-                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&gallery-style=<?php echo $prevArticle? $prevArticle['gallery_style']: '';?>">
+                    <h2><a href="
+                        updates?page-view=archives&article-view=true&article-index=<?php echo $article;?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $archived['gallery_style'];?>
+                    
+                    
+                    updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&gallery-style=<?php echo $prevArticle? $prevArticle['gallery_style']: '';?>">
                         <?php echo $prevArticle? $prevArticle['header']: '';?></a>
                     </h2>
                 </div>
