@@ -594,6 +594,25 @@ $gallery = [
     ]
 ];
 
+// $pageCount = $morePage;
+// $condition = 'isNotSet';
+// $articlesPerPage = 12;
+
+// if($getYear && $getMonth){
+//     // $month = $getMonth;
+//     $archivedIndex = $getYear;
+
+//     $archiveObj = $archives[$archivedIndex];
+//     $yearName = $archiveObj["year_pk"];
+//     $monthList = $archiveObj["months"];
+
+//     $archivedMonth = $monthList[$getMonth];
+//     $monthName = $archivedMonth['name'];
+//     $archivedArticles = $archivedMonth['articles_fk'];
+   
+//     if (isset($monthList[$getMonth])){
+//         $articleSize = count($archivedArticles);
+//         $totalPages = ceil($articleSize / $articlesPerPage);
 
 $archives = [
     [
@@ -684,6 +703,8 @@ $archives = [
         ],
     ],
 ];
+
+
 
 // [1,2] ?
 

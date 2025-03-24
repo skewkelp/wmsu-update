@@ -1084,7 +1084,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 .pagination .col{
     display: flex;
     flex-direction: row;
-    gap: 4%;
+    gap: 8%;
     align-items: start;
     justify-content: center;
 }.pagination .previous div{
@@ -1094,6 +1094,20 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     align-items: flex-end;
     text-align: end;
 }
+
+
+/* .pagination.archives{
+    justify-content: space-between;
+} */
+.pagination.archives .col.previous{
+    justify-content: flex-start;
+}
+.pagination.archives .col.next{
+    justify-content: flex-end;
+}
+
+.pagination.archives > .text
+
 
 .col .description .text-container{
     max-width: 70%;

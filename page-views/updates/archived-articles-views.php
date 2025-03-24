@@ -32,33 +32,47 @@
     $monthName = $archivedMonth['name'];
     $archivedArticles = $archivedMonth['articles_fk'];
     // 
-
+    //   echo '<pre style="margin-left:120px;">';
+    //     var_dump($archivedArticles);
+    //     echo '</pre>';
 
 
     if($articleIndex >= 0){
         $article = $articleTable[$articleIndex];
         $imageCollection = $gallery[$article['gallery_fk']];
+        $safeDescription = ($article['description']);
         
         // $safeDescription = nl2br(htmlspecialchars($article['description']));
+        $prevIndex = array_search($articleIndex, $archivedArticles) - 1;
+        $nextIndex = array_search($articleIndex, $archivedArticles) + 1;
+        //  echo '<pre style="margin-left:120px;">';
+        // var_dump($prevIndex);
+        // echo '</pre>';
+        //  echo '<pre style="margin-left:120px;">';
+        // var_dump($archivedArticles[$articleIndex]);
+        // echo '</pre>';
         
-        $safeDescription = ($article['description']);
+        // $archivedArticles[$prevIndex];
+        //  echo '<pre style="margin-left:120px;">';
+        // var_dump($prevIndex);
+        // echo '</pre>';
 
-        if(isset($archivedArticles[$articleIndex + 1])){
-            $prevArticle = $archivedArticles[$articleIndex + 1];    
-        }else{
-            $prevArticle = false;
-        }
+        // $archivedArticles[$nextIndex];
+        //  echo '<pre style="margin-left:120px;">';
+        // var_dump($nextIndex);
+        // echo '</pre>';
 
-        $prevArticle = isset($archivedArticles[$articleIndex + 1]) ? $archivedArticles[$articleIndex + 1] : false;
-        $nextArticle = isset($archivedArticles[$articleIndex - 1]) ? $archivedArticles[$articleIndex - 1] : false;
+        // $archivedIndex= $archivedArticles[$prevIndex];
+        // var_dump($articleTable[$archivedIndex]);
+        //  echo '<pre style="margin-left:120px;">';
+        // var_dump($articleTable[$archivedArticles[0]]);
+        // echo '</pre>';
+        $prevArticle = isset($archivedArticles[$prevIndex]) ? $articleTable[$archivedArticles[$prevIndex]] : false;
+        $nextArticle = isset($archivedArticles[$nextIndex]) ? $articleTable[$archivedArticles[$nextIndex]] : false;
 
+        $prevStyle = isset($prevArticle['gallery_style'])? $prevArticle['gallery_style'] : '';
 
-        // $prevArticle = isset($articleTable[$articleIndex + 1]) ? $articleTable[$articleIndex + 1] : false;
-        // $nextArticle = isset($articleTable[$articleIndex - 1]) ? $articleTable[$articleIndex - 1] : false;
-           
-        
-        $prevIndex = $articleIndex + 1;
-        $nextIndex = $articleIndex - 1;
+        $nextStyle = isset($nextArticle['gallery_style'])? $nextArticle['gallery_style'] : '';
         
         // echo '<h1>converted description = ' . $safeDescription . '</h1> ';
     }else{
@@ -273,27 +287,23 @@
         </div>
     </div>
 
-    <div class="pagination">
+    <div class="pagination archives">
         <div class="col previous">
             <div class="icon"><img src="../img/icon/back-icon.png" alt=""></div>
-            <div class="description d-flex flex-column justify-content-start">
+            <div class="description d-flex flex-column ">
                 <h1>PREVIOUS</h1>
                 <div class="text-container">
-                    <h2><a href="
-                        updates?page-view=archives&article-view=true&article-index=<?php echo $article;?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $archived['gallery_style'];?>
-                    
-                    
-                    updates?page-view=news-articles&article-view=true&article-index=<?php echo $prevIndex;?>&gallery-style=<?php echo $prevArticle? $prevArticle['gallery_style']: '';?>">
+                    <h2><a href="updates?page-view=archives&article-view=true&article-index=<?php echo $archivedArticles[$prevIndex];?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $prevStyle;?>">
                         <?php echo $prevArticle? $prevArticle['header']: '';?></a>
                     </h2>
                 </div>
             </div>
         </div>
         <div class="col next">
-            <div class="description d-flex flex-column justify-content-start">
+            <div class="description d-flex flex-column">
                 <h1>NEXT</h1>
                 <div class="text-container">
-                    <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $nextIndex;?>&gallery-style=<?php echo $nextArticle? $nextArticle['gallery_style']: '';?>">
+                    <h2><a href="updates?page-view=archives&article-view=true&article-index=<?php echo $archivedArticles[$nextIndex];?>&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&gallery-style=<?php echo $nextStyle ;?>">
                         <?php echo $nextArticle? $nextArticle['header'] : '';?></a>
                     </h2>
                 </div>
