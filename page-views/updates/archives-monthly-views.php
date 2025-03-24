@@ -7,18 +7,44 @@
 <?php 
 //TEMP DATA
     require_once '../table-articles/table-articles.php';
+    $getYear = isset($_GET['archived-index']) ? (int)$_GET['archived-index'] : '';
+    $getMonth = isset($_GET['month-index']) ? (int)$_GET['month-index'] : '';
+    $morePage = isset($_GET['page']) ? (int)$_GET['page'] : 'err';
 
+
+    $pageCount = $morePage;
     $condition = 'isNotSet';
-    $articleSize = count($articleTable);
     $articlesPerPage = 12;
-    $totalPages = ceil($articleSize / $articlesPerPage);
     
-    $moreArticlePage = isset($_GET['page']) ? (int)$_GET['page'] : 'err';
-    if($moreArticlePage){
-        // $totalPages = 59; // Total pages
-        // $articleIndex += 0;
-        $pageCount = $moreArticlePage;
+    if($getYear && $getMonth){
+        // $month = $getMonth;
+        $archivedIndex = $getYear;
 
+        $archiveObj = $archives[$archivedIndex];
+        $yearName = $archiveObj["year_pk"];
+        $monthList = $archiveObj["months"];
+
+        $archivedMonth = $monthList[$getMonth];
+        $monthName = $archivedMonth['name'];
+        $archivedArticles = $archivedMonth['articles_fk'];
+       
+        if (isset($monthList[$getMonth])){
+            $articleSize = count($archivedArticles);
+            $totalPages = ceil($articleSize / $articlesPerPage);
+
+            // echo '<pre style="margin-left:120px;">';
+            // var_dump($archivedArticles);
+            // echo '</pre>';
+        }else{
+            echo '<h1>HUGEEE ERRIRRR/ </h1>';
+            // echo '<pre>';
+            // var_dump($monthList[3]);
+            // echo '</pre>';
+        }
+        
+        // $articleSize = count($archivedMonth["articles_fk"]);
+        // $totalPages = ceil($articleSize / $articlesPerPage);
+    
         $err = 'no error';
         if($pageCount == 1){
             $condition = 'is-1';
@@ -29,7 +55,7 @@
             $articleIndex = 0;
         }elseif($pageCount > 1){
             $condition = 'greater-1';
-            $count = $moreArticlePage - 1;
+            $count = $morePage - 1;
             $articleIndex = $count * $articlesPerPage;
         }elseif($pageCount > $totalPages){
             $condition = 'max article page-'. $articleSize;
@@ -38,9 +64,9 @@
         }
     }
     //ERROR CHECK  
-    elseif($moreArticlePage === 'err'){       
+    elseif($morePage === 'err'){       
         $err = 'error';
-        $moreArticlePage = 1;
+        $morePage = 1;
         $articleIndex = 0;
         $pageCount = '';
         $condition = 'err';
@@ -49,7 +75,7 @@
         $err = 'errorPageNull';
         $condition = 'err';
         $articleIndex = 0;
-        $moreArticlePage = 1;
+        $morePage = 1;
         $pageCount = '';
     }
     
@@ -60,36 +86,34 @@
 <div class="page-margin">
     <div class="page-section articles">
         <div class="section-title articles">
-            <h2>ARTICLE UPDATES 
+            <h2><?php echo $monthName? $monthName: 'MONTH:';?> 
                 <?php 
                 ////PHP CHECKER COMMENT OUT FOR TESTING
-                // echo '//art-size:' . $articleSize . ' ' . ' //pageCount:' .$pageCount . ' ' . ' //actualpage:'. $moreArticlePage .' //articleIndex:'. $articleIndex .' //condition:'. $condition . ' //' . $err;
+                // echo '//art-size:' . $articleSize . ' ' . ' //pageCount:' .$pageCount . ' ' . ' //actualpage:'. $morePage .' //articleIndex:'. $articleIndex .' //condition:'. $condition . ' //' . $err;
                 ?>
             </h2>
         </div>
 
         <div class="article-list">
             <?php  
-            
-            $slicedArticles = array_slice($articleTable, $articleIndex, $articlesPerPage);
-            
+            $slicedArticles = array_slice($archivedArticles, $articleIndex, $articlesPerPage);
             foreach ($slicedArticles as $index => $article):
+                $archived = $articleTable[$article];
+
                 $originalIndex = $index;
-                // if($article["status"] === "archived"){
-                //     continue;
-                // }
+               
             ?>
             <div class="article">
                 <div class="main-info articles">
-                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>" class="img-card-link s">
+                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $archived['gallery_style'];?>" class="img-card-link s">
                         <div id="" class="img-card s">
-                            <img src="<?php echo $article['thumbnail'];?>" alt="">
+                            <img src="<?php echo $archived['thumbnail'];?>" alt="">
                         </div>
                     </a>
                     <div class="description-card articles">
-                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
+                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $archived['gallery_style'];?>"><?php echo $archived['header'];?></a></h2>
                         <div class="date">
-                            <h2><?php echo $article['date'];?></h2>
+                            <h2><?php echo $archived['date'];?></h2>
                         </div>
                     </div>
                 </div>
@@ -98,7 +122,7 @@
                         <p>Related Info</p>
                     </div>
                     <div class="label-tags">
-                        <?php foreach ($article['sdg_tag'] as $tag): ?>
+                        <?php foreach ($archived['sdg_tag'] as $tag): ?>
                             <button class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?>
                             </button>
                         <?php endforeach; ?>
@@ -134,7 +158,7 @@
         </div> -->
         
         <div class="pagination more-articles">
-            <a href="?page=<?php echo $pageCount - 1; ?>" class="prev <?php if ($pageCount == 1) echo 'disabled'; ?>">&laquo; Previous</a>
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&page=<?php echo $pageCount - 1; ?>" class="prev <?php if ($pageCount == 1) echo 'disabled'; ?>">&laquo; Previous</a>
             
             <?php
             // Showing pages dynamically
@@ -142,19 +166,20 @@
                 for ($i = 1; $i <= $totalPages; $i++) {
                     if ($i == 1 || $i == $totalPages || ($i >= $pageCount - 1 && $i <= $pageCount + 1)) {
                         // Highlight current page
-                        echo '<a href="?page-view=news-articles&more-articles=true&page=' . $i . '" class="page-number' . ($i == $pageCount ? ' active' : '') . '">' . $i . '</a>';
+                        echo '<a href="updates?page-view=archives&more-archives=true&archived-index='.$getYear . '&month-index=' . $getMonth . '&page=' . $i . '" class="page-number' . ($i == $pageCount ? ' active' : '') . '">' . $i . '</a>';
                     } elseif ($i == 2 || $i == $totalPages - 1) {
                         echo '<span class="ellipsis">...</span>';
                     }
+                    // 
                 }
             }else{
-                echo '<a href="?page-view=news-articles&more-articles=true&page=">ERROR</a>';
+                echo '<a href="updates?page-view=archives&more-archives=true&archived-index='.$getYear . '&month-index=' . $getMonth . '&page-view=news-articles&more-articles=true&page=">ERROR</a>';
             }
             
          
             ?>
 
-            <a href="?page-view=news-articles&more-articles=true&page=<?php echo $pageCount + 1; ?>" class="next <?php if ($pageCount == $totalPages) echo 'disabled'; ?>">Next &raquo;</a>
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $getMonth;?>&page=<?php echo $pageCount + 1; ?>" class="next <?php if ($pageCount == $totalPages) echo 'disabled'; ?>">Next &raquo;</a>
         </div>
         
         <script>
@@ -294,3 +319,39 @@
             <p>wmsu@wmsu.edu.ph</p>
         </div>
     </div>
+
+<?php 
+////$archiveObj = $archives[$archivedIndex];
+// echo '<pre>';
+// var_dump($archives);
+// echo '</pre>';
+
+////$yearName = $archiveObj["year_pk"];
+// echo '<pre>';
+// var_dump($yearName);
+// echo '</pre>';
+
+// echo '<pre>';
+// var_dump($archiveObj["months"]);
+// echo '</pre>';
+
+////$monthList = $archiveObj["months"];
+// echo '<pre>';
+// var_dump($monthList[$getMonth]);
+// echo '</pre>';
+
+////$archivedMonth = $monthList[$getMonth];
+// echo '<pre>';
+// var_dump($archivedMonth);
+// echo '</pre>';
+
+////$monthName = $archivedMonth['name'];
+// echo '<pre>';
+// var_dump($monthName);
+// echo '</pre>';
+
+//// $archivedArticles = $archivedMonth['articles_fk'];
+// echo '<pre>';
+// var_dump($archivedArticles);
+// echo '</pre>';
+?>

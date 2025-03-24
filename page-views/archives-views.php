@@ -10,17 +10,20 @@
 </div>
 <?php 
     require_once '../table-articles/table-articles.php';
-    $defaultYear = 2; //default year index for archive
+    $defaultYear = 1; //default year index for archive
 
     $getYear = isset($_GET['archived-index']) ? (int)$_GET['archived-index'] : '';
-
-    if($getYear){
- 
+    $archivedIndex = $getYear;
+    $archiveObj = $archives[$archivedIndex];
+    $yearName = $archiveObj["year_pk"];
+    $monthList = $archiveObj["months"];
+    
+    if($getYear || $getYear >= 0){
         if($getYear == $defaultYear){
-            $currentIndex = $defaultYear - 1;
+            $currentIndex = $defaultYear;
             $prevYear = $currentIndex;
         }if($getYear > $defaultYear || $getYear < $defaultYear){
-            $currentIndex = $getYear - 1;
+            $currentIndex = $getYear;
             $prevYear = $currentIndex;
             if($prevYear == 0){
                 $prevNav = false;
@@ -28,12 +31,11 @@
                 $prevNav = isset($archives[$prevYear]) ? $archives[$prevYear] : false;
             }
         }
-        $nextYear = $currentIndex + 1;
+        $nextYear = $currentIndex;
         //1 = 0  2 = 1, 3 = 2
 
         $nextNav = isset($archives[$nextYear]) ? $archives[$nextYear] : false;
            
-        
 
         $yearlyArchived = $archives[$currentIndex];
         $monthlyArchived = $yearlyArchived["months"];
@@ -47,14 +49,12 @@
         $firstMonthList = array_slice($monthlyArchived, -1 *($firstCount)); // 
         
         $secondMonthList = array_slice($monthlyArchived, 0,($secondCount)); // 
-    
     }
-    
     else{
         $currentIndex = 'ERR';
     }
-
-   
+    $nextYear == count($archives) - 1? $nextNav = false : '';
+    
 ?>
 
 <script>
@@ -74,15 +74,15 @@
 </script>
 
 <div class="section-title archives">
-    <h2>YEARLY
+    <h2 style="color: #FFD700; font-size:42px;"><?php echo $yearName? $yearName : 'YEARLY'?>
         <?php 
          ////COMMENT DEBUGGING
             // echo '<br>second:' . $secondCount . ' //prevYear:' . $prevYear . ' //currentYear or getYear:' . $getYear .' //nextYear:' .  $nextYear . ' //currentIndex:' . $currentIndex ;
         ?>
     </h2>
 
-    <div class="d-flex flex-row" style="gap: 20px;">
-        <a class="button previous archives" href="updates?page-view=archives&archived-index=<?php echo $prevYear;?>">&laquo;</a>
+    <div class="d-flex flex-row" style="gap: 40px;">
+        <a class="button previous archives" href="updates?page-view=archives&archived-index=<?php echo $prevYear - 1;?>">&laquo;</a>
         <h2><?php 
             echo $yearlyArchived["year_pk"];
         ?></h2>
@@ -94,11 +94,11 @@
 
         <div class="month-list">
         <?php  
-        for ($index = $firstCount - 1; $index >= 0; $index--):
+        for ($index = $firstCount - 1, $actualIndex = $monthlyCount - 1; $index >= 0; $index--, $actualIndex--):
             $month = $firstMonthList[$index]; // Access the month using the index
             $originalIndex = $index + 1; // Increment index for display
             ?>
-            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $originalIndex?>">
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $actualIndex?>&page=1">
                 <div class="month">
                     <div class="description-card">
                         <h2><?php echo $month["name"] ?></h2>
@@ -117,11 +117,11 @@
 
         <div class="month-list">
         <?php  
-        for ($index = $secondCount - 1; $index >= 0; $index--):
+        for ($index = $secondCount - 1, $actualIndex = $secondCount - 1; $index >= 0; $index--, $actualIndex--):
             $month = $secondMonthList[$index]; // Access the month using the index
             $originalIndex = $index + 1; // Increment index for display
             ?>
-            <a href="">
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $actualIndex?>&page=1">
                 <div id="" class="month">
                     <div class="description-card">
                         <h2><?php echo $month["name"] ?></h2>

@@ -140,7 +140,7 @@
                             <p class="inter-light">Announcements</p>
                             <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
                             <p class="inter-light">Media</p>
-                            <p class="inter-light"><a href="updates?page-view=archives&archived-index=2">Archives</a></p>
+                            <p class="inter-light"><a href="updates?page-view=archives&archived-index=1">Archives</a></p>
                         </div>
                         <div class="nav-divider"></div>
 

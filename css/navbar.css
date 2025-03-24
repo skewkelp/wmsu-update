@@ -22,7 +22,7 @@ body{
 
 
 nav{
-    top: 0;
+    /* top: 0; */
     width: 100vw;
     position: sticky;
     z-index: 4;

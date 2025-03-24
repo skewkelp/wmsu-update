@@ -1167,6 +1167,13 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 .prev, .next {
     font-weight: bold; /* Style for Previous and Next links */
 }
+
+.disabled {
+    color: gray; /* Change text color to gray */
+    pointer-events: none; /* Disable clicks */
+    text-decoration: none; /* Remove underline */
+    opacity: 0.6; /* Make it look faded */
+}
 /*  */
 
 

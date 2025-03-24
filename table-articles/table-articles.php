@@ -364,14 +364,14 @@ $articleTable = [
         ,"status" => "displayed"
     ],
     [
-        "header" => "29",
+        "header" => "29archived",
         "description" => "",
-        "date" => "March 7, 2025",
+        "date" => "December 7, 2024",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
         "gallery_fk" => 3
-        ,"status" => "displayed"
+        ,"status" => "archived"
     ],
     [
         "header" => "30",
@@ -396,7 +396,7 @@ $articleTable = [
     [
         "header" => "32archived",
         "description" => "",
-        "date" => "March 7, 2025",
+        "date" => "December 7, 2024",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
@@ -406,7 +406,7 @@ $articleTable = [
     [
         "header" => "33archived",
         "description" => "",
-        "date" => "March 7, 2025",
+        "date" => "December 7, 2024",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
@@ -426,7 +426,7 @@ $articleTable = [
     [
         "header" => "35archived",
         "description" => "",
-        "date" => "March 7, 2025",
+        "date" => "December 7, 2024",
         "thumbnail" => "../table-articles/3/image-1.jpg",
         "gallery_style" => "8",
         "sdg_tag" => ['1'],
@@ -613,7 +613,7 @@ $archives = [
             ],
         ],
     ],
-    [
+    [   
         "year_pk" => "2024",
         "months" => [
             [
@@ -662,7 +662,7 @@ $archives = [
             ],
             [
                 "name" => "DECEMBER",
-                "articles_fk" => []
+                "articles_fk" => [28, 31, 32, 34]
             ],
         ],
     ],
