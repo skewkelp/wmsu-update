@@ -50,6 +50,7 @@ button{
 
     --page-margin-width: 120px;
     --hero-banner-height: 420px;
+    --hero-banner-2nd-height: 720px;
     --img-card-b-width: 580px;
     --img-card-b-height: 387px;
 
@@ -480,6 +481,15 @@ button{
     background-image: url("../img/hero-banner/archives.png");
 }
 
+.hero-banner.media{ /* MEDIA PAGE */
+    background-image: url("../img/hero-banner/media-banner.png");
+}
+
+.hero-banner.president-corner{ /* MEDIA PAGE */
+    height: calc(var(--hero-banner-2nd-height) * .78);
+    background-image: url("../img/hero-banner/president-corner.png");
+}
+
 
 .page-title-box{
     display: flex;
@@ -599,7 +609,7 @@ button{
     align-items: flex-start;
 }
 
-.section-title.archives{
+.section-title.archives, .section-title.president-corner{
     display: flex;
     justify-content: space-between;
     font-weight: 600;
@@ -607,9 +617,19 @@ button{
     padding: 15px 0;
     align-items: center;
 }.section-title.archives > h2, 
-.section-title.archives > div{
+.section-title.archives > div,
+.section-title.president-corner > h2, 
+.section-title.president-corner > div{
     margin: 0 var(--page-margin-width);
 }
+
+/* PRESIDENT-CORNER */
+.section-title.president-corner{
+    justify-content: flex-end;
+    /* justify-content: flex-start; */
+}
+
+
 
 .button.archives{
     background-color: white;
@@ -809,6 +829,13 @@ button{
 .page-section .page-header{
     padding-bottom: 8px;
 }
+
+/* PRES CORNER */
+.page-section.president-corner .article-list{
+    margin-bottom: 40px;
+}
+
+
 
 .page-section .date h1,
 .page-section .date h2{
@@ -1564,7 +1591,9 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     border-radius: 4%;
 }
 
-.article-list.more-articles .more-articles-link {
+.article-list.more-articles .more-articles-link,
+.article-list.more-articles .more-articles-link
+{
     animation: hop 8s ease-in-out infinite; 
     transition: transform 0.3s ease-in-out;
 }
@@ -1582,9 +1611,10 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     /* color: #FFD700; */
     /* color: #7E0804; */
     color: #000000;
-
-
 }
+
+/* PRESIDENT CORNER */
+
 
 @keyframes hop {
     0%, 30% {
@@ -2007,6 +2037,7 @@ thead {
     :root{
         --page-margin-width: 80px;
         --hero-banner-height: calc(420px * .85);
+        --hero-banner-2nd-height: calc(720px * .85);
         --img-card-b-width: 400px;
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
@@ -2032,6 +2063,8 @@ thead {
     :root{
         --page-margin-width: 30px;
         --hero-banner-height: calc(420px * .8);
+        --hero-banner-2nd-height: calc(720px * .8);
+
         /* --hero-banner-height: 280px; */
         --img-card-b-width: 400px;
         --img-card-b-height: 267px;
@@ -2063,6 +2096,8 @@ thead {
     :root{
         --page-margin-width: 30px;
         --hero-banner-height: 280px;
+        --hero-banner-2nd-height: calc(720px * .7);
+
         --img-card-b-width: 400px;
         --img-card-b-height: 267px;
         --img-card-s-width: 240px;
@@ -2200,6 +2235,8 @@ thead {
         /* --sdg-filter-width: calc(140px * 0.7);
         --sdg-filter-height: calc(140px * 0.7); */
         --hero-banner-height: 240px;
+        --hero-banner-2nd-height: calc(720px * .58);
+
     }
 
   

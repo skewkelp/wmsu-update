@@ -132,14 +132,14 @@
                         <div class="dropdown-content">
                             <h6 class="inter-bold">UPDATES</h6>
                             <h6 class="inter-bold">THE PRESIDENT'S CORNER</h6>
-                            <p class="inter-light">Updates</p>
+                            <p class="inter-light"><a href="updates?page-view=president-corner">Updates</a></p>
                             <p class="inter-light">About the President</p>
                             <p class="inter-light">President's Reports</p>
                             <br>
                             <h6 class="inter-bold">NEWS & EVENTS</h6>
                             <p class="inter-light">Announcements</p>
                             <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
-                            <p class="inter-light">Media</p>
+                            <p class="inter-light"><a href="updates?page-view=media">Media</a></p>
                             <p class="inter-light"><a href="updates?page-view=archives&archived-index=1">Archives</a></p>
                         </div>
                         <div class="nav-divider"></div>

@@ -41,6 +41,10 @@ if ($pageView === 'news-articles') {
         }
     }
 
+} elseif($pageView == 'media'){
+    $directory = '../page-views/updates/media.php';
+} elseif($pageView == 'president-corner'){
+    $directory = '../page-views/updates/president-corner-view.php';
 } else {
     $directory = '../page-draft/backlog.php'; // Fallback or default view
 }
