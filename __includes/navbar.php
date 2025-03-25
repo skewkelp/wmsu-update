@@ -137,7 +137,7 @@
                             <p class="inter-light">President's Reports</p>
                             <br>
                             <h6 class="inter-bold">NEWS & EVENTS</h6>
-                            <p class="inter-light">Announcements</p>
+                            <p class="inter-light"><a href="updates?page-view=announcements">Announcements</a></p>
                             <p class="inter-light"><a href="updates?page-view=news-articles">News Articles</a></p>
                             <p class="inter-light"><a href="updates?page-view=media">Media</a></p>
                             <p class="inter-light"><a href="updates?page-view=archives&archived-index=1">Archives</a></p>

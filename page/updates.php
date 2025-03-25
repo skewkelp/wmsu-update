@@ -45,7 +45,14 @@ if ($pageView === 'news-articles') {
     $directory = '../page-views/updates/media.php';
 } elseif($pageView == 'president-corner'){
     $directory = '../page-views/updates/president-corner-view.php';
-} else {
+} elseif($pageView == 'announcements'){
+    if($articleView === 'true'){
+        $directory = '../page-views/updates/announcements-article-view.php';
+    }else{
+        $directory = '../page-views/updates/announcements.php';
+    }
+
+}else {
     $directory = '../page-draft/backlog.php'; // Fallback or default view
 }
 ?>

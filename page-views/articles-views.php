@@ -65,7 +65,6 @@
 
 <div class="page-margin article">
     <div class="page-section article">
-
         <div class="page-header article">
             <h1><?php echo $article['header'];?></h2>
         </div>

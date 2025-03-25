@@ -1,0 +1,90 @@
+.box{                  /* the container*/
+ position: relative;
+ height: 200px;
+ width: 90%;   
+ margin: 5%;
+ display: flex;
+ flex-direction: row;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+ transition: 0.5 ease-in-out;
+ z-index: 1;
+}
+.box::after{         /*background of the container*/
+content: '';
+position: absolute;
+inset: 0; 
+z-index: -1;   
+background-image: url('../imgs/wsmu.jpg');
+opacity: 0.1; 
+background-size: contain;
+}
+.clickable-text:hover{   
+    color: rgb(162, 1, 1);
+}
+.box-content{           /* the whole contents of the box*/
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.text-content{         /* just the text of the container except the sdg goals*/
+    font-size: larger;
+}
+
+.SDG-goals-content{   /* this is for the sdg goals to flex*/
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.box-content{       /* the contents of the box to have color*/
+    color: crimson;
+}
+
+.clickable-text{   /* animtation and text for navigation to the next page*/
+    color: crimson;
+    font-size: 30px;
+    transition: 0.5 ease-in-out;
+}
+/* here onwards is the announcements-content.php */
+
+.container{         /*container of the whole thing*/
+    position: relative;
+    height: 1000px;
+    width: 90%;   
+    margin: 5%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.content-title{    /*text at the beginning*/
+    padding: 40px;
+}
+.title{           /* the title of the article*/
+    margin-top: 30px;
+    color: crimson;
+}
+.title-date{     /*date of the article*/
+    color: crimson;
+}
+
+.announcement-pic{   /* the picture*/
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-image: url('../img/bomb-threats.jpg');
+    background-size: contain;
+    background-position: 50% 40%;
+}
+.announcement-pic-text{   /* the text under the picture*/
+    text-align: center;
+    margin-top: 30px;
+}
+
+.arrow {           /* arrow for going back*/
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    transition: color 0.3s;
+    font-size: 40px;
+  }
+  
+  .arrow:hover {
+    color: crimson; /* Change color on hover */
+  }
+  

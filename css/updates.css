@@ -485,9 +485,12 @@ button{
     background-image: url("../img/hero-banner/media-banner.png");
 }
 
-.hero-banner.president-corner{ /* MEDIA PAGE */
+.hero-banner.president-corner{ /* PRESIDENT-CORNER */
     height: calc(var(--hero-banner-2nd-height) * .78);
     background-image: url("../img/hero-banner/president-corner.png");
+}
+.hero-banner.announcements{ /* PRESIDENT-CORNER */
+    background-image: url("../img/hero-banner/announcements-banner.png");
 }
 
 
