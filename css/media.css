@@ -1,7 +1,6 @@
 
-.box{
+.box{                       /* the container itself*/
     position: relative;
-    border: 2px solid black;
     height: 350px;
     margin: 20px;
     display: flex;
@@ -10,7 +9,7 @@
     align-items: center;
     
 }
-.box::before{
+.box::before{             /* this makes the blur in the background*/
     content: '';
     position: absolute;
     inset: 0;             /*makes it able to display content */
@@ -18,14 +17,14 @@
     background-size: cover;
     opacity: 0.2;
 }
-.clickable-fb{
+.clickable-fb{          /*Makes the picture clickable*/
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;   /* makes sure its on top */
 }
-.fb-box{
+.fb-box{              /* the container of the facebook image*/
     position: relative;
     isolation: isolate;
     height: 250px;
@@ -38,7 +37,7 @@
     transition: transform 0.5s ease-in-out;
    
 }
-.fb-box::after{
+.fb-box::after{       /* The background of the fb container*/
     content: '';          
     position: absolute;
     inset: 0;           /*makes it able to display content */
@@ -54,7 +53,7 @@
 .fb-box:hover{
     transform: scale(1.1);
 }  
-.new-blazer-box{
+.new-blazer-box{     /*The container of the new-blazer pic*/
     position: relative;
     isolation: isolate;
     height: 250px;
@@ -65,7 +64,7 @@
     border-radius: 30px;
     transition: transform 0.5s ease-in-out;
 }
-.new-blazer-box::after{
+.new-blazer-box::after{  /*The Background of the container of new blazer*/
     content: '';
     position: absolute;
     inset: 0;                 /*makes it able to display content */
@@ -78,17 +77,17 @@
     border-radius: 30px;
     
 }
-.new-blazer-box:hover{
+.new-blazer-box:hover{    /*animations*/
     transform: scale(1.1);
 }
-.clickable-new-blazer{
+.clickable-new-blazer{     /*makes the new-blazer image clickable*/
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;   /* makes sure its on top */
 }
-.digest-box{
+.digest-box{              /* container of the university digest*/
     position: relative;
     isolation: isolate;
     height: 250px;
@@ -101,7 +100,7 @@
     transition: transform 0.5s ease-in-out;
     
 }
-.digest-box::after{
+.digest-box::after{      /*background of the univeristy digest*/
     content: '';
     position: absolute;
     inset: 0;              /*makes it able to display content */
@@ -123,7 +122,7 @@
     height: 100%;
     z-index: 1;   /* makes sure its on top */
 }
-.student-council-box{
+.student-council-box{    /*Student council container*/
     position: relative;
     isolation: isolate;
     height: 250px;
@@ -134,7 +133,7 @@
     border-radius: 30px;
     transition: transform 0.5s ease-in-out;
 }
-.student-council-box::after{
+.student-council-box::after{     /*background of the student council container*/
     content: '';
     position: absolute;
     inset: 0;              /*makes it able to display content */
@@ -146,7 +145,7 @@
     background-repeat: no-repeat;
     border-radius: 30px;
 }
-.clickable-student-council{
+.clickable-student-council{  /*Animations of the student council container*/
     position: absolute;
     inset: 0;
     width: 100%;
@@ -156,6 +155,8 @@
 .student-council-box:hover{
     transform: scale(1.1);
 }
+
+/* here onwards are the texts of each of the containers*/
 .text-fb{
     text-align: center;
     color: white;

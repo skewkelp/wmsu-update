@@ -281,9 +281,12 @@ ul li {
 }
 
 .hero-banner.media{
-    background-image:url("../img/media-banner.png") ;
+    background-image:url("../img/hero-banner/media-banner.png") ;
 }
     
+.hero-banner.announcements{
+    background-image: url("../img/hero-banner/announcements-banner.png");
+}
 
 
 
