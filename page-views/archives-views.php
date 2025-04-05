@@ -1,13 +1,20 @@
 <style>
     <?php 
-    require_once '../css/updates.css'; 
+    require_once '../css/updates/archives.css'; 
+    // require_once '../css/updates.css'; 
     ?>
 </style>
 
 
-<div class="hero-banner archives" >
-    
+<div class="hero-banner archives" >    
+    <div class="items">
+        <div class="hero-header">
+            <h1>ARCHIVES</h1>
+        </div>
+        <img src="../img/wmsu-logo.png" class="hero-icon"></img>
+    </div>
 </div>
+
 <?php 
     require_once '../table-articles/table-articles.php';
     $defaultYear = 1; //default year index for archive
@@ -89,7 +96,7 @@
         <a class="button next archives" href="updates?page-view=archives&archived-index=<?php echo $nextYear + 1;?>" >&raquo;</a>
     </div>
 </div>
-<div class="page-margin">
+<div class="page-margin-old">
     <div class="page-section archives">
 
         <div class="month-list">

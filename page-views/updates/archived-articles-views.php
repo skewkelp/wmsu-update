@@ -1,6 +1,7 @@
 <style>
     <?php 
-    require_once '../css/updates.css'; 
+    require_once '../css/updates/archives.css'; 
+    // require_once '../css/updates.css'; 
     ?>
 </style>
 
@@ -101,12 +102,17 @@
 </script>
 
 
-<div class="hero-banner archives" >
+<div class="hero-banner archives" >    
+    <div class="items">
+        <div class="hero-header">
+            <h1>Archives</h1>
+        </div>
+        <img src="../img/wmsu-logo.png" class="hero-icon"></img>
+    </div>
 </div>
 
-<div class="page-margin article">
+<div class="page-margin-old article">
     <div class="page-section article">
-
         <div class="page-header article">
             <h1><?php echo $article['header'];?></h2>
         </div>

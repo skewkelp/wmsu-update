@@ -1,6 +1,6 @@
 
 <style>
-    <?php require_once '../css/updates.css';?>
+    <?php //require_once '../css/updates/updates.css';?>
 
     <?php require_once '../css/announcement.css';?>
     <?php require_once '../css/fonts.css';?>
@@ -12,9 +12,18 @@
   $indexSample = count($articleTable) - 1;
   $articleSample = $articleTable[$indexSample];
 ?>
-<div class="hero-banner announcements"></div>
 
-<div class="page-margin article">
+<div class="hero-banner announcements" >    
+    <div class="items">
+        <div class="hero-header">
+            <h1>ANNOUNCEMENTS</h1>
+        </div>
+        <img src="../img/wmsu-logo.png" class="hero-icon"></img>
+    </div>
+</div>
+
+
+<div class="page-margin-old article">
     <div class="page-section article">
         <a href="updates?page-view=announcements" class="arrow">⬅ Back</a>
 

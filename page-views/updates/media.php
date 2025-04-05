@@ -1,10 +1,17 @@
 
 <style>
-    <?php require_once '../css/updates.css';?>
+    <?php //require_once '../css/updates.css';?>
     <?php require_once '../css/media.css';?>
 </style>
 
-<div class="hero-banner media"></div>
+<div class="hero-banner media" >    
+    <div class="items">
+        <div class="hero-header">
+            <h1>MEDIA</h1>
+        </div>
+        <img src="../img/wmsu-logo.png" class="hero-icon"></img>
+    </div>
+</div>
     
 <div class ="section-title archives">
     <h2>Our Official Publication Medias</h2>

@@ -1,5 +1,5 @@
 <style>
-    <?php require_once '../css/updates.css';?>
+    <?php //require_once '../css/updates.css';?>
     <?php require_once '../css/announcement.css';?>
     <?php require_once '../css/fonts.css';?>
 </style>
@@ -7,7 +7,14 @@
   require_once '../table-articles/table-articles.php';
 ?>
 
-<div class="hero-banner announcements"></div>
+<div class="hero-banner announcements" >    
+    <div class="items">
+        <div class="hero-header">
+          <h1>ANNOUNCEMENTS</h1>
+        </div>
+        <img src="../img/wmsu-logo.png" class="hero-icon"></img>
+    </div>
+</div>
         
  <div class="section-title archives">
     <h2>Latest Announcements</h2>

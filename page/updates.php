@@ -55,10 +55,15 @@ if ($pageView === 'news-articles') {
 }else {
     $directory = '../page-draft/backlog.php'; // Fallback or default view
 }
+
 ?>
 
 <link rel="stylesheet" href="../vendor/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
 
+
+<style>
+    <?php require_once '../css/updates/updates.css'; ?>
+</style>
 
 <body>
     <?php require_once '../__includes/navbar.php'; ?>
