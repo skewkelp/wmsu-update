@@ -1,0 +1,40 @@
+<?php  
+            
+            $slicedArticles = array_slice($articleTable, $articleIndex, $articlesPerPage);
+            
+            foreach ($slicedArticles as $index => $article):
+                $originalIndex = $index;
+                // if($article["status"] === "archived"){
+                //     continue;
+                // }
+            ?>
+
+            <div class="article">
+                <div class="main-info articles">
+                    <a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>" class="img-card-link s">
+                        <div id="" class="img-card s">
+                            <img src="<?php echo $article['thumbnail'];?>" alt="">
+                        </div>
+                    </a>
+                    <div class="description-card articles">
+                        <h2><a href="updates?page-view=news-articles&article-view=true&article-index=<?php echo $originalIndex;?>&gallery-style=<?php echo $article['gallery_style'];?>"><?php echo $article['header'];?></a></h2>
+                        <div class="date">
+                            <h2><?php echo $article['date'];?></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag articles">
+                    <div class="title-card">
+                        <p>Related Info</p>
+                    </div>
+                    <div class="label-tags">
+                        <?php foreach ($article['sdg_tag'] as $tag): ?>
+                            <button class="sdg-label sdg-<?php echo $tag; ?>"><?php echo $tag; ?>
+                            </button>
+                        <?php endforeach; ?>
+                        
+                    </div>
+                </div>
+            </div>
+                
+            <?php endforeach; ?>

@@ -1,0 +1,75 @@
+.ResExtHeroCont{
+    width: 100vw;
+    height: 400px;
+    background-image: linear-gradient(rgba(86, 7, 1, 0.8), rgba(88, 8, 2, 0.8)), url(../imgs/CTE-Field.png);
+    background-position: center;
+}
+
+.ResExtHero{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 85px;
+}
+
+.ResExtHeroTitle{
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.ResExtHeroImg{
+    width: 280px;
+    height: 280px;
+}
+
+.ResExtSubNavCont{
+    width: 100vw;
+    height: 80px;
+    border-bottom: 1.5px solid #BD0F03;
+    margin-bottom: 25px;
+}
+
+.ResExtSubNav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ResExtSubNavLinks{
+    margin: 0 30px;
+    color: #BD0F03;
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+
+.ResExtSubNavLinks:hover{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: underline;
+    transition: ease-in-out .2s;
+}
+
+.ResExtSubNavDropDown-1{
+    width: 100vw;
+    height: 300px;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out, visibility .1s linear .1s;
+    transform: translateY(-25px);
+}
+
+.ResExtShowDD{
+    visibility: visible;
+    position: relative;
+}
+
+.ResExtSubNavDDCntr{
+
+}

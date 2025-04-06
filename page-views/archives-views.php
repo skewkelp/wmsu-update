@@ -1,146 +1,141 @@
 <style>
-    <?php require_once '../css/updates.css'; ?>
-
+    <?php 
+    require_once '../css/updates.css'; 
+    ?>
 </style>
+
 
 <div class="hero-banner archives" >
     
 </div>
+<?php 
+    require_once '../table-articles/table-articles.php';
+    $defaultYear = 1; //default year index for archive
+
+    $getYear = isset($_GET['archived-index']) ? (int)$_GET['archived-index'] : '';
+    $archivedIndex = $getYear;
+    $archiveObj = $archives[$archivedIndex];
+    $yearName = $archiveObj["year_pk"];
+    $monthList = $archiveObj["months"];
+    
+    if($getYear || $getYear >= 0){
+        if($getYear == $defaultYear){
+            $currentIndex = $defaultYear;
+            $prevYear = $currentIndex;
+        }if($getYear > $defaultYear || $getYear < $defaultYear){
+            $currentIndex = $getYear;
+            $prevYear = $currentIndex;
+            if($prevYear == 0){
+                $prevNav = false;
+            }else{
+                $prevNav = isset($archives[$prevYear]) ? $archives[$prevYear] : false;
+            }
+        }
+        $nextYear = $currentIndex;
+        //1 = 0  2 = 1, 3 = 2
+
+        $nextNav = isset($archives[$nextYear]) ? $archives[$nextYear] : false;
+           
+
+        $yearlyArchived = $archives[$currentIndex];
+        $monthlyArchived = $yearlyArchived["months"];
+        $originalIndex = 0;
+        
+        $monthlyCount = count($monthlyArchived);
+        
+        $firstCount = ceil($monthlyCount/2);
+        $secondCount = $monthlyCount - $firstCount; 
+        
+        $firstMonthList = array_slice($monthlyArchived, -1 *($firstCount)); // 
+        
+        $secondMonthList = array_slice($monthlyArchived, 0,($secondCount)); // 
+    }
+    else{
+        $currentIndex = 'ERR';
+    }
+    $nextYear == count($archives) - 1? $nextNav = false : '';
+    
+?>
+
+<script>
+    var prevNavExist = <?php echo json_encode($prevNav !== false); ?>;
+    var nextNavExist = <?php echo json_encode($nextNav !== false); ?>;
+    
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hide or show elements based on existence
+        if (!prevNavExist) {
+            document.querySelector('.previous.archives').classList.add('hidden');
+        }
+        if (!nextNavExist) {
+            document.querySelector('.next.archives').classList.add('hidden');
+        }
+    });
+</script>
+
 <div class="section-title archives">
-    <h2>ARTICLES</h2>
-    <div class="d-flex flex-row" style="gap: 20px;">
-        <button style="color:black;"><</button>
-        <h2>2024</h2>
-        <button style="color:black; ">></button>
+    <h2 style="color: #FFD700; font-size:42px;"><?php echo $yearName? $yearName : 'YEARLY'?>
+        <?php 
+         ////COMMENT DEBUGGING
+            // echo '<br>second:' . $secondCount . ' //prevYear:' . $prevYear . ' //currentYear or getYear:' . $getYear .' //nextYear:' .  $nextYear . ' //currentIndex:' . $currentIndex ;
+        ?>
+    </h2>
+
+    <div class="d-flex flex-row" style="gap: 40px;">
+        <a class="button previous archives" href="updates?page-view=archives&archived-index=<?php echo $prevYear - 1;?>">&laquo;</a>
+        <h2><?php 
+            echo $yearlyArchived["year_pk"];
+        ?></h2>
+        <a class="button next archives" href="updates?page-view=archives&archived-index=<?php echo $nextYear + 1;?>" >&raquo;</a>
     </div>
 </div>
 <div class="page-margin">
     <div class="page-section archives">
+
         <div class="month-list">
-            <div id="december" class="month">
-                <div class="description-card">
-                    <h2>DECEMBER</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="november" class="month">
-                <div class="description-card">
-                    <h2>NOVEMBER</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="october" class="month">
-                <div class="description-card">
-                    <h2>OCTOBER</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
+        <?php  
+        for ($index = $firstCount - 1, $actualIndex = $monthlyCount - 1; $index >= 0; $index--, $actualIndex--):
+            $month = $firstMonthList[$index]; // Access the month using the index
+            $originalIndex = $index + 1; // Increment index for display
+            ?>
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $actualIndex?>&page=1">
+                <div class="month">
+                    <div class="description-card">
+                        <h2><?php echo $month["name"] ?></h2>
+                        <h2 id="year"><?php echo $yearlyArchived["year_pk"] ?></h2>
+                    </div>
 
-            <div id="september" class="month">
-                <div class="description-card">
-                    <h2>SEPTEMBER</h2>
-                    <h2 id="year">2024</h2>
-                </div>        
-                <a href="" class="vector"></a>
-            </div>
-
-            <div id="august" class="month">
-                <div class="description-card">
-                    <h2>AUGUST</h2>
-                    <h2 id="year">2024</h2>
+                    <div class="vector">
+                        <img src="../table-articles/4/image-4.jpg" alt="">
+                        <div class="overlay"></div>
+                    </div>
+               
                 </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="july" class="month">
-                <div class="description-card">
-                    <h2>JULY</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
+            </a>
+        <?php endfor; ?>
         </div>
+
         <div class="month-list">
-            <div id="june" class="month">
-                <div class="description-card">
-                    <h2>JUNE</h2>
-                    <h2 id="year">2024</h2>
+        <?php  
+        for ($index = $secondCount - 1, $actualIndex = $secondCount - 1; $index >= 0; $index--, $actualIndex--):
+            $month = $secondMonthList[$index]; // Access the month using the index
+            $originalIndex = $index + 1; // Increment index for display
+            ?>
+            <a href="updates?page-view=archives&more-archives=true&archived-index=<?php echo $getYear;?>&month-index=<?php echo $actualIndex?>&page=1">
+                <div id="" class="month">
+                    <div class="description-card">
+                        <h2><?php echo $month["name"] ?></h2>
+                        <h2 id="year"><?php echo $yearlyArchived["year_pk"] ?></h2>
+                    </div>
+    
+                    <div class="vector">
+                        <img src="" alt="">
+                        <div class="overlay"></div>
+                    </div>
+       
                 </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="may" class="month">
-                <div class="description-card">
-                    <h2>MAY</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="april" class="month">
-                <div class="description-card">
-                    <h2>APRIL</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
-
-            <div id="march" class="month">
-                <div class="description-card">
-                    <h2>MARCH</h2>
-                    <h2 id="year">2024</h2>
-                </div>        
-                <a href="" class="vector"></a>
-            </div>
-
-            <div id="february" class="month">
-                <div class="description-card">
-                    <h2>FEBRUARY</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
-            <div id="january" class="month">
-                <div class="description-card">
-                    <h2>JANUARY</h2>
-                    <h2 id="year">2024</h2>
-                </div>
-                <a href="" class="vector"></a>
-            </div>
+            </a>
+        <?php endfor; ?>
         </div>
     </div>
-</div>
-<div class="footer">
-    <div class="footer list text">
-        <div class="footer-item">
-            <div class="d-flex flex-row">
-                <div class="footer-logo"></div>
-                <h1 class="f-logo-text">| WMSU</h1>
-            </div>    
-            <p>Copyright © 2025 Western <br> Mindanao State University.<br>
-            All rights reserved.</p>
-        </div>
-        
-        <div class="footer-item">
-            <h1>ABOUT</h1>
-            <p><a href="">Mission</a></p>
-            <p><a href="">Vission</a></p>
-            <p><a href="">History</a></p>
-        </div>
-        
-        <div class="footer-item">
-            <h1>SERVICES</h1>
-            
-        </div>
-        
-        <div class="footer-item i4">
-            <h1>QUICK LINKS</h1>
-            <div class="d-flex flex-column justify-content-start">
-                <div class="transparency-seal"><a href=""></a></div>
-            </div>
-            <p><a href="">Board Of Regents</a></p>
-            <p><a href="">Administrative</a></p>
-            <p><a href="">Officials</a></p>
-        </div>
-
 </div>
