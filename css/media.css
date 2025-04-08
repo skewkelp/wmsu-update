@@ -1,4 +1,3 @@
-
 .box{
     position: relative;
     border: 2px solid black;
@@ -18,15 +17,23 @@
     background-size: cover;
     opacity: 0.2;
 }
+.clickable-fb{          /*Makes the picture clickable*/
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
 .fb-box{
     position: relative;
     isolation: isolate;
-    height: 250px;
+    height: 260px;
     width: 22%;  
     background-position: center;
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    transition: transform 0.3s;
 }
 .fb-box::after{
     content: '';          
@@ -41,15 +48,26 @@
     border-radius: 30px;
     z-index: -1;
 }
+.fb-box:hover{
+    transform: scale(1.1);
+}
+.clickable-new-blazer{     /*makes the new-blazer image clickable*/
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
 .new-blazer-box{
     position: relative;
     isolation: isolate;
-    height: 250px;
+    height: 260px;
     width: 22%;
     background-position: center;
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    transition: transform 0.3s;
 }
 .new-blazer-box::after{
     content: '';
@@ -64,16 +82,20 @@
     border-radius: 30px;
     
 }
+.new-blazer-box:hover{
+    transform: scale(1.1);
+}
 .digest-box{
     position: relative;
     isolation: isolate;
-    height: 250px;
+    height: 260px;
     width: 20%;
     background-position: center;
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
     overflow: hidden;
+    transition: transform 0.3s;
 }
 .digest-box::after{
     content: '';
@@ -87,15 +109,26 @@
     background-repeat: no-repeat;
     
 }
+.clickable-digest{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
+.digest-box:hover{
+    transform: scale(1.1);
+}
 .student-council-box{
     position: relative;
     isolation: isolate;
-    height: 250px;
+    height: 260px;
     width: 20%;
     background-position: center;
     background-image: url('../imgs/wsmu.jpg');
     background-size: cover;
     border-radius: 30px;
+    transition: transform 0.3s;
 }
 .student-council-box::after{
     content: '';
@@ -109,9 +142,41 @@
     background-repeat: no-repeat;
     border-radius: 30px;
 }
-.texts{
+.clickable-student-council{  /*Animations of the student council container*/
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;   /* makes sure its on top */
+}
+.student-council-box:hover{
+    transform: scale(1.1);
+}
+.text-fb{
     text-align: center;
     color: white;
     display: grid;
-    margin-top: 70%;
+    align-items: center;
+    padding-top: 70%;
+}
+.text-new-blazer{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 70%;
+}
+.university-digest-text{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 80%;
+}
+.usc-text{
+    text-align: center;
+    color: white;
+    display: grid;
+    align-items: center;
+    padding-top: 75%; 
 }

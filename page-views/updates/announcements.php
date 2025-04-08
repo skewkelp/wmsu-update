@@ -1,6 +1,6 @@
 <style>
     <?php require_once '../css/updates.css';?>
-    <?php require_once '../css/announcement.css';?>
+    <?php require_once '../css/announcements.css';?>
     <?php require_once '../css/fonts.css';?>
 </style>
 <?php 
@@ -24,7 +24,7 @@
     <div class="text-content">
       <h4 class="Date-text"><?php echo $articleSample['date'];?></h4>
         <a href="updates?page-view=announcements&article-view=true" class="clickable-text inter-black"><?php echo $articleSample['header'];?></a>
-        <!-- <a href="../page-views/announcement-content.php" class="clickable-text inter-black"><?php echo $articleSample['header'];?></a> -->
+        <!-- <a href="../page-views/updates/announcements-article-view.php" class="clickable-text inter-black"><?php echo $articleSample['header'];?></a> -->
       <h4>SDG Goals:</h4> 
       
       

@@ -19,15 +19,16 @@
         </div>
 
         <div class="new-blazer-box">
-            <div class="text-new-blazer"> 
-                <h4>New Blazer</h4>
-            </div>
-            <a href="https://www.facebook.com/thenewblazer" class="clickable-new-blazer"></a>    
+        <div class="text-new-blazer"> 
+         <h4>New Blazer</h4>
         </div>
+         <a href="https://www.facebook.com/thenewblazer" class="clickable-new-blazer"></a>    
+         </div>
 
+     
         <div class="digest-box">
             <div class="university-digest-text"> 
-                <h4>University Digest</h4>
+                <h4>University Digest</h4>   
             </div>   
             <a href="https://www.facebook.com/theuniversitydigest" class="clickable-digest"></a>
         </div>
