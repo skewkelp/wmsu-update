@@ -94,6 +94,8 @@ button{
     --og-important-certificates-height: 240px;
     --important-certificates-height: var(--og-important-certificates-height);
     /* sdg-color */
+    --sdg-section-background-color: #002147;
+   
     --sdg-1-background-color: #EB1C2D;
     --sdg-2-background-color: #D3A029;
     --sdg-3-background-color: #279B48;
@@ -280,6 +282,23 @@ button{
     
     --sdg-text-h1-font-size: 32px;
     --sdg-text-h2-font-size: 16px;
+
+    /* SDG ADDED LATEST */
+    --og-sdg-icon-size: 56px;
+    --sdg-icon-size: 56px;
+
+    --og-sdg-gradient-container-size: 600px;
+    --sdg-gradient-container-size: 600px;
+
+    --mask-size: 60%; /* Control the size of the mask */
+    --og-sdg-side-padding: 120px;
+    --sdg-side-padding: 120px;
+
+    --og-sdg-target-div-position-left: 160px;
+    --sdg-target-div-position-left: 160px;
+
+
+
 }
 
 :root{
@@ -610,6 +629,7 @@ button{
     gap: 20px;
 }
 .page-section.sdg{
+    margin-top: 0;
     /* contentview */
     flex-direction: column;
     gap: 10px;
@@ -756,6 +776,7 @@ button{
     color: white;
     /* background-color: goldenrod; */
     max-width: 100%;
+    
 }.section-title.articles, .section-title.articles h2{
     padding-left: 40px;
     text-align: left;
@@ -778,11 +799,11 @@ button{
 }
 
 
-
 .page-section .date h1,
 .page-section .date h2{
     font-size: 18px;
-    color: var(--brand-color);
+    /* color: var(--brand-color); */
+    color: #7E0804;
 }
 
 .page-section .date{
@@ -1733,9 +1754,11 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
 
 .description-card .date{
     width: fit-content;
-    padding: 12px;
+    /* padding: 12px; */
+    padding-top: 12px;
+    padding-bottom: 12px;
     border-radius: 4%;
-    border: solid #D9D9D9 1px;
+    /* border: solid #D9D9D9 1px; */
     /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     background-color: white;
 }.description-card .date p{
@@ -1743,6 +1766,7 @@ REDUNDANT = no use, for note taking incase on specified cell grid specification
     font-size: 20px;
     white-space: nowrap;
 }
+
 
 .w-100{
     width: auto !important;
@@ -1993,6 +2017,11 @@ thead {
         --sdg-1-text-width: calc(var(--og-sdg-1-text-width) * 0.8);
         --sdg-1-icon-width: calc(var(--og-sdg-1-icon-width) * 0.8);
 
+        /* SDG-STYLING */
+        --sdg-side-padding: calc(var(--og-sdg-side-padding) * 0.8);
+        --sdg-gradient-container-size: calc(var(--og-sdg-gradient-container-size) * 0.8);
+        --sdg-icon-size: calc(var(--og-sdg-icon-size) * 0.8);
+
     }
 
     .hero-banner .items{
@@ -2003,6 +2032,11 @@ thead {
     }
     .hero-icon{
         margin-right: calc(var(--hero-icon-margin-right) * 0);
+    }
+
+
+    #target-text, #target-icon{
+        /* max-width: 80%; */
     }
 
 }
@@ -2030,6 +2064,12 @@ thead {
         --sdg-list-height: auto;
         /* --sdg-1-text-width: calc(var(--og-sdg-1-text-width) * 0.6);
         --sdg-1-icon-width: calc(var(--og-sdg-1-icon-width) * 0.6);  */
+    
+        /* SDG-STYLING */
+        --sdg-side-padding: calc(var(--og-sdg-side-padding) * 0.67);
+        --sdg-gradient-container-size: calc(var(--og-sdg-gradient-container-size) * 0.67);
+        --sdg-icon-size: calc(var(--og-sdg-icon-size) * 0.67);
+        --sdg-target-div-position-left: calc(var(--og-sdg-target-div-position-left) * 0.67);
     }
 
     .hero-banner .items{
@@ -2045,10 +2085,6 @@ thead {
         margin-left: calc(var(--hero-icon-margin-right) * 2);
     }
 
-    .page-section.news{
-        gap: 20px;
-        padding: 0 10px;
-    }
 
     .articles .article-list{
         justify-content: space-between;
@@ -2247,5 +2283,34 @@ thead {
     /* .sdg-list .filter-button{  
         height: 100px;        
     } */
+}
+
+
+/* ANIMATION */
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    50% {
+        transform: translateX(200px); /* Move to the right */
+    }
+    100% {
+        transform: translateX(0); /* Return to the original position */
+    }
+}
+
+@keyframes moveRightLeft {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    40% {
+        transform: translateX(-40px); /* Move to the left */
+    }
+    60% {
+        transform: translateX(-40px); /* Move to the left */
+    }
+    100% {
+        transform: translateX(0); /* Return to the original position */
+    }
 }
 

@@ -32,7 +32,6 @@ if ($pageView === 'news-articles') {
         $directory = '../page-views/updates/archives-monthly-views.php';
 
     }elseif($moreArchivesView === 'false'){
-        
         if($articleView === 'true'){
             $directory = '../page-views/updates/archived-articles-views.php';
             // $directory = '../page-views/updates/articles-views.php';
@@ -45,6 +44,7 @@ if ($pageView === 'news-articles') {
     $directory = '../page-views/updates/media.php';
 } elseif($pageView == 'president-corner'){
     $directory = '../page-views/updates/president-corner-view.php';
+    
 } elseif($pageView == 'announcements'){
     if($articleView === 'true'){
         $directory = '../page-views/updates/announcements-article-view.php';
@@ -53,15 +53,17 @@ if ($pageView === 'news-articles') {
     }
 
 }else {
-    $directory = '../page-draft/backlog.php'; // Fallback or default view
+    // $directory = '../page-draft/backlog.php'; // Fallback or default view
+    $directory = '../page-draft/design-test.php'; // Fallback or default view
 }
 
 ?>
 
 <link rel="stylesheet" href="../vendor/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
-
+<script src="../vendor/jquery-3.7.1/jquery-3.7.1.min.js"></script>
 
 <style>
+    <?php require_once '../css/updates/news-articles.css'; ?>
     <?php require_once '../css/updates/updates.css'; ?>
 </style>
 

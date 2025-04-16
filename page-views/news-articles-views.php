@@ -36,8 +36,14 @@
             </a>
             <div class="description-card latest">
                 <h2 class="indented"><a href="updates?page-view=news-articles&article-view=true&article-index=0&gallery-style=<?php echo $latestarticle['gallery_style'];?>"><?php echo $latestarticle['header'];?></a></h2>
-                <div class="date">
-                    <h2><?php echo $latestarticle['date'];?></h2>
+                
+                <div class="d-flex flex-row justify-content-between">
+                    <div class="date">
+                        <h2><?php echo $latestarticle['date'];?></h2>
+                    </div>
+                    <div class="button view-more">
+                        <h2><a href="">Learn More -></a></h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,6 +77,7 @@
     </div>
 
 </div>
+
 
 <div class="page-section sdg">
     <div class="section-title sdg">
@@ -173,6 +180,7 @@
     
     </div>
 </div>
+
 
 <div class="page-section articles page-margin">
     <div class="section-title articles">

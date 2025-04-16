@@ -36,7 +36,7 @@ $articleTable = [
         "sdg_tag" => ['3','4','8','9','11','12','13'],
         "gallery_fk" => 0
         ,"status" => "displayed"
-
+        
     ],
     [
         "header" => "Western Mindanao State University joins the 2025 National Women’s Month Celebration!",
