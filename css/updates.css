@@ -481,7 +481,12 @@ button{
     background-image: url("../img/hero-banner/archives.png");
 }
 
-
+.hero-banner.media{ /* NEWS-ARTICLE PAGE */
+    background-image: url("../img/hero-banner/media-banner.png");
+}
+.hero-banner.hero-banner.president-report{
+    background-image: url("../img/hero-banner/hero-banner-logo.png");
+}
     
 
 
@@ -572,7 +577,7 @@ button{
     flex-direction: column;
     padding: 40px;
     gap: 20px;
-
+    display: flex;
 }.page-section.sdg{
     /* contentview */
     flex-direction: column;

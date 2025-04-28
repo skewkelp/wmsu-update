@@ -574,7 +574,7 @@ $articleTable = [
         "status" => "displayed"
     ],
     [
-        "header" => "WSMU Adresses bomb threat Joke",
+        "header" => "WMSU Adresses Bomb Threat Joke",
         "description" => '
         <p class="announcement-pic-text inter-bold">Western Mindanao State University (WMSU) strongly condemns any jokes or statements about bombs and other threats that compromise public safety. Such actions are highly inappropriate, illegal, and will have serious consequences.
         The safety and security of our students, faculty, and staff are our top priority. WMSU enforces a zero-tolerance policy on threats of violence, whether real or perceived, as they cause unnecessary fear and disrupt our learning environment.
@@ -588,7 +588,8 @@ $articleTable = [
         "gallery_fk" => 0
         ,"status" => "displayed"
 
-    ]
+    ],
+  
 ];
 
 

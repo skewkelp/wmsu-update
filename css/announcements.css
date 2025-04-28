@@ -9,7 +9,9 @@
  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
  z-index: 1;
  border: 2px solid;
+ border-radius: 20px;
  transition: border-color 0.5s ease-out;
+ max-width: 100%;
 }
 .box::after{         /*background of the container*/
 content: '';
@@ -34,7 +36,7 @@ background-size: contain;
 .SDG-goals-content{   /* this is for the sdg goals to flex*/
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 5%;
 }
 .box-content{       /* the contents of the box to have color*/
     color: crimson;
@@ -89,21 +91,51 @@ background-size: contain;
 .description-card{
     margin-top: 30px;
 }
-.announcement-content{
-
-}
 
 .arrow {           /* arrow for going back*/
-    color: black;
+    color: crimson;
     transition: color 0.3s;
     font-size: 20px;
   }
   
   .arrow:hover {
-    color: crimson; /* Change color on hover */
+    color: rgb(0, 0, 0); /* Change color on hover */
   }
-.arrows{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;  
+/* Responsiveness starts here */
+@media(max-width: 480px){   /* The announcement page responsiveness starts here */
+ .box{
+   width: 95%;
+   color: blue;
+   height: 150px;
+ }
+.section-title.archives{
+    font-size:0.8rem;
+    width: 100%;
 }
+.clickable-text{
+    font-size: 20px;
+}
+}
+/* The announcement page content responsiveness starts here */
+
+@media (max-width:1500px) { /* Tablet View and laptop view */
+    .announcement-pic{
+        width: auto;
+    }
+    .title{
+        font-size: 40px;
+    }
+} 
+@media(max-width:800px) {
+    .title{
+        font-size:20px;
+    }
+    .page-section.article{
+    }
+}
+ @media (max-width:500px){
+    .page-section.article{
+        width: 100%;
+    }
+}
+

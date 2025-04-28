@@ -33,13 +33,21 @@ if ($pageView === 'news-articles') {
     $directory = '../page-views/archives-views.php';
 } elseif ($pageView === 'media'){
     $directory = '../page-views/updates/media.php';
-} elseif ($pageView === 'announcements'){
+} elseif ($pageView == 'president-report'){
+    if($articleView == 'true'){
+     $directory = '../page-views/president-report-views.php';
+    }
+    else{
+    $directory = '../page-views/president-report.php';
+    }
+}elseif ($pageView === 'announcements'){
     if($articleView == 'true'){
     $directory = '../page-views/updates/announcements-article-view.php';
 }
 else{
     $directory = '../page-views/updates/announcements.php';
 }
+
 }else {
     $directory = '../page-views/default-view.php'; // Fallback or default view
 }

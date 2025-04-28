@@ -134,7 +134,7 @@
                             <h6 class="inter-bold">THE PRESIDENT'S CORNER</h6>
                             <p class="inter-light"><a href="updates?page-view=president-corner">Updates</a></p>
                             <p class="inter-light">About the President</p>
-                            <p class="inter-light">President's Reports</p>
+                            <p class="inter-light"><a href="updates?page-view=president-report">President's Reports</p>
                             <br>
                             <h6 class="inter-bold">NEWS & EVENTS</h6>
                             <p class="inter-light"><a href="updates?page-view=announcements">Announcements</a></p>

@@ -13,7 +13,7 @@
     <div class="box">
         <div class="fb-box">
             <div class="text-fb"> 
-                <h4>Facebook</h4>
+                <h4>Wsmu fb page</h4>
             </div> 
             <a href="https://www.facebook.com/wmsu.edu.ph" class="clickable-fb"></a>
         </div>

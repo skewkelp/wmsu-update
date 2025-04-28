@@ -1,7 +1,6 @@
-
 <style>
     <?php require_once '../css/updates.css';?>
-    <?php require_once '../css/announcements.css';?>
+    <?php require_once '../css/presidents-report.css';?>
     <?php require_once '../css/fonts.css';?>
 </style>
 
@@ -13,21 +12,28 @@
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<div class="hero-banner president-report"> 
+    <div class="items">
+     <div class="hero-header inter-bold">
+          <h1>President's Reports</h1>
+</div>
+        <img src="../img/hero-banner/PresidentWsmu.png" class="hero-icon"></img>
+    </div>       
 
-<div class="hero-banner announcements"></div>
+</div>
+
 
 <div class="page-margin article">
     <div class="page-section article">
-        <a href="updates?page-view=announcements" class="arrow inter-black">&#11164; Back To Announcements </a>
+        <a href="updates?page-view=president-report" class="arrow inter-black">&#11164; Back To President's Report</a>
         <div class="page-header-article" >
-            <h2 class="title inter-extrabold" style="color: crimson;
-!important;"><?php echo $articleSample['header'];?></h2>
+            <h2 class="title inter-extrabold" style="color: crimson">President's First Report of 2024</h2>
         </div>
         <div class="date">
             <span class="bi-clock icon"></span>
-            <h2 class="title-date inter-medium"><?php echo $articleSample['date'];?></h2>
+            <h2 class="title-date inter-medium">April 28 2025</h2>
         </div>
-        <div class="announcement-pic"></div>
+       
 
         <div class="description-card">
             <?php echo $articleSample['description'];?>
