@@ -14,10 +14,10 @@
     padding-right: 170px;
     color: white;
 }                      /* till here */
-.box{                  /* the container*/
+.box-president-report{                  /* the container*/
     position: relative;
     height: 200px;
-    width: 90%;   
+    width: 40%;   
     margin: 5%;
     display: flex;
     flex-direction: row;
@@ -28,7 +28,7 @@
     transition: border-color 0.5s ease-out;
     max-width: 100%;
    }
-   .box::after{         /*background of the container*/
+   .box-president-report::after{         /*background of the container*/
    content: '';
    position: absolute;
    inset: 0; 
@@ -38,7 +38,7 @@
    background-size: contain;
    overflow: hidden;
    }
-   .box:hover{
+   .box-president-report:hover{
       border-color: red;
    }
    .box-content{           /* the whole contents of the box*/
@@ -95,17 +95,14 @@
        font-size: 65px;
    }
    
-   .announcement-pic{   /* the picture*/
-       width: 1000px;
-       height: 500px;
-       background-repeat: no-repeat;
-       background-image: url('../img/bomb-threats.jpg');
-       background-size: contain;
-       background-position: center center;
-   
+   .president-report-pic{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: block;
    }
    .description-card{
-       margin-top: 30px;
+       text-align: justify;
    }
    
    .arrow {           /* arrow for going back*/
@@ -117,9 +114,13 @@
      .arrow:hover {
        color: rgb(0, 0, 0); /* Change color on hover */
      }
+    .president-report-boxes{
+        display: flex;
+        flex-direction: row;
+    }
    /* Responsiveness starts here */
    @media(max-width: 480px){   /* The President-report page responsiveness starts here */
-    .box{
+    .box-president-report{
       width: 95%;
       height: 150px;
     }
@@ -146,6 +147,7 @@
            font-size:20px;
        }
        .page-section.article{
+
        }
    }
     @media (max-width:500px){
