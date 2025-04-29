@@ -40,8 +40,8 @@
 
         <div class="description-card">
             <!-- <?php echo $articleSample['description'];?> -->
-         <p class="inter-semibold"> 
-Today, January 9, 2025, marks a significant milestone for Western Mindanao State University (WMSU) as the College of Medicine Building Phase 1 was officially turned over to the university. This momentous event was graced by the presence of WMSU President Dr. Ma. Carla A. Ochotorena, members of the Board of Regents, Vice-Presidents, and esteemed members of the WMSU community.  
+         <p class="president-text inter-semibold"> 
+On January 9, 2025, marks a significant milestone for Western Mindanao State University (WMSU) as the College of Medicine Building Phase 1 was officially turned over to the university. This momentous event was graced by the presence of WMSU President Dr. Ma. Carla A. Ochotorena, members of the Board of Regents, Vice-Presidents, and esteemed members of the WMSU community.  
 The Phase 1 project boasts a total floor area of 1,253 square meters, meticulously designed to enhance medical education and training. This state-of-the-art facility includes an ICU Simulation, Ward, Operating Room, Emergency Room, Control Room, Comfort Rooms for male, female, and persons with disabilities (PWD), as well as Utility and Electrical Rooms.  
 This transformative project, worth P33,000,000, was made possible through the invaluable support of Senator Pia S. Cayetano, who funded the construction under the FY 2021 General Appropriations Act (GAA). The funding is part of the initiative to increase the carrying capacity of the College of Medicine, enabling WMSU to accommodate more aspiring medical professionals and provide them with top-tier facilities.  
 Once fully completed, the entire College of Medicine building will stand as a 4-story edifice with an impressive total floor area of 4,262 square meters. This structure reflects WMSU’s commitment to providing quality education in a conducive learning environment, ensuring future healthcare professionals are well-prepared to serve society.  

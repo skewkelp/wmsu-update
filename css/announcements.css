@@ -80,8 +80,8 @@ background-size: contain;
 }
 
 .announcement-pic{   /* the picture*/
-    width: 1000px;
-    height: 500px;
+    width: 1100px;
+    height: 30vw;
     background-repeat: no-repeat;
     background-image: url('../img/bomb-threats.jpg');
     background-size: contain;
@@ -89,9 +89,11 @@ background-size: contain;
 
 }
 .description-card{
-    margin-top: 30px;
+    margin-top: 50px;
 }
-
+.president-text {
+    padding: 30px;
+}
 .arrow {           /* arrow for going back*/
     color: crimson;
     transition: color 0.3s;
@@ -105,17 +107,17 @@ background-size: contain;
 @media(max-width: 480px){   /* The announcement page responsiveness starts here */
  .box{
    width: 100%;
-   color: blue;
-   height: 150px;
+   height: auto;
    max-width: 480px;
    
  }
 .section-title.archives{
     font-size:0.8rem;
-    width: 100%;
+    width: auto;
+    height: auto;
 }
 .clickable-text{
-    font-size: 20px;
+    font-size: 100%;
 }
 
 }
@@ -123,17 +125,17 @@ background-size: contain;
 
 @media (max-width:1500px) { /* Tablet View and laptop view */
     .announcement-pic{
-        width: auto;
+        width: 70vw;
+        height: 70vh;
     }
-    .title{
-        font-size: 40px;
-    }
+      
 } 
 @media(max-width:800px) {
-    .title{
-        font-size:20px;
-    }
     .page-section.article{
+        font-size: 100%;
+    }
+    .h2{
+        font-size: 50%;
     }
 }
  @media (max-width:500px){
